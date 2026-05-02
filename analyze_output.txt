@@ -1,0 +1,103 @@
+Analyzing pet_finder...                                         
+
+warning • Duplicate import • lib/features/chat/presentation/widgets/chat_widgets.dart:22:8 • duplicate_import
+  error • Invalid constant value • lib/features/chat/presentation/widgets/chat_widgets.dart:206:19 • invalid_constant
+  error • Invalid constant value • lib/features/chat/presentation/widgets/chat_widgets.dart:368:16 • invalid_constant
+  error • Invalid constant value • lib/features/community/presentation/pages/community_post_detail_screen.dart:83:44 • invalid_constant
+  error • Invalid constant value • lib/features/community/presentation/pages/community_post_detail_screen.dart:93:28 • invalid_constant
+warning • Duplicate import • lib/features/community/presentation/widgets/community_widgets.dart:18:8 • duplicate_import
+  error • Invalid constant value • lib/features/map/presentation/pages/nearby_alerts_map_screen.dart:82:36 • invalid_constant
+  error • Invalid constant value • lib/features/map/presentation/pages/nearby_alerts_map_screen.dart:152:50 • invalid_constant
+  error • Invalid constant value • lib/features/map/presentation/pages/nearby_alerts_map_screen.dart:160:50 • invalid_constant
+  error • Invalid constant value • lib/features/map/presentation/pages/nearby_alerts_map_screen.dart:167:50 • invalid_constant
+  error • Invalid constant value • lib/features/map/presentation/pages/nearby_alerts_map_screen.dart:179:46 • invalid_constant
+  error • The values in a const list literal must be constants • lib/features/map/presentation/pages/nearby_alerts_map_screen.dart:179:46 • non_constant_list_element
+  error • Invalid constant value • lib/features/map/presentation/pages/nearby_alerts_map_screen.dart:184:46 • invalid_constant
+  error • The values in a const list literal must be constants • lib/features/map/presentation/pages/nearby_alerts_map_screen.dart:184:46 • non_constant_list_element
+  error • Invalid constant value • lib/features/map/presentation/pages/nearby_alerts_map_screen.dart:189:46 • invalid_constant
+  error • The values in a const list literal must be constants • lib/features/map/presentation/pages/nearby_alerts_map_screen.dart:189:46 • non_constant_list_element
+  error • Invalid constant value • lib/features/map/presentation/pages/nearby_alerts_map_screen.dart:271:22 • invalid_constant
+  error • The values in a const list literal must be constants • lib/features/map/presentation/pages/nearby_alerts_map_screen.dart:271:22 • non_constant_list_element
+  error • Invalid constant value • lib/features/map/presentation/pages/nearby_alerts_map_screen.dart:275:22 • invalid_constant
+  error • The values in a const list literal must be constants • lib/features/map/presentation/pages/nearby_alerts_map_screen.dart:275:22 • non_constant_list_element
+  error • Invalid constant value • lib/features/map/presentation/pages/nearby_alerts_map_screen.dart:277:55 • invalid_constant
+  error • The values in a const list literal must be constants • lib/features/map/presentation/pages/nearby_alerts_map_screen.dart:277:55 • non_constant_list_element
+  error • Invalid constant value • lib/features/map/presentation/pages/nearby_alerts_map_screen.dart:280:22 • invalid_constant
+  error • The values in a const list literal must be constants • lib/features/map/presentation/pages/nearby_alerts_map_screen.dart:280:22 • non_constant_list_element
+  error • Invalid constant value • lib/features/mock/mock_data.dart:24:15 • invalid_constant
+  error • Undefined name 'context' • lib/features/mock/mock_data.dart:24:15 • undefined_identifier
+  error • Invalid constant value • lib/features/mock/mock_data.dart:42:15 • invalid_constant
+  error • Undefined name 'context' • lib/features/mock/mock_data.dart:42:15 • undefined_identifier
+  error • Invalid constant value • lib/features/notifications/presentation/pages/notifications_screen.dart:81:38 • invalid_constant
+warning • Duplicate import • lib/features/onboarding/presentation/pages/splash_screen.dart:15:8 • duplicate_import
+  error • The instance member 'context' can't be accessed in an initializer • lib/features/pets/presentation/pages/add_pet_profile_screen.dart:29:15 • implicit_this_reference_in_initializer
+  error • The instance member 'context' can't be accessed in an initializer • lib/features/pets/presentation/pages/add_pet_profile_screen.dart:30:17 • implicit_this_reference_in_initializer
+  error • Expected to find ',' • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:29:48 • expected_token
+  error • Too many positional arguments: 0 expected, but 8 found • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:29:48 • extra_positional_arguments_could_be_named
+  error • Undefined name 'profiles' • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:29:48 • undefined_identifier
+  error • Expected to find ',' • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:29:57 • expected_token
+  error • Undefined name 'ready' • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:29:57 • undefined_identifier
+  error • 'in' can't be used as an identifier because it's a keyword • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:29:63 • expected_identifier_but_got_keyword
+  error • Expected to find ',' • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:29:63 • expected_token
+  error • Undefined name 'in' • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:29:63 • undefined_identifier
+  error • 'case' can't be used as an identifier because it's a keyword • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:29:66 • expected_identifier_but_got_keyword
+  error • Expected to find ',' • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:29:66 • expected_token
+  error • Undefined name 'case' • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:29:66 • undefined_identifier
+  error • Expected to find ',' • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:29:71 • expected_token
+  error • Undefined name 'they' • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:29:71 • undefined_identifier
+  error • Expected to find ',' • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:29:76 • expected_token
+  error • Undefined name 'ever' • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:29:76 • undefined_identifier
+  error • Expected to find ',' • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:29:81 • expected_token
+  error • Undefined name 'need' • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:29:81 • undefined_identifier
+  error • Expected to find ',' • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:29:86 • expected_token
+  error • Undefined name 'help' • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:29:86 • undefined_identifier
+  error • Expected an identifier • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:29:91 • missing_identifier
+  error • Unterminated string literal • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:29:92 • unterminated_string_literal
+  error • Expected to find ',' • lib/features/pets/presentation/pages/my_pets_empty_screen.dart:30:15 • expected_token
+  error • Expected to find ',' • lib/features/pets/presentation/pages/my_pets_list_screen.dart:41:52 • expected_token
+  error • Too many positional arguments: 0 expected, but 8 found • lib/features/pets/presentation/pages/my_pets_list_screen.dart:41:52 • extra_positional_arguments_could_be_named
+  error • Undefined name 'profiles' • lib/features/pets/presentation/pages/my_pets_list_screen.dart:41:52 • undefined_identifier
+  error • Expected to find ',' • lib/features/pets/presentation/pages/my_pets_list_screen.dart:41:61 • expected_token
+  error • Undefined name 'ready' • lib/features/pets/presentation/pages/my_pets_list_screen.dart:41:61 • undefined_identifier
+  error • 'in' can't be used as an identifier because it's a keyword • lib/features/pets/presentation/pages/my_pets_list_screen.dart:41:67 • expected_identifier_but_got_keyword
+  error • Expected to find ',' • lib/features/pets/presentation/pages/my_pets_list_screen.dart:41:67 • expected_token
+  error • Undefined name 'in' • lib/features/pets/presentation/pages/my_pets_list_screen.dart:41:67 • undefined_identifier
+  error • 'case' can't be used as an identifier because it's a keyword • lib/features/pets/presentation/pages/my_pets_list_screen.dart:41:70 • expected_identifier_but_got_keyword
+  error • Expected to find ',' • lib/features/pets/presentation/pages/my_pets_list_screen.dart:41:70 • expected_token
+  error • Undefined name 'case' • lib/features/pets/presentation/pages/my_pets_list_screen.dart:41:70 • undefined_identifier
+  error • Expected to find ',' • lib/features/pets/presentation/pages/my_pets_list_screen.dart:41:75 • expected_token
+  error • Undefined name 'they' • lib/features/pets/presentation/pages/my_pets_list_screen.dart:41:75 • undefined_identifier
+  error • Expected to find ',' • lib/features/pets/presentation/pages/my_pets_list_screen.dart:41:80 • expected_token
+  error • Undefined name 'ever' • lib/features/pets/presentation/pages/my_pets_list_screen.dart:41:80 • undefined_identifier
+  error • Expected to find ',' • lib/features/pets/presentation/pages/my_pets_list_screen.dart:41:85 • expected_token
+  error • Undefined name 'need' • lib/features/pets/presentation/pages/my_pets_list_screen.dart:41:85 • undefined_identifier
+  error • Expected to find ',' • lib/features/pets/presentation/pages/my_pets_list_screen.dart:41:90 • expected_token
+  error • Undefined name 'help' • lib/features/pets/presentation/pages/my_pets_list_screen.dart:41:90 • undefined_identifier
+  error • Expected an identifier • lib/features/pets/presentation/pages/my_pets_list_screen.dart:41:95 • missing_identifier
+  error • Unterminated string literal • lib/features/pets/presentation/pages/my_pets_list_screen.dart:41:96 • unterminated_string_literal
+  error • Expected to find ',' • lib/features/pets/presentation/pages/my_pets_list_screen.dart:42:19 • expected_token
+warning • Duplicate import • lib/features/pets/presentation/widgets/pets_widgets.dart:20:8 • duplicate_import
+  error • Invalid constant value • lib/features/pets/presentation/widgets/pets_widgets.dart:437:24 • invalid_constant
+  error • Invalid constant value • lib/features/profile/presentation/pages/help_support_screen.dart:39:26 • invalid_constant
+  error • Invalid constant value • lib/features/profile/presentation/pages/help_support_screen.dart:46:26 • invalid_constant
+  error • Invalid constant value • lib/features/profile/presentation/pages/help_support_screen.dart:72:26 • invalid_constant
+  error • Invalid constant value • lib/features/profile/presentation/pages/help_support_screen.dart:79:26 • invalid_constant
+warning • Duplicate import • lib/features/profile/presentation/pages/profile_overview_screen.dart:10:8 • duplicate_import
+  error • Invalid constant value • lib/features/reminders/presentation/widgets/reminders_widgets.dart:210:19 • invalid_constant
+  error • Invalid constant value • lib/features/reminders/presentation/widgets/reminders_widgets.dart:603:19 • invalid_constant
+  error • Invalid constant value • lib/features/reminders/presentation/widgets/reminders_widgets.dart:708:14 • invalid_constant
+  error • Undefined name 'context' • lib/features/reminders/presentation/widgets/reminders_widgets.dart:708:14 • undefined_identifier
+  error • Invalid constant value • lib/features/reminders/presentation/widgets/reminders_widgets.dart:713:14 • invalid_constant
+  error • Undefined name 'context' • lib/features/reminders/presentation/widgets/reminders_widgets.dart:713:14 • undefined_identifier
+  error • Invalid constant value • lib/features/reminders/presentation/widgets/reminders_widgets.dart:718:14 • invalid_constant
+  error • Undefined name 'context' • lib/features/reminders/presentation/widgets/reminders_widgets.dart:718:14 • undefined_identifier
+  error • Invalid constant value • lib/features/reminders/presentation/widgets/reminders_widgets.dart:723:14 • invalid_constant
+  error • Undefined name 'context' • lib/features/reminders/presentation/widgets/reminders_widgets.dart:723:14 • undefined_identifier
+  error • Invalid constant value • lib/features/reminders/presentation/widgets/reminders_widgets.dart:728:14 • invalid_constant
+  error • Undefined name 'context' • lib/features/reminders/presentation/widgets/reminders_widgets.dart:728:14 • undefined_identifier
+  error • The expression of a constant pattern must be a valid constant • lib/features/reports/presentation/widgets/report_flow_steps.dart:7:12 • constant_pattern_with_non_constant_expression
+  error • The expression of a constant pattern must be a valid constant • lib/features/reports/presentation/widgets/report_flow_steps.dart:8:12 • constant_pattern_with_non_constant_expression
+  error • The expression of a constant pattern must be a valid constant • lib/features/reports/presentation/widgets/report_flow_steps.dart:10:3 • constant_pattern_with_non_constant_expression
+  error • The expression of a constant pattern must be a valid constant • lib/features/reports/presentation/widgets/report_flow_steps.dart:17:7 • constant_pattern_with_non_constant_expression
+  error • The expression of a constant pattern must be a valid constant • lib/features/reports/presentation/widgets/report_flow_steps.dart:19:7 • constant_pattern_with_non_constant_expression
+
