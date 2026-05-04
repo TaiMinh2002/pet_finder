@@ -215,19 +215,22 @@ class CommunityFeaturedCard extends StatelessWidget {
               featured: true,
             ),
             const SizedBox(height: 14),
-            Row(
-              children: [
-                AppChip(
-                  label: communityCategoryLabel(context, post.category),
-                  color: AppColors.fieldWarm,
-                ),
-                const SizedBox(width: 8),
-                AppChip(
-                  label: context.l10n.communityWidgetFeatured,
-                  icon: Icons.auto_awesome,
-                  color: AppColors.fieldCool,
-                ),
-              ],
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  AppChip(
+                    label: communityCategoryLabel(context, post.category),
+                    color: AppColors.fieldWarm,
+                  ),
+                  const SizedBox(width: 8),
+                  AppChip(
+                    label: context.l10n.communityWidgetFeatured,
+                    icon: Icons.auto_awesome,
+                    color: AppColors.fieldCool,
+                  ),
+                ],
+              ),
             ),
             const SizedBox(height: 12),
             Text(

@@ -51,8 +51,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         imagePath: AppImages.authSignUp,
         icon: Icons.badge_outlined,
         badgeLabel: context.l10n.authBadgeSafeContact,
-        height: 164,
-        compact: true,
+        height: 194,
         accent: AppColors.coral,
       ),
       children: [

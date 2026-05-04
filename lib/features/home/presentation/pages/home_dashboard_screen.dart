@@ -569,10 +569,14 @@ class _UrgentReportCard extends StatelessWidget {
                       size: 16,
                     ),
                     const SizedBox(width: 6),
-                    Text(
-                      context.l10n.homeNearbyUrgentAlerts,
-                      style: AppTextStyles.chip.copyWith(
-                        color: AppColors.coral,
+                    Expanded(
+                      child: Text(
+                        context.l10n.homeNearbyUrgentAlerts,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: AppTextStyles.chip.copyWith(
+                          color: AppColors.coral,
+                        ),
                       ),
                     ),
                   ],
