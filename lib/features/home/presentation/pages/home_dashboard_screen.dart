@@ -272,30 +272,26 @@ class _HeroActionCard extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 16),
-          Row(
+          Column(
             children: [
-              Expanded(
-                child: AppButton(
-                  label: context.l10n.reportLostPet,
-                  icon: Icons.campaign,
-                  height: 48,
-                  onPressed: () => context.goNamed(
-                    AppRoute.reportCreate.name,
-                    queryParameters: const {'type': 'lost'},
-                  ),
+              AppButton(
+                label: context.l10n.reportLostPet,
+                icon: Icons.campaign,
+                height: 48,
+                onPressed: () => context.goNamed(
+                  AppRoute.reportCreate.name,
+                  queryParameters: const {'type': 'lost'},
                 ),
               ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: AppButton(
-                  label: context.l10n.reportFoundPet,
-                  icon: Icons.favorite,
-                  variant: AppButtonVariant.secondary,
-                  height: 48,
-                  onPressed: () => context.goNamed(
-                    AppRoute.reportCreate.name,
-                    queryParameters: const {'type': 'found'},
-                  ),
+              const SizedBox(height: 10),
+              AppButton(
+                label: context.l10n.reportFoundPet,
+                icon: Icons.favorite,
+                variant: AppButtonVariant.secondary,
+                height: 48,
+                onPressed: () => context.goNamed(
+                  AppRoute.reportCreate.name,
+                  queryParameters: const {'type': 'found'},
                 ),
               ),
             ],

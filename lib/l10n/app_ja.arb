@@ -684,5 +684,33 @@
         "type": "int"
       }
     }
-  }
+  },
+  "mapFilterSeen": "目撃済み",
+  "mapFilterUrgent": "緊急",
+  "mapLoadingLocation": "位置を検索中...",
+  "mapLocationPermissionRequired": "位置情報の許可が必要です",
+  "mapLocationPermissionDeniedDesc": "近くの迷子ペットのアラートを見るには位置情報へのアクセスを許可してください。",
+  "mapLocationPermissionDeniedForeverDesc": "位置情報の許可が永久に拒否されました。設定を開いてアクセスを許可してください。",
+  "mapLocationServiceDisabled": "位置情報サービスが無効です",
+  "mapLocationServiceDisabledDesc": "マップを使用するには位置情報サービスを有効にしてください。",
+  "mapOpenSettings": "設定を開く",
+  "mapRetry": "再試行",
+  "mapReportsNearby": "近くに{count}件の報告",
+  "@mapReportsNearby": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mapBadgeLost": "迷子",
+  "mapBadgeFound": "発見",
+  "mapBadgeUrgent": "緊急",
+  "mapBadgeReunited": "再会",
+  "mapAway": "離れた場所",
+  "mapView": "見る",
+  "mapViewDetails": "詳細を見る",
+  "mapContact": "連絡する",
+  "mapNavigate": "ナビ",
+  "mapUrgentNearbyAlert": "近くで緊急アラート"
 }

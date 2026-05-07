@@ -684,5 +684,33 @@
         "type": "int"
       }
     }
-  }
+  },
+  "mapFilterSeen": "목격됨",
+  "mapFilterUrgent": "긴급",
+  "mapLoadingLocation": "위치 찾는 중...",
+  "mapLocationPermissionRequired": "위치 권한이 필요합니다",
+  "mapLocationPermissionDeniedDesc": "근처 잃어버린 반려동물 알림을 보려면 위치 접근을 허용해 주세요.",
+  "mapLocationPermissionDeniedForeverDesc": "위치 권한이 영구적으로 거부되었습니다. 설정을 열어 접근을 허용해 주세요.",
+  "mapLocationServiceDisabled": "위치 서비스가 비활성화됨",
+  "mapLocationServiceDisabledDesc": "지도를 사용하려면 위치 서비스를 활성화해 주세요.",
+  "mapOpenSettings": "설정 열기",
+  "mapRetry": "다시 시도",
+  "mapReportsNearby": "근처 {count}건 보고",
+  "@mapReportsNearby": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mapBadgeLost": "실종",
+  "mapBadgeFound": "발견",
+  "mapBadgeUrgent": "긴급",
+  "mapBadgeReunited": "재회",
+  "mapAway": "거리",
+  "mapView": "보기",
+  "mapViewDetails": "자세히 보기",
+  "mapContact": "연락하기",
+  "mapNavigate": "길 안내",
+  "mapUrgentNearbyAlert": "근처 긴급 알림"
 }

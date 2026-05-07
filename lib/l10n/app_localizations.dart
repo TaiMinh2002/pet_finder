@@ -3151,6 +3151,132 @@ abstract class AppLocalizations {
   /// In vi, this message translates to:
   /// **'{count} giờ trước'**
   String timeHoursAgo(int count);
+
+  /// No description provided for @mapFilterSeen.
+  ///
+  /// In vi, this message translates to:
+  /// **'Đã thấy'**
+  String get mapFilterSeen;
+
+  /// No description provided for @mapFilterUrgent.
+  ///
+  /// In vi, this message translates to:
+  /// **'Khẩn cấp'**
+  String get mapFilterUrgent;
+
+  /// No description provided for @mapLoadingLocation.
+  ///
+  /// In vi, this message translates to:
+  /// **'Đang tìm vị trí...'**
+  String get mapLoadingLocation;
+
+  /// No description provided for @mapLocationPermissionRequired.
+  ///
+  /// In vi, this message translates to:
+  /// **'Cần quyền truy cập vị trí'**
+  String get mapLocationPermissionRequired;
+
+  /// No description provided for @mapLocationPermissionDeniedDesc.
+  ///
+  /// In vi, this message translates to:
+  /// **'Vui lòng cho phép truy cập vị trí để xem các cảnh báo thú cưng thất lạc gần bạn.'**
+  String get mapLocationPermissionDeniedDesc;
+
+  /// No description provided for @mapLocationPermissionDeniedForeverDesc.
+  ///
+  /// In vi, this message translates to:
+  /// **'Quyền vị trí bị từ chối vĩnh viễn. Vui lòng vào Cài đặt để cấp quyền.'**
+  String get mapLocationPermissionDeniedForeverDesc;
+
+  /// No description provided for @mapLocationServiceDisabled.
+  ///
+  /// In vi, this message translates to:
+  /// **'Dịch vụ vị trí bị tắt'**
+  String get mapLocationServiceDisabled;
+
+  /// No description provided for @mapLocationServiceDisabledDesc.
+  ///
+  /// In vi, this message translates to:
+  /// **'Vui lòng bật dịch vụ vị trí để sử dụng bản đồ.'**
+  String get mapLocationServiceDisabledDesc;
+
+  /// No description provided for @mapOpenSettings.
+  ///
+  /// In vi, this message translates to:
+  /// **'Mở Cài đặt'**
+  String get mapOpenSettings;
+
+  /// No description provided for @mapRetry.
+  ///
+  /// In vi, this message translates to:
+  /// **'Thử lại'**
+  String get mapRetry;
+
+  /// No description provided for @mapReportsNearby.
+  ///
+  /// In vi, this message translates to:
+  /// **'{count} báo cáo gần đây'**
+  String mapReportsNearby(int count);
+
+  /// No description provided for @mapBadgeLost.
+  ///
+  /// In vi, this message translates to:
+  /// **'THẤT LẠC'**
+  String get mapBadgeLost;
+
+  /// No description provided for @mapBadgeFound.
+  ///
+  /// In vi, this message translates to:
+  /// **'TÌM THẤY'**
+  String get mapBadgeFound;
+
+  /// No description provided for @mapBadgeUrgent.
+  ///
+  /// In vi, this message translates to:
+  /// **'KHẨN CẤP'**
+  String get mapBadgeUrgent;
+
+  /// No description provided for @mapBadgeReunited.
+  ///
+  /// In vi, this message translates to:
+  /// **'ĐOÀN TỤ'**
+  String get mapBadgeReunited;
+
+  /// No description provided for @mapAway.
+  ///
+  /// In vi, this message translates to:
+  /// **'cách đây'**
+  String get mapAway;
+
+  /// No description provided for @mapView.
+  ///
+  /// In vi, this message translates to:
+  /// **'Xem'**
+  String get mapView;
+
+  /// No description provided for @mapViewDetails.
+  ///
+  /// In vi, this message translates to:
+  /// **'Xem chi tiết'**
+  String get mapViewDetails;
+
+  /// No description provided for @mapContact.
+  ///
+  /// In vi, this message translates to:
+  /// **'Liên hệ'**
+  String get mapContact;
+
+  /// No description provided for @mapNavigate.
+  ///
+  /// In vi, this message translates to:
+  /// **'Chỉ đường'**
+  String get mapNavigate;
+
+  /// No description provided for @mapUrgentNearbyAlert.
+  ///
+  /// In vi, this message translates to:
+  /// **'Cảnh báo khẩn cấp gần đây'**
+  String get mapUrgentNearbyAlert;
 }
 
 class _AppLocalizationsDelegate

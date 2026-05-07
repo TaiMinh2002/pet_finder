@@ -546,5 +546,33 @@
         "type": "int"
       }
     }
-  }
+  },
+  "mapFilterSeen": "Đã thấy",
+  "mapFilterUrgent": "Khẩn cấp",
+  "mapLoadingLocation": "Đang tìm vị trí...",
+  "mapLocationPermissionRequired": "Cần quyền truy cập vị trí",
+  "mapLocationPermissionDeniedDesc": "Vui lòng cho phép truy cập vị trí để xem các cảnh báo thú cưng thất lạc gần bạn.",
+  "mapLocationPermissionDeniedForeverDesc": "Quyền vị trí bị từ chối vĩnh viễn. Vui lòng vào Cài đặt để cấp quyền.",
+  "mapLocationServiceDisabled": "Dịch vụ vị trí bị tắt",
+  "mapLocationServiceDisabledDesc": "Vui lòng bật dịch vụ vị trí để sử dụng bản đồ.",
+  "mapOpenSettings": "Mở Cài đặt",
+  "mapRetry": "Thử lại",
+  "mapReportsNearby": "{count} báo cáo gần đây",
+  "@mapReportsNearby": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mapBadgeLost": "THẤT LẠC",
+  "mapBadgeFound": "TÌM THẤY",
+  "mapBadgeUrgent": "KHẨN CẤP",
+  "mapBadgeReunited": "ĐOÀN TỤ",
+  "mapAway": "cách đây",
+  "mapView": "Xem",
+  "mapViewDetails": "Xem chi tiết",
+  "mapContact": "Liên hệ",
+  "mapNavigate": "Chỉ đường",
+  "mapUrgentNearbyAlert": "Cảnh báo khẩn cấp gần đây"
 }

@@ -1650,4 +1650,72 @@ class AppLocalizationsVi extends AppLocalizations {
   String timeHoursAgo(int count) {
     return '$count giờ trước';
   }
+
+  @override
+  String get mapFilterSeen => 'Đã thấy';
+
+  @override
+  String get mapFilterUrgent => 'Khẩn cấp';
+
+  @override
+  String get mapLoadingLocation => 'Đang tìm vị trí...';
+
+  @override
+  String get mapLocationPermissionRequired => 'Cần quyền truy cập vị trí';
+
+  @override
+  String get mapLocationPermissionDeniedDesc =>
+      'Vui lòng cho phép truy cập vị trí để xem các cảnh báo thú cưng thất lạc gần bạn.';
+
+  @override
+  String get mapLocationPermissionDeniedForeverDesc =>
+      'Quyền vị trí bị từ chối vĩnh viễn. Vui lòng vào Cài đặt để cấp quyền.';
+
+  @override
+  String get mapLocationServiceDisabled => 'Dịch vụ vị trí bị tắt';
+
+  @override
+  String get mapLocationServiceDisabledDesc =>
+      'Vui lòng bật dịch vụ vị trí để sử dụng bản đồ.';
+
+  @override
+  String get mapOpenSettings => 'Mở Cài đặt';
+
+  @override
+  String get mapRetry => 'Thử lại';
+
+  @override
+  String mapReportsNearby(int count) {
+    return '$count báo cáo gần đây';
+  }
+
+  @override
+  String get mapBadgeLost => 'THẤT LẠC';
+
+  @override
+  String get mapBadgeFound => 'TÌM THẤY';
+
+  @override
+  String get mapBadgeUrgent => 'KHẨN CẤP';
+
+  @override
+  String get mapBadgeReunited => 'ĐOÀN TỤ';
+
+  @override
+  String get mapAway => 'cách đây';
+
+  @override
+  String get mapView => 'Xem';
+
+  @override
+  String get mapViewDetails => 'Xem chi tiết';
+
+  @override
+  String get mapContact => 'Liên hệ';
+
+  @override
+  String get mapNavigate => 'Chỉ đường';
+
+  @override
+  String get mapUrgentNearbyAlert => 'Cảnh báo khẩn cấp gần đây';
 }

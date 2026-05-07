@@ -546,5 +546,33 @@
         "type": "int"
       }
     }
-  }
+  },
+  "mapFilterSeen": "Seen",
+  "mapFilterUrgent": "Urgent",
+  "mapLoadingLocation": "Finding location...",
+  "mapLocationPermissionRequired": "Location permission required",
+  "mapLocationPermissionDeniedDesc": "Please allow location access to see nearby lost pet alerts.",
+  "mapLocationPermissionDeniedForeverDesc": "Location permission is permanently denied. Please open Settings to grant access.",
+  "mapLocationServiceDisabled": "Location service disabled",
+  "mapLocationServiceDisabledDesc": "Please enable location services to use the map.",
+  "mapOpenSettings": "Open Settings",
+  "mapRetry": "Retry",
+  "mapReportsNearby": "{count} reports nearby",
+  "@mapReportsNearby": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mapBadgeLost": "LOST",
+  "mapBadgeFound": "FOUND",
+  "mapBadgeUrgent": "URGENT",
+  "mapBadgeReunited": "REUNITED",
+  "mapAway": "away",
+  "mapView": "View",
+  "mapViewDetails": "View Details",
+  "mapContact": "Contact",
+  "mapNavigate": "Navigate",
+  "mapUrgentNearbyAlert": "Urgent nearby alert"
 }

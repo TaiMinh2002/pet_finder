@@ -684,5 +684,33 @@
         "type": "int"
       }
     }
-  }
+  },
+  "mapFilterSeen": "已目击",
+  "mapFilterUrgent": "紧急",
+  "mapLoadingLocation": "正在查找位置...",
+  "mapLocationPermissionRequired": "需要位置权限",
+  "mapLocationPermissionDeniedDesc": "请允许位置访问以查看附近迷失宠物的警报。",
+  "mapLocationPermissionDeniedForeverDesc": "位置权限被永久拒绝。请打开设置以授予访问权限。",
+  "mapLocationServiceDisabled": "位置服务已禁用",
+  "mapLocationServiceDisabledDesc": "请启用位置服务以使用地图。",
+  "mapOpenSettings": "打开设置",
+  "mapRetry": "重试",
+  "mapReportsNearby": "附近{count}条报告",
+  "@mapReportsNearby": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mapBadgeLost": "走失",
+  "mapBadgeFound": "找到",
+  "mapBadgeUrgent": "紧急",
+  "mapBadgeReunited": "团聚",
+  "mapAway": "外",
+  "mapView": "查看",
+  "mapViewDetails": "查看详情",
+  "mapContact": "联系",
+  "mapNavigate": "导航",
+  "mapUrgentNearbyAlert": "附近紧急警报"
 }
