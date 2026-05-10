@@ -1639,4 +1639,72 @@ class AppLocalizationsEn extends AppLocalizations {
   String timeHoursAgo(int count) {
     return '$count hr ago';
   }
+
+  @override
+  String get mapFilterSeen => 'Seen';
+
+  @override
+  String get mapFilterUrgent => 'Urgent';
+
+  @override
+  String get mapLoadingLocation => 'Finding location...';
+
+  @override
+  String get mapLocationPermissionRequired => 'Location permission required';
+
+  @override
+  String get mapLocationPermissionDeniedDesc =>
+      'Please allow location access to see nearby lost pet alerts.';
+
+  @override
+  String get mapLocationPermissionDeniedForeverDesc =>
+      'Location permission is permanently denied. Please open Settings to grant access.';
+
+  @override
+  String get mapLocationServiceDisabled => 'Location service disabled';
+
+  @override
+  String get mapLocationServiceDisabledDesc =>
+      'Please enable location services to use the map.';
+
+  @override
+  String get mapOpenSettings => 'Open Settings';
+
+  @override
+  String get mapRetry => 'Retry';
+
+  @override
+  String mapReportsNearby(int count) {
+    return '$count reports nearby';
+  }
+
+  @override
+  String get mapBadgeLost => 'LOST';
+
+  @override
+  String get mapBadgeFound => 'FOUND';
+
+  @override
+  String get mapBadgeUrgent => 'URGENT';
+
+  @override
+  String get mapBadgeReunited => 'REUNITED';
+
+  @override
+  String get mapAway => 'away';
+
+  @override
+  String get mapView => 'View';
+
+  @override
+  String get mapViewDetails => 'View Details';
+
+  @override
+  String get mapContact => 'Contact';
+
+  @override
+  String get mapNavigate => 'Navigate';
+
+  @override
+  String get mapUrgentNearbyAlert => 'Urgent nearby alert';
 }

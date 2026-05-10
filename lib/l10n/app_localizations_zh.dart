@@ -1580,4 +1580,70 @@ class AppLocalizationsZh extends AppLocalizations {
   String timeHoursAgo(int count) {
     return '$count小时前';
   }
+
+  @override
+  String get mapFilterSeen => '已目击';
+
+  @override
+  String get mapFilterUrgent => '紧急';
+
+  @override
+  String get mapLoadingLocation => '正在查找位置...';
+
+  @override
+  String get mapLocationPermissionRequired => '需要位置权限';
+
+  @override
+  String get mapLocationPermissionDeniedDesc => '请允许位置访问以查看附近迷失宠物的警报。';
+
+  @override
+  String get mapLocationPermissionDeniedForeverDesc =>
+      '位置权限被永久拒绝。请打开设置以授予访问权限。';
+
+  @override
+  String get mapLocationServiceDisabled => '位置服务已禁用';
+
+  @override
+  String get mapLocationServiceDisabledDesc => '请启用位置服务以使用地图。';
+
+  @override
+  String get mapOpenSettings => '打开设置';
+
+  @override
+  String get mapRetry => '重试';
+
+  @override
+  String mapReportsNearby(int count) {
+    return '附近$count条报告';
+  }
+
+  @override
+  String get mapBadgeLost => '走失';
+
+  @override
+  String get mapBadgeFound => '找到';
+
+  @override
+  String get mapBadgeUrgent => '紧急';
+
+  @override
+  String get mapBadgeReunited => '团聚';
+
+  @override
+  String get mapAway => '外';
+
+  @override
+  String get mapView => '查看';
+
+  @override
+  String get mapViewDetails => '查看详情';
+
+  @override
+  String get mapContact => '联系';
+
+  @override
+  String get mapNavigate => '导航';
+
+  @override
+  String get mapUrgentNearbyAlert => '附近紧急警报';
 }

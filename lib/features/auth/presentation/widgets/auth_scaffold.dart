@@ -214,7 +214,7 @@ class AuthIllustration extends StatelessWidget {
                   Positioned.fill(
                     child: AppAssetImage(
                       assetPath: imagePath,
-                      fit: compact ? BoxFit.cover : BoxFit.cover,
+                      fit: BoxFit.fill,
                       borderRadius: BorderRadius.all(
                         Radius.circular(cardRadius),
                       ),

@@ -42557,6 +42557,3595 @@
           "cornerRadius": 5
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "ybMji",
+      "x": 1,
+      "y": 8860,
+      "name": "Hanoi Map 1 - Default State",
+      "clip": true,
+      "width": 393,
+      "height": 852,
+      "fill": "#F7EDDF",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "DU7PJ",
+          "x": 0,
+          "y": 0,
+          "name": "Stylized Hanoi Map",
+          "clip": true,
+          "width": 393,
+          "height": 852,
+          "fill": "#F8E8D8",
+          "layout": "none",
+          "children": [
+            {
+              "type": "path",
+              "id": "pimiy",
+              "x": 248,
+              "y": 0,
+              "name": "Red River",
+              "opacity": 0.78,
+              "geometry": "M95-20c43 85 23 154 50 234 26 80-13 151 9 233 24 92-38 157-15 245 18 70-15 123 8 200l49 0c-22-80 23-146-1-217-26-81 33-149 9-240-23-87 16-155-11-236-24-73-3-142-48-219z",
+              "viewBox": [
+                0,
+                -20,
+                210,
+                912
+              ],
+              "fill": "#A7E8F0",
+              "width": 145,
+              "height": 852
+            },
+            {
+              "type": "ellipse",
+              "id": "XtubC",
+              "x": 52,
+              "y": 132,
+              "name": "Hồ Tây",
+              "opacity": 0.86,
+              "rotation": -9,
+              "fill": "#A7E8F0",
+              "width": 116,
+              "height": 88
+            },
+            {
+              "type": "ellipse",
+              "id": "uK15V",
+              "x": 206,
+              "y": 377,
+              "name": "Hồ Hoàn Kiếm",
+              "opacity": 0.9,
+              "rotation": -18,
+              "fill": "#5ECAD1",
+              "width": 45,
+              "height": 30
+            },
+            {
+              "type": "frame",
+              "id": "VEXLt",
+              "x": 165,
+              "y": 300,
+              "name": "Old Quarter Urban Core",
+              "opacity": 0.62,
+              "width": 110,
+              "height": 132,
+              "fill": "#FFF4E6",
+              "cornerRadius": 24,
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "HJPjx",
+              "x": 66,
+              "y": 245,
+              "name": "Ba Đình Block",
+              "opacity": 0.72,
+              "width": 116,
+              "height": 96,
+              "fill": "#FFE1CD",
+              "cornerRadius": 24,
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "M3b47",
+              "x": 96,
+              "y": 455,
+              "name": "Đống Đa Block",
+              "opacity": 0.76,
+              "width": 122,
+              "height": 96,
+              "fill": "#FFE8D7",
+              "cornerRadius": 28,
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "qDgnV",
+              "x": 18,
+              "y": 372,
+              "name": "Cầu Giấy Block",
+              "opacity": 0.72,
+              "width": 114,
+              "height": 116,
+              "fill": "#FFF4E6",
+              "cornerRadius": 28,
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "bcXB3",
+              "x": 210,
+              "y": 480,
+              "name": "Hai Bà Trưng Block",
+              "opacity": 0.48,
+              "width": 128,
+              "height": 112,
+              "fill": "#FFD7BE",
+              "cornerRadius": 28,
+              "layout": "none"
+            },
+            {
+              "type": "path",
+              "id": "KEJ9k",
+              "x": 0,
+              "y": 110,
+              "name": "Ring Road",
+              "geometry": "M24 96c80-32 147-12 200 36 55 50 54 138 2 194-60 66-123 115-125 210",
+              "viewBox": [
+                0,
+                0,
+                360,
+                566
+              ],
+              "fill": {
+                "type": "color",
+                "color": "#FFFFFF",
+                "enabled": false
+              },
+              "width": 348,
+              "height": 566,
+              "stroke": {
+                "align": "center",
+                "thickness": 7,
+                "fill": "#FFFFFF"
+              }
+            },
+            {
+              "type": "path",
+              "id": "W77aS6",
+              "x": 135,
+              "y": 85,
+              "name": "North South Arterial",
+              "geometry": "M48 0c36 97-28 174 7 260 37 92-11 183 17 350",
+              "viewBox": [
+                0,
+                0,
+                108,
+                610
+              ],
+              "fill": {
+                "type": "color",
+                "color": "#FFFFFF",
+                "enabled": false
+              },
+              "width": 108,
+              "height": 610,
+              "stroke": {
+                "align": "center",
+                "thickness": 6,
+                "fill": "#FFFFFF"
+              }
+            },
+            {
+              "type": "path",
+              "id": "prCZJ",
+              "x": 0,
+              "y": 342,
+              "name": "East West Arterial",
+              "geometry": "M0 72c80-50 141 26 209-27 41-31 84-17 131-35",
+              "viewBox": [
+                0,
+                0,
+                340,
+                120
+              ],
+              "fill": {
+                "type": "color",
+                "color": "#FFFFFF",
+                "enabled": false
+              },
+              "width": 340,
+              "height": 120,
+              "stroke": {
+                "align": "center",
+                "thickness": 6,
+                "fill": "#FFFFFF"
+              }
+            },
+            {
+              "type": "path",
+              "id": "G6PjRk",
+              "x": 42,
+              "y": 185,
+              "name": "Lake Road",
+              "geometry": "M0 42c68-28 121-22 170 16 35 27 52 58 80 78",
+              "viewBox": [
+                0,
+                0,
+                250,
+                150
+              ],
+              "fill": {
+                "type": "color",
+                "color": "#FFD7BE",
+                "enabled": false
+              },
+              "width": 250,
+              "height": 150,
+              "stroke": {
+                "align": "center",
+                "thickness": 4,
+                "fill": "#FFD7BE"
+              }
+            },
+            {
+              "type": "path",
+              "id": "k1LPB",
+              "x": 50,
+              "y": 518,
+              "name": "South Connector",
+              "geometry": "M0 18c70 56 130 32 179 82 40 40 79 43 121 62",
+              "viewBox": [
+                0,
+                0,
+                300,
+                180
+              ],
+              "fill": {
+                "type": "color",
+                "color": "#FFFFFF",
+                "enabled": false
+              },
+              "width": 300,
+              "height": 180,
+              "stroke": {
+                "align": "center",
+                "thickness": 5,
+                "fill": "#FFFFFF"
+              }
+            },
+            {
+              "type": "path",
+              "id": "A5Kqs1",
+              "x": 38,
+              "y": 278,
+              "name": "Inner Grid A",
+              "opacity": 0.9,
+              "geometry": "M0 44c54 14 91-15 143 2 44 14 72 35 115 18m-234 32c51-24 99 9 147-8 33-12 55 6 81 30m-240 37c66-12 114 11 173-10 33-11 51 6 73 23",
+              "viewBox": [
+                0,
+                0,
+                258,
+                212
+              ],
+              "fill": {
+                "type": "color",
+                "color": "#E8CDBB",
+                "enabled": false
+              },
+              "width": 258,
+              "height": 212,
+              "stroke": {
+                "align": "center",
+                "thickness": 2,
+                "fill": "#E8CDBB"
+              }
+            },
+            {
+              "type": "path",
+              "id": "GgLIR",
+              "x": 77,
+              "y": 204,
+              "name": "Inner Grid B",
+              "opacity": 0.9,
+              "geometry": "M34 0c13 62-5 101 16 153 26 63 0 118 22 177m31-322c16 58-10 106 10 166 21 62 1 103 23 154m38-310c-15 54 12 108-11 170-22 60 1 94-12 142",
+              "viewBox": [
+                0,
+                0,
+                220,
+                330
+              ],
+              "fill": {
+                "type": "color",
+                "color": "#EBC9B5",
+                "enabled": false
+              },
+              "width": 220,
+              "height": 330,
+              "stroke": {
+                "align": "center",
+                "thickness": 2,
+                "fill": "#EBC9B5"
+              }
+            },
+            {
+              "type": "path",
+              "id": "iMuTI",
+              "x": 135,
+              "y": 298,
+              "name": "Dense Alleys",
+              "opacity": 0.8,
+              "geometry": "M5 18l131 0m-136 27l129-6m-119 31l132 8m-139 26l122-7m-105 33l120-8m-110-122l-4 148m32-140l4 144m29-152l-6 148m35-136l-6 130",
+              "viewBox": [
+                0,
+                0,
+                142,
+                152
+              ],
+              "fill": {
+                "type": "color",
+                "color": "#D8B9A5",
+                "enabled": false
+              },
+              "width": 142,
+              "height": 152,
+              "stroke": {
+                "align": "center",
+                "thickness": 1.5,
+                "fill": "#D8B9A5"
+              }
+            },
+            {
+              "type": "text",
+              "id": "G61h3",
+              "x": 84,
+              "y": 168,
+              "name": "Label Hồ Tây",
+              "rotation": -7,
+              "fill": "#277C86",
+              "content": "Hồ Tây",
+              "fontFamily": "$fontBody",
+              "fontSize": 13,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "v3mKQ",
+              "x": 178,
+              "y": 413,
+              "name": "Label Hồ Hoàn Kiếm",
+              "fill": "#277C86",
+              "content": "Hồ Hoàn Kiếm",
+              "fontFamily": "$fontBody",
+              "fontSize": 11,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "Ncdye",
+              "x": 188,
+              "y": 335,
+              "name": "Label Hoàn Kiếm",
+              "fill": "#76665F",
+              "content": "Hoàn Kiếm",
+              "fontFamily": "$fontBody",
+              "fontSize": 13,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "QuRzC",
+              "x": 88,
+              "y": 270,
+              "name": "Label Ba Đình",
+              "fill": "#76665F",
+              "content": "Ba Đình",
+              "fontFamily": "$fontBody",
+              "fontSize": 13,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "K1CfjW",
+              "x": 118,
+              "y": 488,
+              "name": "Label Đống Đa",
+              "fill": "#76665F",
+              "content": "Đống Đa",
+              "fontFamily": "$fontBody",
+              "fontSize": 13,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "oBKi1",
+              "x": 41,
+              "y": 414,
+              "name": "Label Cầu Giấy",
+              "fill": "#76665F",
+              "content": "Cầu Giấy",
+              "fontFamily": "$fontBody",
+              "fontSize": 13,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "TowS9",
+              "x": 221,
+              "y": 527,
+              "name": "Label Hai Bà Trưng",
+              "fill": "#76665F",
+              "content": "Hai Bà Trưng",
+              "fontFamily": "$fontBody",
+              "fontSize": 13,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "aHKPK",
+              "x": 54,
+              "y": 111,
+              "name": "Label Tây Hồ",
+              "fill": "#76665F",
+              "content": "Tây Hồ",
+              "fontFamily": "$fontBody",
+              "fontSize": 13,
+              "fontWeight": "700"
+            },
+            {
+              "type": "icon_font",
+              "id": "odbEt",
+              "x": 315,
+              "y": 112,
+              "name": "Tiny Paw 1",
+              "width": 18,
+              "height": 18,
+              "iconFontName": "pets",
+              "iconFontFamily": "Material Symbols Rounded",
+              "fill": "#F45D4820"
+            },
+            {
+              "type": "icon_font",
+              "id": "bqyFy",
+              "x": 45,
+              "y": 604,
+              "name": "Tiny Paw 2",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "pets",
+              "iconFontFamily": "Material Symbols Rounded",
+              "fill": "#4DBDC620"
+            },
+            {
+              "type": "icon_font",
+              "id": "w7GX3",
+              "x": 278,
+              "y": 676,
+              "name": "Tiny Paw 3",
+              "width": 17,
+              "height": 17,
+              "iconFontName": "pets",
+              "iconFontFamily": "Material Symbols Rounded",
+              "fill": "#8ACB8830"
+            },
+            {
+              "type": "frame",
+              "id": "xIUA7",
+              "x": 217,
+              "y": 326,
+              "name": "Urgent Coral Pin",
+              "rotation": 45,
+              "width": 38,
+              "height": 45,
+              "fill": "#F45D48",
+              "cornerRadius": [
+                19,
+                19,
+                19,
+                4
+              ],
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#A6482A35",
+                "offset": {
+                  "x": 0,
+                  "y": 8
+                },
+                "blur": 18
+              },
+              "layout": "vertical",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "KPMEw",
+                  "name": "pinIcon1",
+                  "rotation": -45,
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "pets",
+                  "iconFontFamily": "Material Symbols Rounded",
+                  "fill": "#FFFFFF"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "d4uh0D",
+              "x": 105,
+              "y": 405,
+              "name": "Teal Seen Pin",
+              "rotation": 45,
+              "width": 32,
+              "height": 38,
+              "fill": "#4DBDC6",
+              "cornerRadius": [
+                16,
+                16,
+                16,
+                4
+              ],
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#2D7E8530",
+                "offset": {
+                  "x": 0,
+                  "y": 6
+                },
+                "blur": 14
+              },
+              "layout": "vertical",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "n36yXD",
+                  "name": "pinIcon2",
+                  "rotation": -45,
+                  "width": 17,
+                  "height": 17,
+                  "iconFontName": "pets",
+                  "iconFontFamily": "Material Symbols Rounded",
+                  "fill": "#FFFFFF"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "cYHFG",
+              "x": 149,
+              "y": 208,
+              "name": "Green Found Pin",
+              "rotation": 45,
+              "width": 30,
+              "height": 36,
+              "fill": "#8ACB88",
+              "cornerRadius": [
+                15,
+                15,
+                15,
+                4
+              ],
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#447A4230",
+                "offset": {
+                  "x": 0,
+                  "y": 6
+                },
+                "blur": 13
+              },
+              "layout": "vertical",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "FLQwF",
+                  "name": "pinIcon3",
+                  "rotation": -45,
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "pets",
+                  "iconFontFamily": "Material Symbols Rounded",
+                  "fill": "#FFFFFF"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "y8K5v",
+              "x": 274,
+              "y": 501,
+              "name": "Yellow Watch Pin",
+              "rotation": 45,
+              "width": 31,
+              "height": 37,
+              "fill": "#F8C84B",
+              "cornerRadius": [
+                16,
+                16,
+                16,
+                4
+              ],
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#B7832230",
+                "offset": {
+                  "x": 0,
+                  "y": 6
+                },
+                "blur": 14
+              },
+              "layout": "vertical",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "vTXpc",
+                  "name": "pinIcon4",
+                  "rotation": -45,
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "pets",
+                  "iconFontFamily": "Material Symbols Rounded",
+                  "fill": "#FFFFFF"
+                }
+              ]
+            },
+            {
+              "type": "ellipse",
+              "id": "QJx6J",
+              "x": 205,
+              "y": 314,
+              "name": "Coral Accuracy Pulse",
+              "fill": "#F45D4828",
+              "width": 62,
+              "height": 62
+            },
+            {
+              "type": "ellipse",
+              "id": "p4naF",
+              "x": 182,
+              "y": 472,
+              "name": "Current Location Dot",
+              "fill": "#4DBDC6",
+              "width": 18,
+              "height": 18,
+              "stroke": {
+                "align": "inside",
+                "thickness": 4,
+                "fill": "#FFFFFF"
+              },
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#2C889030",
+                "offset": {
+                  "x": 0,
+                  "y": 4
+                },
+                "blur": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "rectangle",
+          "id": "Sgpn6",
+          "x": 0,
+          "y": 0,
+          "name": "Top Peach Veil",
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 180,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#FFF4E6F2",
+                "position": 0
+              },
+              {
+                "color": "#FFF4E600",
+                "position": 1
+              }
+            ]
+          },
+          "width": 393,
+          "height": 148
+        },
+        {
+          "type": "frame",
+          "id": "BwfqJ",
+          "x": 0,
+          "y": 0,
+          "name": "Safe Area",
+          "width": 393,
+          "height": 44,
+          "fill": "#FFF4E6E6",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "o9om8",
+              "x": 29,
+              "y": 15,
+              "name": "statusTime",
+              "fill": "#273036",
+              "content": "9:41",
+              "fontFamily": "$fontBody",
+              "fontSize": 14,
+              "fontWeight": "700"
+            },
+            {
+              "type": "icon_font",
+              "id": "WnSvg",
+              "x": 314,
+              "y": 15,
+              "name": "statusBars",
+              "width": 18,
+              "height": 18,
+              "iconFontName": "signal_cellular_alt",
+              "iconFontFamily": "Material Symbols Rounded",
+              "fill": "#273036"
+            },
+            {
+              "type": "icon_font",
+              "id": "K4Ma9",
+              "x": 337,
+              "y": 15,
+              "name": "statusWifi",
+              "width": 18,
+              "height": 18,
+              "iconFontName": "wifi",
+              "iconFontFamily": "Material Symbols Rounded",
+              "fill": "#273036"
+            },
+            {
+              "type": "icon_font",
+              "id": "lrs9F",
+              "x": 360,
+              "y": 15,
+              "name": "statusBattery",
+              "width": 18,
+              "height": 18,
+              "iconFontName": "battery_full",
+              "iconFontFamily": "Material Symbols Rounded",
+              "fill": "#273036"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "m4590w",
+          "x": 20,
+          "y": 58,
+          "name": "Search Bar",
+          "width": 291,
+          "height": 52,
+          "fill": "#FFFFFF",
+          "cornerRadius": 26,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#A6482A24",
+            "offset": {
+              "x": 0,
+              "y": 10
+            },
+            "blur": 24
+          },
+          "gap": 10,
+          "padding": [
+            16,
+            14
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "u6PXPX",
+              "name": "searchIcon",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "search",
+              "iconFontFamily": "Material Symbols Rounded",
+              "fill": "#4DBDC6"
+            },
+            {
+              "type": "text",
+              "id": "IPiiT",
+              "name": "searchText",
+              "fill": "#76665F",
+              "content": "Search area, breed, or report",
+              "fontFamily": "$fontBody",
+              "fontSize": 14,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "P2sCm",
+          "x": 323,
+          "y": 58,
+          "name": "Notification Button",
+          "width": 52,
+          "height": 52,
+          "fill": "#FFFFFF",
+          "cornerRadius": 26,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#A6482A24",
+            "offset": {
+              "x": 0,
+              "y": 10
+            },
+            "blur": 24
+          },
+          "layout": "none",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "xuD3O",
+              "x": 15,
+              "y": 15,
+              "name": "notifIcon",
+              "width": 22,
+              "height": 22,
+              "iconFontName": "notifications",
+              "iconFontFamily": "Material Symbols Rounded",
+              "fill": "#F45D48"
+            },
+            {
+              "type": "ellipse",
+              "id": "jkl49",
+              "x": 31,
+              "y": 13,
+              "name": "dot",
+              "fill": "#F45D48",
+              "width": 8,
+              "height": 8
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "W3ERo",
+          "x": 20,
+          "y": 122,
+          "name": "Filter Chips",
+          "width": 353,
+          "height": 40,
+          "gap": 8,
+          "children": [
+            {
+              "type": "frame",
+              "id": "X3u1h",
+              "name": "chipLost",
+              "fill": "#F45D48",
+              "cornerRadius": 19,
+              "gap": 6,
+              "padding": [
+                12,
+                9
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "zeiWa",
+                  "name": "chipLostIcon",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "pets",
+                  "iconFontFamily": "Material Symbols Rounded",
+                  "fill": "#FFFFFF"
+                },
+                {
+                  "type": "text",
+                  "id": "ObXOD",
+                  "name": "chipLostText",
+                  "fill": "#FFFFFF",
+                  "content": "Lost",
+                  "fontFamily": "$fontBody",
+                  "fontSize": 13,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "P0hyN0",
+              "name": "chipSeen",
+              "fill": "#FFFFFFE8",
+              "cornerRadius": 19,
+              "gap": 6,
+              "padding": [
+                12,
+                9
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "Hw00x",
+                  "name": "chipSeenIcon",
+                  "fill": "#4DBDC6",
+                  "width": 10,
+                  "height": 10
+                },
+                {
+                  "type": "text",
+                  "id": "y2eyt",
+                  "name": "chipSeenText",
+                  "fill": "#273036",
+                  "content": "Seen",
+                  "fontFamily": "$fontBody",
+                  "fontSize": 13,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "xBk0Q",
+              "name": "chipFound",
+              "fill": "#FFFFFFE8",
+              "cornerRadius": 19,
+              "gap": 6,
+              "padding": [
+                12,
+                9
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "s6Iaf",
+                  "name": "chipFoundIcon",
+                  "fill": "#8ACB88",
+                  "width": 10,
+                  "height": 10
+                },
+                {
+                  "type": "text",
+                  "id": "o9PLs4",
+                  "name": "chipFoundText",
+                  "fill": "#273036",
+                  "content": "Found",
+                  "fontFamily": "$fontBody",
+                  "fontSize": 13,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "DtA81",
+              "name": "chipUrgent",
+              "fill": "#FFFFFFE8",
+              "cornerRadius": 19,
+              "gap": 6,
+              "padding": [
+                12,
+                9
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "punW7",
+                  "name": "chipUrgentIcon",
+                  "fill": "#F8C84B",
+                  "width": 10,
+                  "height": 10
+                },
+                {
+                  "type": "text",
+                  "id": "p2nEz",
+                  "name": "chipUrgentText",
+                  "fill": "#273036",
+                  "content": "Urgent",
+                  "fontFamily": "$fontBody",
+                  "fontSize": 13,
+                  "fontWeight": "700"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "CZNz5",
+          "x": 321,
+          "y": 179,
+          "name": "Filter Control",
+          "width": 52,
+          "height": 52,
+          "fill": "#FFFFFF",
+          "cornerRadius": 26,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#A6482A24",
+            "offset": {
+              "x": 0,
+              "y": 10
+            },
+            "blur": 24
+          },
+          "layout": "vertical",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "U8zBw",
+              "name": "filterIcon",
+              "width": 22,
+              "height": 22,
+              "iconFontName": "tune",
+              "iconFontFamily": "Material Symbols Rounded",
+              "fill": "#273036"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "JcQjt",
+          "x": 321,
+          "y": 244,
+          "name": "Location Control",
+          "width": 52,
+          "height": 52,
+          "fill": "#4DBDC6",
+          "cornerRadius": 26,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#2D7E8538",
+            "offset": {
+              "x": 0,
+              "y": 10
+            },
+            "blur": 24
+          },
+          "layout": "vertical",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "HuwbR",
+              "name": "locIcon",
+              "width": 22,
+              "height": 22,
+              "iconFontName": "my_location",
+              "iconFontFamily": "Material Symbols Rounded",
+              "fill": "#FFFFFF"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "z7hvn",
+          "x": 20,
+          "y": 657,
+          "name": "Map Legend",
+          "width": 164,
+          "height": 40,
+          "fill": "#FFFFFFE8",
+          "cornerRadius": 20,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#A6482A20",
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "blur": 18
+          },
+          "gap": 8,
+          "padding": [
+            12,
+            9
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "ellipse",
+              "id": "q7QhwY",
+              "name": "legendDot",
+              "fill": "#F45D48",
+              "width": 10,
+              "height": 10
+            },
+            {
+              "type": "text",
+              "id": "jZeTe",
+              "name": "legendText",
+              "fill": "#273036",
+              "content": "12 reports nearby",
+              "fontFamily": "$fontBody",
+              "fontSize": 13,
+              "fontWeight": "700"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Hr8oh",
+          "x": 16,
+          "y": 712,
+          "name": "Warm Bottom Preview Card",
+          "width": 361,
+          "height": 116,
+          "fill": "#FFF4E6",
+          "cornerRadius": 28,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#A6482A24",
+            "offset": {
+              "x": 0,
+              "y": -8
+            },
+            "blur": 28
+          },
+          "gap": 14,
+          "padding": 14,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "oMyau",
+              "name": "Pet Photo",
+              "clip": true,
+              "width": 88,
+              "height": 88,
+              "fill": "#FFD7BE",
+              "cornerRadius": 22,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "BT6fv",
+                  "x": 12,
+                  "y": 13,
+                  "name": "photoBg",
+                  "fill": "#FFFFFF80",
+                  "width": 64,
+                  "height": 64
+                },
+                {
+                  "type": "icon_font",
+                  "id": "LDDO6",
+                  "x": 22,
+                  "y": 18,
+                  "name": "petFace",
+                  "width": 46,
+                  "height": 46,
+                  "iconFontName": "pets",
+                  "iconFontFamily": "Material Symbols Rounded",
+                  "fill": "#F45D48"
+                },
+                {
+                  "type": "frame",
+                  "id": "ddIeW",
+                  "x": 49,
+                  "y": 57,
+                  "name": "photoBadge",
+                  "width": 32,
+                  "height": 22,
+                  "fill": "#4DBDC6",
+                  "cornerRadius": 11,
+                  "layout": "vertical",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Q4HpR",
+                      "name": "photoBadgeText",
+                      "fill": "#FFFFFF",
+                      "content": "2h",
+                      "fontFamily": "$fontBody",
+                      "fontSize": 11,
+                      "fontWeight": "800"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Mnuxr",
+              "name": "Preview Copy",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 5,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Rt2vc",
+                  "name": "rowTop",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "s0J5F3",
+                      "name": "title",
+                      "fill": "#273036",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Milo sighted near Hoàn Kiếm",
+                      "lineHeight": 1.12,
+                      "fontFamily": "$fontHeading",
+                      "fontSize": 16,
+                      "fontWeight": "800"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Y4QzN",
+                      "name": "urgent",
+                      "fill": "#F45D48",
+                      "cornerRadius": 12,
+                      "gap": 4,
+                      "padding": [
+                        8,
+                        5
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "eYube",
+                          "name": "urgentText",
+                          "fill": "#FFFFFF",
+                          "content": "LOST",
+                          "fontFamily": "$fontBody",
+                          "fontSize": 10,
+                          "fontWeight": "800"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "zjCeX",
+                  "name": "desc",
+                  "fill": "#76665F",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Cream tabby, teal collar. Last update around P. Lý Thái Tổ.",
+                  "lineHeight": 1.25,
+                  "fontFamily": "$fontBody",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "Slzh5",
+                  "name": "Preview CTA Row",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "JBLxW",
+                      "name": "distance",
+                      "gap": 4,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "hTcRG",
+                          "name": "distanceIcon",
+                          "width": 15,
+                          "height": 15,
+                          "iconFontName": "near_me",
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#4DBDC6"
+                        },
+                        {
+                          "type": "text",
+                          "id": "FZxkh",
+                          "name": "distanceText",
+                          "fill": "#273036",
+                          "content": "0.8 km away",
+                          "fontFamily": "$fontBody",
+                          "fontSize": 12,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "W7bWpO",
+                      "name": "viewBtn",
+                      "fill": "#F45D48",
+                      "cornerRadius": 15,
+                      "gap": 5,
+                      "padding": [
+                        10,
+                        7
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "k8rfCz",
+                          "name": "viewText",
+                          "fill": "#FFFFFF",
+                          "content": "View",
+                          "fontFamily": "$fontBody",
+                          "fontSize": 12,
+                          "fontWeight": "800"
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "F329g",
+                          "name": "viewIcon",
+                          "width": 14,
+                          "height": 14,
+                          "iconFontName": "arrow_forward",
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#FFFFFF"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "g14jTe",
+          "x": 129,
+          "y": 837,
+          "name": "Home Indicator",
+          "opacity": 0.22,
+          "width": 135,
+          "height": 5,
+          "fill": "#273036",
+          "cornerRadius": 3
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "FjVKh",
+      "x": 444,
+      "y": 8860,
+      "name": "Hanoi Map 2 - Selected Marker",
+      "clip": true,
+      "width": 393,
+      "height": 852,
+      "fill": "#F7EDDF",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "rBfQC",
+          "x": 0,
+          "y": 0,
+          "name": "selMap",
+          "clip": true,
+          "width": 393,
+          "height": 852,
+          "fill": "#F5EBDD",
+          "layout": "none",
+          "children": [
+            {
+              "type": "path",
+              "id": "E2gLZ3",
+              "x": 300,
+              "y": 0,
+              "name": "selRiver",
+              "geometry": "M40 0c38 70-26 132 12 214 30 64-32 124-4 206 14 42 40 80 24 130l26 0 0-550z",
+              "viewBox": [
+                0,
+                0,
+                100,
+                550
+              ],
+              "fill": "#A7E8F082",
+              "width": 84,
+              "height": 500,
+              "stroke": {
+                "thickness": 2,
+                "fill": "#4DBDC64A"
+              }
+            },
+            {
+              "type": "ellipse",
+              "id": "TXQEL",
+              "x": 42,
+              "y": 162,
+              "name": "selWestLake",
+              "fill": "#BEEFF0",
+              "width": 126,
+              "height": 100,
+              "stroke": {
+                "thickness": 2,
+                "fill": "#4DBDC655"
+              }
+            },
+            {
+              "type": "ellipse",
+              "id": "c3vM4",
+              "x": 86,
+              "y": 198,
+              "name": "selWestLake2",
+              "fill": "#A7E8F0",
+              "width": 82,
+              "height": 62,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#4DBDC644"
+              }
+            },
+            {
+              "type": "ellipse",
+              "id": "Flnz7",
+              "x": 215,
+              "y": 373,
+              "name": "selHoanKiem",
+              "fill": "#BEEFF0",
+              "width": 44,
+              "height": 62,
+              "stroke": {
+                "thickness": 2,
+                "fill": "#4DBDC655"
+              }
+            },
+            {
+              "type": "line",
+              "id": "yHHj0",
+              "x": 40,
+              "y": 322,
+              "name": "selRoad1",
+              "width": 232,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 6,
+                "cap": "round",
+                "fill": "#FFFFFFD8"
+              }
+            },
+            {
+              "type": "line",
+              "id": "L5i4RH",
+              "x": 58,
+              "y": 360,
+              "name": "selRoad2",
+              "rotation": -10,
+              "width": 250,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 5,
+                "cap": "round",
+                "fill": "#FFFFFFD8"
+              }
+            },
+            {
+              "type": "line",
+              "id": "pfRJN",
+              "x": 110,
+              "y": 142,
+              "name": "selRoad3",
+              "rotation": 24.000000000000004,
+              "width": 230,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 5,
+                "cap": "round",
+                "fill": "#FFFFFFCC"
+              }
+            },
+            {
+              "type": "line",
+              "id": "T8U8yx",
+              "x": 190,
+              "y": 250,
+              "name": "selRoad4",
+              "rotation": 78,
+              "width": 206,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 5,
+                "cap": "round",
+                "fill": "#FFFFFFCC"
+              }
+            },
+            {
+              "type": "line",
+              "id": "B1K1jW",
+              "x": 82,
+              "y": 448,
+              "name": "selRoad5",
+              "rotation": 8,
+              "width": 240,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 5,
+                "cap": "round",
+                "fill": "#FFFFFFD8"
+              }
+            },
+            {
+              "type": "line",
+              "id": "WpnWm",
+              "x": 44,
+              "y": 540,
+              "name": "selRoad6",
+              "rotation": -17,
+              "width": 268,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 5,
+                "cap": "round",
+                "fill": "#FFFFFFCC"
+              }
+            },
+            {
+              "type": "line",
+              "id": "yvJsU",
+              "x": 150,
+              "y": 254,
+              "name": "selRoad7",
+              "rotation": 116.00000000000001,
+              "width": 210,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 4,
+                "cap": "round",
+                "fill": "#FFFFFFB8"
+              }
+            },
+            {
+              "type": "line",
+              "id": "LFAzq",
+              "x": 20,
+              "y": 600,
+              "name": "selRoad8",
+              "rotation": 2,
+              "width": 342,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 4,
+                "cap": "round",
+                "fill": "#FFFFFFB8"
+              }
+            },
+            {
+              "type": "line",
+              "id": "LLcfh",
+              "x": 32,
+              "y": 250,
+              "name": "selRoad9",
+              "rotation": 40,
+              "width": 286,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 3,
+                "cap": "round",
+                "fill": "#E6D6C6"
+              }
+            },
+            {
+              "type": "line",
+              "id": "jsarz",
+              "x": 118,
+              "y": 276,
+              "name": "selRoad10",
+              "rotation": 96.00000000000001,
+              "width": 264,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 3,
+                "cap": "round",
+                "fill": "#E6D6C6"
+              }
+            },
+            {
+              "type": "line",
+              "id": "vSt0h",
+              "x": 44,
+              "y": 405,
+              "name": "selGrid1",
+              "rotation": 84,
+              "width": 130,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 2,
+                "cap": "round",
+                "fill": "#EADCCC"
+              }
+            },
+            {
+              "type": "line",
+              "id": "pBLwI",
+              "x": 178,
+              "y": 392,
+              "name": "selGrid2",
+              "rotation": 92,
+              "width": 144,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 2,
+                "cap": "round",
+                "fill": "#EADCCC"
+              }
+            },
+            {
+              "type": "line",
+              "id": "pRIhl",
+              "x": 75,
+              "y": 498,
+              "name": "selGrid3",
+              "rotation": 28,
+              "width": 170,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 2,
+                "cap": "round",
+                "fill": "#EADCCC"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "AecI2",
+              "x": 54,
+              "y": 286,
+              "name": "selPark1",
+              "opacity": 0.65,
+              "width": 88,
+              "height": 56,
+              "fill": "#DDF0C8",
+              "cornerRadius": 22
+            },
+            {
+              "type": "frame",
+              "id": "qm4wM",
+              "x": 246,
+              "y": 488,
+              "name": "selPark2",
+              "opacity": 0.65,
+              "width": 82,
+              "height": 58,
+              "fill": "#DDF0C8",
+              "cornerRadius": 22
+            },
+            {
+              "type": "text",
+              "id": "k2oy9h",
+              "x": 78,
+              "y": 144,
+              "name": "lblTayHo",
+              "fill": "#50656A99",
+              "content": "Tây Hồ",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "900"
+            },
+            {
+              "type": "text",
+              "id": "Y2OARd",
+              "x": 148,
+              "y": 285,
+              "name": "lblBaDinh",
+              "fill": "#50656A99",
+              "content": "Ba Đình",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "900"
+            },
+            {
+              "type": "text",
+              "id": "PVKou",
+              "x": 48,
+              "y": 398,
+              "name": "lblCauGiay",
+              "fill": "#50656A99",
+              "content": "Cầu Giấy",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "900"
+            },
+            {
+              "type": "text",
+              "id": "e3Rfh",
+              "x": 135,
+              "y": 430,
+              "name": "lblDongDa",
+              "fill": "#50656A99",
+              "content": "Đống Đa",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "900"
+            },
+            {
+              "type": "text",
+              "id": "ukc3E",
+              "x": 205,
+              "y": 448,
+              "name": "lblHoanKiem",
+              "fill": "#50656A99",
+              "content": "Hoàn Kiếm",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "900"
+            },
+            {
+              "type": "text",
+              "id": "zZzBm",
+              "x": 238,
+              "y": 526,
+              "name": "lblHBT",
+              "fill": "#50656A99",
+              "content": "Hai Bà Trưng",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "900"
+            },
+            {
+              "type": "ellipse",
+              "id": "INLUp",
+              "x": 163,
+              "y": 326,
+              "name": "selRadius",
+              "fill": "#F45D4818",
+              "width": 150,
+              "height": 150,
+              "stroke": {
+                "thickness": 2,
+                "fill": "#F45D4848"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "l2J2vd",
+              "x": 218,
+              "y": 368,
+              "name": "pinLost",
+              "width": 42,
+              "height": 42,
+              "fill": "$coral",
+              "cornerRadius": 21,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#D83B2D55",
+                "offset": {
+                  "x": 0,
+                  "y": 10
+                },
+                "blur": 22
+              },
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "E29y6r",
+                  "name": "pinLostIcon",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "paw-print",
+                  "iconFontFamily": "lucide",
+                  "fill": "$white"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "IQTo3",
+              "x": 86,
+              "y": 248,
+              "name": "pinFound",
+              "width": 34,
+              "height": 34,
+              "fill": "$teal",
+              "cornerRadius": 17,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#22A6A344",
+                "offset": {
+                  "x": 0,
+                  "y": 8
+                },
+                "blur": 18
+              },
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "pQg5s",
+                  "name": "pinFoundIcon",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "paw-print",
+                  "iconFontFamily": "lucide",
+                  "fill": "$white"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "P489E",
+              "x": 116,
+              "y": 482,
+              "name": "pinUrgent",
+              "width": 36,
+              "height": 36,
+              "fill": "#FFB84D",
+              "cornerRadius": 18,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#FFB84D55",
+                "offset": {
+                  "x": 0,
+                  "y": 8
+                },
+                "blur": 18
+              },
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "FkwjI",
+                  "name": "pinUrgentIcon",
+                  "width": 17,
+                  "height": 17,
+                  "iconFontName": "triangle-alert",
+                  "iconFontFamily": "lucide",
+                  "fill": "$charcoal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "M99b2",
+              "x": 252,
+              "y": 536,
+              "name": "pinReunited",
+              "width": 32,
+              "height": 32,
+              "fill": "$green",
+              "cornerRadius": 16,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#5B9C5944",
+                "offset": {
+                  "x": 0,
+                  "y": 7
+                },
+                "blur": 16
+              },
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "Bof8h",
+                  "name": "pinReunitedIcon",
+                  "width": 15,
+                  "height": 15,
+                  "iconFontName": "heart",
+                  "iconFontFamily": "lucide",
+                  "fill": "$charcoal"
+                }
+              ]
+            },
+            {
+              "type": "ellipse",
+              "id": "U1Lb8A",
+              "x": 226,
+              "y": 376,
+              "name": "selPulse",
+              "fill": "#FFFFFF66",
+              "width": 26,
+              "height": 26,
+              "stroke": {
+                "thickness": 2,
+                "fill": "#FFFFFFAA"
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "dCoy2",
+          "x": 20,
+          "y": 58,
+          "name": "selSearch",
+          "width": 288,
+          "height": 52,
+          "fill": "#FFFFFFE8",
+          "cornerRadius": 22,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#2730361F",
+            "offset": {
+              "x": 0,
+              "y": 10
+            },
+            "blur": 24
+          },
+          "gap": 10,
+          "padding": [
+            0,
+            16
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "G5MvT",
+              "name": "selSearchIcon",
+              "width": 18,
+              "height": 18,
+              "iconFontName": "search",
+              "iconFontFamily": "lucide",
+              "fill": "$muted"
+            },
+            {
+              "type": "text",
+              "id": "zHGwD",
+              "name": "selSearchText",
+              "fill": "$muted",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Search area, breed, or report",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "700"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "v0AnC",
+          "x": 320,
+          "y": 58,
+          "name": "selBell",
+          "width": 52,
+          "height": 52,
+          "fill": "#FFFFFFE8",
+          "cornerRadius": 20,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#2730361F",
+            "offset": {
+              "x": 0,
+              "y": 10
+            },
+            "blur": 24
+          },
+          "layout": "vertical",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "d4B2hg",
+              "name": "selBellIcon",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "bell",
+              "iconFontFamily": "lucide",
+              "fill": "$coral"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "YxWDw",
+          "x": 20,
+          "y": 126,
+          "name": "chipsSel",
+          "width": 353,
+          "height": 38,
+          "gap": 8,
+          "children": [
+            {
+              "type": "frame",
+              "id": "U09IGv",
+              "name": "chipLost",
+              "width": 62,
+              "height": 36,
+              "fill": "$coral",
+              "cornerRadius": 18,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Cr9On",
+                  "name": "chipLostT",
+                  "fill": "$white",
+                  "content": "Lost",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "900"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "UtUpO",
+              "name": "chipFound",
+              "width": 70,
+              "height": 36,
+              "fill": "#FFFFFFD9",
+              "cornerRadius": 18,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "TLja0",
+                  "name": "chipFoundT",
+                  "fill": "$charcoal",
+                  "content": "Found",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "800"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "S7bAtl",
+              "name": "chipNearby",
+              "width": 82,
+              "height": 36,
+              "fill": "#FFFFFFD9",
+              "cornerRadius": 18,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "MdwHm",
+                  "name": "chipNearbyT",
+                  "fill": "$charcoal",
+                  "content": "Nearby",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "800"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "oDaJv",
+              "name": "chipUrgent",
+              "width": 78,
+              "height": 36,
+              "fill": "#FFFFFFD9",
+              "cornerRadius": 18,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "lEpSu",
+                  "name": "chipUrgentT",
+                  "fill": "$charcoal",
+                  "content": "Urgent",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "800"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "x3eCXK",
+          "x": 319,
+          "y": 550,
+          "name": "selLoc",
+          "width": 52,
+          "height": 52,
+          "fill": "#FFFFFFE8",
+          "cornerRadius": 20,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#2730361F",
+            "offset": {
+              "x": 0,
+              "y": 10
+            },
+            "blur": 24
+          },
+          "layout": "vertical",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "s7oVR",
+              "name": "selLocIcon",
+              "width": 22,
+              "height": 22,
+              "iconFontName": "locate-fixed",
+              "iconFontFamily": "lucide",
+              "fill": "$teal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "FLGon",
+          "x": 16,
+          "y": 618,
+          "name": "sheetSel",
+          "width": 361,
+          "height": 204,
+          "fill": "#FFFFFFF2",
+          "cornerRadius": 30,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#27303626",
+            "offset": {
+              "x": 0,
+              "y": -12
+            },
+            "blur": 34
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 14,
+          "children": [
+            {
+              "type": "frame",
+              "id": "BQ4l9",
+              "name": "sheetHandle",
+              "width": 52,
+              "height": 5,
+              "fill": "#27303622",
+              "cornerRadius": 5
+            },
+            {
+              "type": "frame",
+              "id": "p3pjWE",
+              "name": "sheetTop",
+              "width": "fill_container",
+              "height": 78,
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "PZIkp",
+                  "name": "petImg",
+                  "clip": true,
+                  "width": 74,
+                  "height": 74,
+                  "fill": "#FFE1D2",
+                  "cornerRadius": 22,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "O0nFZ",
+                      "x": 21,
+                      "y": 20,
+                      "name": "petPaw",
+                      "width": 32,
+                      "height": 32,
+                      "iconFontName": "paw-print",
+                      "iconFontFamily": "lucide",
+                      "fill": "$coral"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "BJ6ER",
+                  "name": "petInfo",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 5,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "QaILz",
+                      "name": "statusBadge",
+                      "width": 54,
+                      "height": 22,
+                      "fill": "$coral",
+                      "cornerRadius": 11,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "f7kUm7",
+                          "name": "statusText",
+                          "fill": "$white",
+                          "content": "LOST",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "900"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "RpgJ1",
+                      "name": "petName",
+                      "fill": "$charcoal",
+                      "content": "Milo • 0.8 km away",
+                      "fontFamily": "Funnel Sans",
+                      "fontSize": 19,
+                      "fontWeight": "900"
+                    },
+                    {
+                      "type": "text",
+                      "id": "dfofA",
+                      "name": "petLoc",
+                      "fill": "$muted",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Last seen 2h ago near Hoàn Kiếm Lake",
+                      "lineHeight": 1.3,
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "aXEgI",
+              "name": "sheetButtons",
+              "width": "fill_container",
+              "height": 46,
+              "gap": 8,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "hAv1s",
+                  "name": "viewBtn",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "$coral",
+                  "cornerRadius": 20,
+                  "layout": "vertical",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Dh2Fu",
+                      "name": "viewBtnT",
+                      "fill": "$white",
+                      "content": "View Details",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "900"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "zq8Fj",
+                  "name": "contactBtn",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#EAF9F8",
+                  "cornerRadius": 20,
+                  "layout": "vertical",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "qAdB6",
+                      "name": "contactBtnT",
+                      "fill": "$teal",
+                      "content": "Contact",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "900"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "pSUK2",
+                  "name": "navBtn",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#FFF3E8",
+                  "cornerRadius": 20,
+                  "layout": "vertical",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "HPx6m",
+                      "name": "navBtnT",
+                      "fill": "$coral",
+                      "content": "Navigate",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "900"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "lO7ac",
+          "x": 129,
+          "y": 839,
+          "name": "selHome",
+          "width": 135,
+          "height": 5,
+          "fill": "#2B2115",
+          "cornerRadius": 5
+        },
+        {
+          "type": "frame",
+          "id": "DF9rC",
+          "x": 0,
+          "y": 0,
+          "name": "selStatus",
+          "width": 393,
+          "height": 50,
+          "padding": [
+            14,
+            24,
+            0,
+            24
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "nWF3p",
+              "name": "selTime",
+              "fill": "$charcoal",
+              "content": "9:41",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "800"
+            },
+            {
+              "type": "text",
+              "id": "xKj8F",
+              "name": "selStatusIcons",
+              "fill": "$charcoal",
+              "content": "LTE 82%",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "700"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "G8vK1E",
+      "x": 887,
+      "y": 8860,
+      "name": "Hanoi Map 3 - Urgent Alert",
+      "clip": true,
+      "width": 393,
+      "height": 852,
+      "fill": "#F7EDDF",
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "XtJhU",
+          "x": 0,
+          "y": 0,
+          "name": "urgMap",
+          "clip": true,
+          "width": 393,
+          "height": 852,
+          "fill": "#F5EBDD",
+          "layout": "none",
+          "children": [
+            {
+              "type": "path",
+              "id": "I7pZA",
+              "x": 300,
+              "y": 0,
+              "name": "selRiver",
+              "geometry": "M40 0c38 70-26 132 12 214 30 64-32 124-4 206 14 42 40 80 24 130l26 0 0-550z",
+              "viewBox": [
+                0,
+                0,
+                100,
+                550
+              ],
+              "fill": "#A7E8F082",
+              "width": 84,
+              "height": 500,
+              "stroke": {
+                "thickness": 2,
+                "fill": "#4DBDC64A"
+              }
+            },
+            {
+              "type": "ellipse",
+              "id": "AUnJW",
+              "x": 42,
+              "y": 162,
+              "name": "selWestLake",
+              "fill": "#BEEFF0",
+              "width": 126,
+              "height": 100,
+              "stroke": {
+                "thickness": 2,
+                "fill": "#4DBDC655"
+              }
+            },
+            {
+              "type": "ellipse",
+              "id": "k3nXe",
+              "x": 86,
+              "y": 198,
+              "name": "selWestLake2",
+              "fill": "#A7E8F0",
+              "width": 82,
+              "height": 62,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#4DBDC644"
+              }
+            },
+            {
+              "type": "ellipse",
+              "id": "vQBgs",
+              "x": 215,
+              "y": 373,
+              "name": "selHoanKiem",
+              "fill": "#BEEFF0",
+              "width": 44,
+              "height": 62,
+              "stroke": {
+                "thickness": 2,
+                "fill": "#4DBDC655"
+              }
+            },
+            {
+              "type": "line",
+              "id": "V2zqDI",
+              "x": 40,
+              "y": 322,
+              "name": "selRoad1",
+              "width": 232,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 6,
+                "cap": "round",
+                "fill": "#FFFFFFD8"
+              }
+            },
+            {
+              "type": "line",
+              "id": "U4UKg2",
+              "x": 58,
+              "y": 360,
+              "name": "selRoad2",
+              "rotation": -10,
+              "width": 250,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 5,
+                "cap": "round",
+                "fill": "#FFFFFFD8"
+              }
+            },
+            {
+              "type": "line",
+              "id": "HRLae",
+              "x": 110,
+              "y": 142,
+              "name": "selRoad3",
+              "rotation": 24.000000000000004,
+              "width": 230,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 5,
+                "cap": "round",
+                "fill": "#FFFFFFCC"
+              }
+            },
+            {
+              "type": "line",
+              "id": "WzlP0",
+              "x": 190,
+              "y": 250,
+              "name": "selRoad4",
+              "rotation": 78,
+              "width": 206,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 5,
+                "cap": "round",
+                "fill": "#FFFFFFCC"
+              }
+            },
+            {
+              "type": "line",
+              "id": "y1EXN",
+              "x": 82,
+              "y": 448,
+              "name": "selRoad5",
+              "rotation": 8,
+              "width": 240,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 5,
+                "cap": "round",
+                "fill": "#FFFFFFD8"
+              }
+            },
+            {
+              "type": "line",
+              "id": "jUwcE",
+              "x": 44,
+              "y": 540,
+              "name": "selRoad6",
+              "rotation": -17,
+              "width": 268,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 5,
+                "cap": "round",
+                "fill": "#FFFFFFCC"
+              }
+            },
+            {
+              "type": "line",
+              "id": "NlCAg",
+              "x": 150,
+              "y": 254,
+              "name": "selRoad7",
+              "rotation": 116.00000000000001,
+              "width": 210,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 4,
+                "cap": "round",
+                "fill": "#FFFFFFB8"
+              }
+            },
+            {
+              "type": "line",
+              "id": "DDO85",
+              "x": 20,
+              "y": 600,
+              "name": "selRoad8",
+              "rotation": 2,
+              "width": 342,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 4,
+                "cap": "round",
+                "fill": "#FFFFFFB8"
+              }
+            },
+            {
+              "type": "line",
+              "id": "jDxM3",
+              "x": 32,
+              "y": 250,
+              "name": "selRoad9",
+              "rotation": 40,
+              "width": 286,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 3,
+                "cap": "round",
+                "fill": "#E6D6C6"
+              }
+            },
+            {
+              "type": "line",
+              "id": "DZgXC",
+              "x": 118,
+              "y": 276,
+              "name": "selRoad10",
+              "rotation": 96.00000000000001,
+              "width": 264,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 3,
+                "cap": "round",
+                "fill": "#E6D6C6"
+              }
+            },
+            {
+              "type": "line",
+              "id": "me2aY",
+              "x": 44,
+              "y": 405,
+              "name": "selGrid1",
+              "rotation": 84,
+              "width": 130,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 2,
+                "cap": "round",
+                "fill": "#EADCCC"
+              }
+            },
+            {
+              "type": "line",
+              "id": "mhAV6",
+              "x": 178,
+              "y": 392,
+              "name": "selGrid2",
+              "rotation": 92,
+              "width": 144,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 2,
+                "cap": "round",
+                "fill": "#EADCCC"
+              }
+            },
+            {
+              "type": "line",
+              "id": "N4IkW",
+              "x": 75,
+              "y": 498,
+              "name": "selGrid3",
+              "rotation": 28,
+              "width": 170,
+              "height": 1,
+              "stroke": {
+                "align": "center",
+                "thickness": 2,
+                "cap": "round",
+                "fill": "#EADCCC"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "t9sm4b",
+              "x": 54,
+              "y": 286,
+              "name": "selPark1",
+              "opacity": 0.65,
+              "width": 88,
+              "height": 56,
+              "fill": "#DDF0C8",
+              "cornerRadius": 22
+            },
+            {
+              "type": "frame",
+              "id": "L8THxW",
+              "x": 246,
+              "y": 488,
+              "name": "selPark2",
+              "opacity": 0.65,
+              "width": 82,
+              "height": 58,
+              "fill": "#DDF0C8",
+              "cornerRadius": 22
+            },
+            {
+              "type": "text",
+              "id": "fvC4g",
+              "x": 78,
+              "y": 144,
+              "name": "lblTayHo",
+              "fill": "#50656A99",
+              "content": "Tây Hồ",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "900"
+            },
+            {
+              "type": "text",
+              "id": "HhMec",
+              "x": 148,
+              "y": 285,
+              "name": "lblBaDinh",
+              "fill": "#50656A99",
+              "content": "Ba Đình",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "900"
+            },
+            {
+              "type": "text",
+              "id": "LU5pn",
+              "x": 48,
+              "y": 398,
+              "name": "lblCauGiay",
+              "fill": "#50656A99",
+              "content": "Cầu Giấy",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "900"
+            },
+            {
+              "type": "text",
+              "id": "or8Yd",
+              "x": 135,
+              "y": 430,
+              "name": "lblDongDa",
+              "fill": "#50656A99",
+              "content": "Đống Đa",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "900"
+            },
+            {
+              "type": "text",
+              "id": "rug5F",
+              "x": 205,
+              "y": 448,
+              "name": "lblHoanKiem",
+              "fill": "#50656A99",
+              "content": "Hoàn Kiếm",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "900"
+            },
+            {
+              "type": "text",
+              "id": "pvkM0",
+              "x": 238,
+              "y": 526,
+              "name": "lblHBT",
+              "fill": "#50656A99",
+              "content": "Hai Bà Trưng",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "900"
+            },
+            {
+              "type": "ellipse",
+              "id": "Q2EJN",
+              "x": 163,
+              "y": 326,
+              "name": "selRadius",
+              "fill": "#F45D4818",
+              "width": 150,
+              "height": 150,
+              "stroke": {
+                "thickness": 2,
+                "fill": "#F45D4848"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "s3soVZ",
+              "x": 218,
+              "y": 368,
+              "name": "pinLost",
+              "width": 42,
+              "height": 42,
+              "fill": "$coral",
+              "cornerRadius": 21,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#D83B2D55",
+                "offset": {
+                  "x": 0,
+                  "y": 10
+                },
+                "blur": 22
+              },
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "s9ZlX",
+                  "name": "pinLostIcon",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "paw-print",
+                  "iconFontFamily": "lucide",
+                  "fill": "$white"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "t1eu6",
+              "x": 86,
+              "y": 248,
+              "name": "pinFound",
+              "width": 34,
+              "height": 34,
+              "fill": "$teal",
+              "cornerRadius": 17,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#22A6A344",
+                "offset": {
+                  "x": 0,
+                  "y": 8
+                },
+                "blur": 18
+              },
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "TFJzQ",
+                  "name": "pinFoundIcon",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "paw-print",
+                  "iconFontFamily": "lucide",
+                  "fill": "$white"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "nHDhE",
+              "x": 116,
+              "y": 482,
+              "name": "pinUrgent",
+              "width": 36,
+              "height": 36,
+              "fill": "#FFB84D",
+              "cornerRadius": 18,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#FFB84D55",
+                "offset": {
+                  "x": 0,
+                  "y": 8
+                },
+                "blur": 18
+              },
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "rvqLK",
+                  "name": "pinUrgentIcon",
+                  "width": 17,
+                  "height": 17,
+                  "iconFontName": "triangle-alert",
+                  "iconFontFamily": "lucide",
+                  "fill": "$charcoal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "M10YEl",
+              "x": 252,
+              "y": 536,
+              "name": "pinReunited",
+              "width": 32,
+              "height": 32,
+              "fill": "$green",
+              "cornerRadius": 16,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#5B9C5944",
+                "offset": {
+                  "x": 0,
+                  "y": 7
+                },
+                "blur": 16
+              },
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "ta7W6",
+                  "name": "pinReunitedIcon",
+                  "width": 15,
+                  "height": 15,
+                  "iconFontName": "heart",
+                  "iconFontFamily": "lucide",
+                  "fill": "$charcoal"
+                }
+              ]
+            },
+            {
+              "type": "ellipse",
+              "id": "l3Emc",
+              "x": 226,
+              "y": 376,
+              "name": "selPulse",
+              "fill": "#FFFFFF66",
+              "width": 26,
+              "height": 26,
+              "stroke": {
+                "thickness": 2,
+                "fill": "#FFFFFFAA"
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "S9MKyI",
+          "x": 0,
+          "y": 0,
+          "name": "urgTint",
+          "width": 393,
+          "height": 852,
+          "fill": "#FFF4E633"
+        },
+        {
+          "type": "frame",
+          "id": "TSthU",
+          "x": 20,
+          "y": 58,
+          "name": "urgSearch",
+          "width": 288,
+          "height": 52,
+          "fill": "#FFFFFFEA",
+          "cornerRadius": 22,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#2730361F",
+            "offset": {
+              "x": 0,
+              "y": 10
+            },
+            "blur": 24
+          },
+          "gap": 10,
+          "padding": [
+            0,
+            16
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "E4NSRp",
+              "name": "urgSearchIcon",
+              "width": 18,
+              "height": 18,
+              "iconFontName": "search",
+              "iconFontFamily": "lucide",
+              "fill": "$muted"
+            },
+            {
+              "type": "text",
+              "id": "rr06U",
+              "name": "urgSearchText",
+              "fill": "$muted",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Search area, breed, or report",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "700"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "R7X9M",
+          "x": 320,
+          "y": 58,
+          "name": "urgFilter",
+          "width": 52,
+          "height": 52,
+          "fill": "#FFFFFFEA",
+          "cornerRadius": 20,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#2730361F",
+            "offset": {
+              "x": 0,
+              "y": 10
+            },
+            "blur": 24
+          },
+          "layout": "vertical",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "FPLdN",
+              "name": "urgFilterIcon",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "sliders-horizontal",
+              "iconFontFamily": "lucide",
+              "fill": "$coral"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "lgkn1",
+          "x": 20,
+          "y": 126,
+          "name": "urgBanner",
+          "width": 353,
+          "height": 64,
+          "fill": "#FFF0D6",
+          "cornerRadius": 24,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#FFB84D66"
+          },
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#FFB84D33",
+            "offset": {
+              "x": 0,
+              "y": 12
+            },
+            "blur": 26
+          },
+          "gap": 12,
+          "padding": [
+            0,
+            16
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "HIp1D",
+              "name": "urgIconWrap",
+              "width": 40,
+              "height": 40,
+              "fill": "#FFB84D",
+              "cornerRadius": 15,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "oHk08",
+                  "name": "urgIcon",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "triangle-alert",
+                  "iconFontFamily": "lucide",
+                  "fill": "$charcoal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "JUul6",
+              "name": "urgCopy",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 3,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "pubKp",
+                  "name": "urgTitle",
+                  "fill": "$charcoal",
+                  "content": "Urgent nearby alert",
+                  "fontFamily": "Funnel Sans",
+                  "fontSize": 17,
+                  "fontWeight": "900"
+                },
+                {
+                  "type": "text",
+                  "id": "XwV1J",
+                  "name": "urgSub",
+                  "fill": "$muted",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "New sighting 300m from you in Đống Đa",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "700"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ellipse",
+          "id": "t9Groj",
+          "x": 98,
+          "y": 464,
+          "name": "urgPulseOuter",
+          "fill": "#FFB84D33",
+          "width": 72,
+          "height": 72,
+          "stroke": {
+            "thickness": 2,
+            "fill": "#FFB84D88"
+          }
+        },
+        {
+          "type": "ellipse",
+          "id": "CMXwq",
+          "x": 110,
+          "y": 476,
+          "name": "urgPulseMid",
+          "fill": "#FFB84D44",
+          "width": 48,
+          "height": 48,
+          "stroke": {
+            "thickness": 2,
+            "fill": "#FFFFFFAA"
+          }
+        },
+        {
+          "type": "frame",
+          "id": "C5Rg9P",
+          "x": 118,
+          "y": 484,
+          "name": "urgPin",
+          "width": 32,
+          "height": 32,
+          "fill": "#FFB84D",
+          "cornerRadius": 16,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#FFB84D66",
+            "offset": {
+              "x": 0,
+              "y": 8
+            },
+            "blur": 20
+          },
+          "layout": "vertical",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "ykRlp",
+              "name": "urgPinIcon",
+              "width": 16,
+              "height": 16,
+              "iconFontName": "paw-print",
+              "iconFontFamily": "lucide",
+              "fill": "$charcoal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "YBVXD",
+          "x": 319,
+          "y": 532,
+          "name": "urgLoc",
+          "width": 52,
+          "height": 52,
+          "fill": "#FFFFFFE8",
+          "cornerRadius": 20,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#2730361F",
+            "offset": {
+              "x": 0,
+              "y": 10
+            },
+            "blur": 24
+          },
+          "layout": "vertical",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "BeQnV",
+              "name": "urgLocIcon",
+              "width": 22,
+              "height": 22,
+              "iconFontName": "locate-fixed",
+              "iconFontFamily": "lucide",
+              "fill": "$teal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "WVQq6",
+          "x": 16,
+          "y": 604,
+          "name": "urgSheet",
+          "width": 361,
+          "height": 230,
+          "fill": "#FFFFFFF4",
+          "cornerRadius": 30,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#27303626",
+            "offset": {
+              "x": 0,
+              "y": -12
+            },
+            "blur": 34
+          },
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 14,
+          "children": [
+            {
+              "type": "frame",
+              "id": "Y9T07",
+              "name": "urgHandle",
+              "width": 52,
+              "height": 5,
+              "fill": "#27303622",
+              "cornerRadius": 5
+            },
+            {
+              "type": "frame",
+              "id": "LK63P",
+              "name": "urgTop",
+              "width": "fill_container",
+              "height": 86,
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "I2RugS",
+                  "name": "urgPhoto",
+                  "clip": true,
+                  "width": 82,
+                  "height": 82,
+                  "fill": "#FFF0D6",
+                  "cornerRadius": 24,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#FFB84D66"
+                  },
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "ag4ux",
+                      "x": 24,
+                      "y": 22,
+                      "name": "urgPhotoPaw",
+                      "width": 34,
+                      "height": 34,
+                      "iconFontName": "paw-print",
+                      "iconFontFamily": "lucide",
+                      "fill": "#FF9C2B"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "TWYDO",
+                  "name": "urgInfo",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 5,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "OdzCu",
+                      "name": "urgBadge",
+                      "width": 88,
+                      "height": 22,
+                      "fill": "#FFB84D",
+                      "cornerRadius": 11,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "XwtM1",
+                          "name": "urgBadgeT",
+                          "fill": "$charcoal",
+                          "content": "URGENT",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "900"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "Uaao6",
+                      "name": "urgName",
+                      "fill": "$charcoal",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Possible sighting of Luna",
+                      "fontFamily": "Funnel Sans",
+                      "fontSize": 18,
+                      "fontWeight": "900"
+                    },
+                    {
+                      "type": "text",
+                      "id": "bY7tl",
+                      "name": "urgMeta",
+                      "fill": "$muted",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "300m away • 8 minutes ago • Nguyễn Chí Thanh",
+                      "lineHeight": 1.28,
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "vET9U",
+              "name": "urgTip",
+              "width": "fill_container",
+              "height": 42,
+              "fill": "#FFF8EF",
+              "cornerRadius": 18,
+              "gap": 8,
+              "padding": [
+                0,
+                12
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "mDlQy",
+                  "name": "urgTipIcon",
+                  "width": 17,
+                  "height": 17,
+                  "iconFontName": "route",
+                  "iconFontFamily": "lucide",
+                  "fill": "$teal"
+                },
+                {
+                  "type": "text",
+                  "id": "UXply",
+                  "name": "urgTipText",
+                  "fill": "$muted",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Navigate safely and contact the owner before approaching.",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "YSfub",
+              "name": "urgBtns",
+              "width": 331,
+              "height": 46,
+              "gap": 6,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "K0Vuns",
+                  "name": "urgView",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "$coral",
+                  "cornerRadius": 20,
+                  "layout": "vertical",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "qoRp0",
+                      "name": "urgViewT",
+                      "fill": "$white",
+                      "content": "View Details",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "900"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "idUbg",
+                  "name": "urgContact",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#EAF9F8",
+                  "cornerRadius": 20,
+                  "layout": "vertical",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "y8QUw",
+                      "name": "urgContactT",
+                      "fill": "$teal",
+                      "content": "Contact",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "900"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "DDKI6",
+                  "name": "urgNav",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#FFF0D6",
+                  "cornerRadius": 20,
+                  "layout": "vertical",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "iS0iz",
+                      "name": "urgNavT",
+                      "fill": "#B96A00",
+                      "content": "Navigate",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "900"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "j5S8fw",
+          "x": 129,
+          "y": 839,
+          "name": "urgHome",
+          "width": 135,
+          "height": 5,
+          "fill": "#2B2115",
+          "cornerRadius": 5
+        },
+        {
+          "type": "frame",
+          "id": "J7h9m6",
+          "x": 0,
+          "y": 0,
+          "name": "urgStatus",
+          "width": 393,
+          "height": 50,
+          "padding": [
+            14,
+            24,
+            0,
+            24
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "M9K7OE",
+              "name": "urgTime",
+              "fill": "$charcoal",
+              "content": "9:41",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "800"
+            },
+            {
+              "type": "text",
+              "id": "LbjZU",
+              "name": "urgStatusIcons",
+              "fill": "$charcoal",
+              "content": "LTE 82%",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "700"
+            }
+          ]
+        }
+      ]
     }
   ],
   "variables": {

@@ -1603,4 +1603,71 @@ class AppLocalizationsKo extends AppLocalizations {
   String timeHoursAgo(int count) {
     return '$count시간 전';
   }
+
+  @override
+  String get mapFilterSeen => '목격됨';
+
+  @override
+  String get mapFilterUrgent => '긴급';
+
+  @override
+  String get mapLoadingLocation => '위치 찾는 중...';
+
+  @override
+  String get mapLocationPermissionRequired => '위치 권한이 필요합니다';
+
+  @override
+  String get mapLocationPermissionDeniedDesc =>
+      '근처 잃어버린 반려동물 알림을 보려면 위치 접근을 허용해 주세요.';
+
+  @override
+  String get mapLocationPermissionDeniedForeverDesc =>
+      '위치 권한이 영구적으로 거부되었습니다. 설정을 열어 접근을 허용해 주세요.';
+
+  @override
+  String get mapLocationServiceDisabled => '위치 서비스가 비활성화됨';
+
+  @override
+  String get mapLocationServiceDisabledDesc => '지도를 사용하려면 위치 서비스를 활성화해 주세요.';
+
+  @override
+  String get mapOpenSettings => '설정 열기';
+
+  @override
+  String get mapRetry => '다시 시도';
+
+  @override
+  String mapReportsNearby(int count) {
+    return '근처 $count건 보고';
+  }
+
+  @override
+  String get mapBadgeLost => '실종';
+
+  @override
+  String get mapBadgeFound => '발견';
+
+  @override
+  String get mapBadgeUrgent => '긴급';
+
+  @override
+  String get mapBadgeReunited => '재회';
+
+  @override
+  String get mapAway => '거리';
+
+  @override
+  String get mapView => '보기';
+
+  @override
+  String get mapViewDetails => '자세히 보기';
+
+  @override
+  String get mapContact => '연락하기';
+
+  @override
+  String get mapNavigate => '길 안내';
+
+  @override
+  String get mapUrgentNearbyAlert => '근처 긴급 알림';
 }

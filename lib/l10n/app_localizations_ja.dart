@@ -1592,4 +1592,71 @@ class AppLocalizationsJa extends AppLocalizations {
   String timeHoursAgo(int count) {
     return '$count時間前';
   }
+
+  @override
+  String get mapFilterSeen => '目撃済み';
+
+  @override
+  String get mapFilterUrgent => '緊急';
+
+  @override
+  String get mapLoadingLocation => '位置を検索中...';
+
+  @override
+  String get mapLocationPermissionRequired => '位置情報の許可が必要です';
+
+  @override
+  String get mapLocationPermissionDeniedDesc =>
+      '近くの迷子ペットのアラートを見るには位置情報へのアクセスを許可してください。';
+
+  @override
+  String get mapLocationPermissionDeniedForeverDesc =>
+      '位置情報の許可が永久に拒否されました。設定を開いてアクセスを許可してください。';
+
+  @override
+  String get mapLocationServiceDisabled => '位置情報サービスが無効です';
+
+  @override
+  String get mapLocationServiceDisabledDesc => 'マップを使用するには位置情報サービスを有効にしてください。';
+
+  @override
+  String get mapOpenSettings => '設定を開く';
+
+  @override
+  String get mapRetry => '再試行';
+
+  @override
+  String mapReportsNearby(int count) {
+    return '近くに$count件の報告';
+  }
+
+  @override
+  String get mapBadgeLost => '迷子';
+
+  @override
+  String get mapBadgeFound => '発見';
+
+  @override
+  String get mapBadgeUrgent => '緊急';
+
+  @override
+  String get mapBadgeReunited => '再会';
+
+  @override
+  String get mapAway => '離れた場所';
+
+  @override
+  String get mapView => '見る';
+
+  @override
+  String get mapViewDetails => '詳細を見る';
+
+  @override
+  String get mapContact => '連絡する';
+
+  @override
+  String get mapNavigate => 'ナビ';
+
+  @override
+  String get mapUrgentNearbyAlert => '近くで緊急アラート';
 }

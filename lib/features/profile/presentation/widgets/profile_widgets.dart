@@ -283,21 +283,38 @@ class ProfileStatGrid extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                width: 40,
-                height: 40,
+                width: 20,
+                height: 20,
                 decoration: BoxDecoration(
                   color: stat.color.withValues(alpha: 0.14),
                   borderRadius: AppRadius.mdBorder,
                 ),
                 child: Icon(stat.icon, color: stat.color),
               ),
-              const Spacer(),
-              Text(
-                stat.value,
-                style: AppTextStyles.heroTitle.copyWith(fontSize: 24),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        stat.value,
+                        maxLines: 1,
+                        style: AppTextStyles.heroTitle.copyWith(fontSize: 24),
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      stat.label,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: AppTextStyles.caption,
+                    ),
+                  ],
+                ),
               ),
-              const SizedBox(height: 4),
-              Text(stat.label, style: AppTextStyles.caption),
             ],
           ),
         );
