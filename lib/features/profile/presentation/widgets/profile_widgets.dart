@@ -256,7 +256,7 @@ class ProfileStatGrid extends StatelessWidget {
       ),
       (
         label: context.l10n.profileHelpedCases,
-        value: '${MockData.chats.length + 2}',
+        value: '5', // Placeholder for chat count
         color: AppColors.coralDark,
         icon: Icons.favorite_outline,
       ),

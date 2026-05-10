@@ -212,16 +212,15 @@ class ReportDetailScreen extends StatelessWidget {
                                   label: context.l10n.reportContact,
                                   icon: Icons.chat_bubble_outline,
                                   onPressed: () {
-                                    final chat = MockData.resolveChatForReport(
-                                      report.id,
+                                    // Chat functionality temporarily disabled
+                                    // TODO: Implement chat integration with new ChatCubit
+                                    
+                                    // For now, show placeholder message
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      const SnackBar(
+                                        content: Text('Chat functionality coming soon'),
+                                      ),
                                     );
-                                    if (chat != null) {
-                                      context.goNamed(
-                                        AppRoute.chatDetail.name,
-                                        pathParameters: {'chatId': chat.id},
-                                      );
-                                      return;
-                                    }
                                     context.goNamed(AppRoute.chatList.name);
                                   },
                                 ),

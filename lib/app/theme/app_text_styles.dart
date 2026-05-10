@@ -28,6 +28,12 @@ abstract final class AppTextStyles {
     fontFamily: headingFamily,
     fontSize: 24,
     fontWeight: FontWeight.w900,
+  );
+
+  static const headingMedium = TextStyle(
+    fontFamily: headingFamily,
+    fontSize: 20,
+    fontWeight: FontWeight.w700,
     color: AppColors.charcoal,
   );
 
