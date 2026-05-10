@@ -10,7 +10,7 @@ import '../../../../core/widgets/app_button.dart';
 import '../../../../core/widgets/app_card.dart';
 import '../../../../core/widgets/app_chip.dart';
 import '../../../mock/mock_data.dart';
-import '../../domain/chat_model.dart';
+// import '../../domain/chat_model.dart'; // Temporarily disabled
 import 'chat_widgets.dart';
 import 'package:pet_finder/core/localization/localization_extensions.dart';
 
@@ -110,7 +110,7 @@ class ContactQuickActionSheet extends StatelessWidget {
     super.key,
   });
 
-  final ChatModel chat;
+  final dynamic chat; // Placeholder for old ChatModel
   final VoidCallback onOpenChat;
   final VoidCallback onViewReport;
 

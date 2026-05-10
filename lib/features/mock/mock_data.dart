@@ -1,4 +1,4 @@
-import '../chat/domain/chat_model.dart';
+// import '../chat/domain/chat_model.dart';
 import '../community/domain/community_post_model.dart';
 import '../notifications/domain/notification_model.dart';
 import '../pets/domain/pet_model.dart';
@@ -249,23 +249,14 @@ abstract final class MockData {
     return null;
   }
 
-  static ChatModel? tryResolveChat(String chatId) {
-    for (final chat in chats) {
-      if (chat.id == chatId) {
-        return chat;
-      }
-    }
-    return null;
-  }
+  // Chat methods commented out due to model changes
+  // static ChatModel? tryResolveChat(String chatId) {
+  //   return null;
+  // }
 
-  static ChatModel? resolveChatForReport(String reportId) {
-    for (final chat in chats) {
-      if (chat.reportId == reportId) {
-        return chat;
-      }
-    }
-    return null;
-  }
+  // static ChatModel? resolveChatForReport(String reportId) {
+  //   return null;
+  // }
 
   static CommunityPostModel? tryResolveCommunityPost(String postId) {
     for (final post in communityPosts) {
@@ -355,78 +346,8 @@ abstract final class MockData {
     ),
   ];
 
-  static const chats = [
-    ChatModel(
-      id: 'chat_1',
-      contactName: 'An Tran',
-      reportTitle: 'Luna sighting',
-      reportId: 'report_luna_lost',
-      petName: 'Luna',
-      petId: 'pet_luna',
-      lastMessage: 'I saw a similar dog near the south gate.',
-      timeLabel: '3 min',
-      unreadCount: 2,
-      role: ChatParticipantRole.helper,
-      reportStatus: PetReportStatus.active,
-      messages: [
-        ChatMessageModel(
-          id: 'chat_1_msg_1',
-          text:
-              'Hi, I think I saw Luna near the south gate around 20 minutes ago.',
-          timeLabel: '10:12 AM',
-          isMine: false,
-        ),
-        ChatMessageModel(
-          id: 'chat_1_msg_2',
-          text: 'Thank you. Was she still wearing the teal collar?',
-          timeLabel: '10:13 AM',
-          isMine: true,
-        ),
-        ChatMessageModel(
-          id: 'chat_1_msg_3',
-          text:
-              'Yes, and she was walking with a calm golden dog posture. I can pin the exact corner.',
-          timeLabel: '10:14 AM',
-          isMine: false,
-        ),
-        ChatMessageModel(
-          id: 'chat_1_msg_4',
-          text: 'Nearby street corner photo placeholder',
-          timeLabel: '10:15 AM',
-          isMine: false,
-          type: ChatMessageType.image,
-        ),
-      ],
-    ),
-    ChatModel(
-      id: 'chat_2',
-      contactName: 'Mai Nguyen',
-      reportTitle: 'Orange tabby by Riverside Cafe',
-      reportId: 'report_milo_found',
-      petName: 'Unknown cat',
-      petId: 'pet_mochi',
-      lastMessage:
-          'I can stay here for another 15 minutes if the owner is on the way.',
-      timeLabel: '28 min',
-      unreadCount: 0,
-      role: ChatParticipantRole.reporter,
-      reportStatus: PetReportStatus.active,
-      messages: [
-        ChatMessageModel(
-          id: 'chat_2_msg_1',
-          text:
-              'Thanks for posting this. The markings look similar to a cat from our building.',
-          timeLabel: '9:26 AM',
-          isMine: true,
-        ),
-        ChatMessageModel(
-          id: 'chat_2_msg_2',
-          text:
-              'I can stay here for another 15 minutes if the owner is on the way.',
-          timeLabel: '9:28 AM',
-          isMine: false,
-        ),
-      ],
-    ),
-  ];
+  // Chat mock data commented out due to model changes
+  // static const chats = [];
+
+  static const lostPetReports = <PetReportModel>[];
 }
