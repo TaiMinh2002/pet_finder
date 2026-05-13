@@ -27,7 +27,6 @@ class _AccountSuccessScreenState extends State<AccountSuccessScreen> {
     setState(() => _isLoading = true);
     await Future<void>.delayed(const Duration(milliseconds: 320));
     if (!mounted) return;
-    mockAuth.signIn();
     showPetSnackBar(
       context,
       context.l10n.authSuccessTitle,
