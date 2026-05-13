@@ -12,6 +12,7 @@ import '../../../../app/theme/app_shadows.dart';
 import '../../../../app/theme/app_text_styles.dart';
 import '../../../../core/localization/localization_extensions.dart';
 import '../../../../core/widgets/app_asset_image.dart';
+import '../../domain/onboarding_controller.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -31,7 +32,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void _navigate() {
     if (!mounted) return;
-    context.goNamed(AppRoute.onboarding.name);
+    final route = onboardingController.hasSeenOnboarding
+        ? AppRoute.welcome
+        : AppRoute.onboarding;
+    context.goNamed(route.name);
   }
 
   void _onTapNavigate() {

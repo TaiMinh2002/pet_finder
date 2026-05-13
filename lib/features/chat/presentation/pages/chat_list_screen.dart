@@ -26,7 +26,6 @@ class _ChatListScreenState extends State<ChatListScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     return BlocBuilder<ChatCubit, ChatState>(
       builder: (context, state) {
         if (state is ChatLoading) {
@@ -51,7 +50,8 @@ class _ChatListScreenState extends State<ChatListScreen> {
                   ),
                   const SizedBox(height: 16),
                   ElevatedButton(
-                    onPressed: () => context.read<ChatCubit>().loadConversations(),
+                    onPressed: () =>
+                        context.read<ChatCubit>().loadConversations(),
                     child: const Text('Retry'),
                   ),
                 ],
@@ -60,7 +60,9 @@ class _ChatListScreenState extends State<ChatListScreen> {
           );
         }
 
-        final conversations = state is ConversationsLoaded ? state.conversations : <ChatConversation>[];
+        final conversations = state is ConversationsLoaded
+            ? state.conversations
+            : <ChatConversation>[];
         final sortedConversations = [...conversations]
           ..sort((a, b) => b.lastMessageTime.compareTo(a.lastMessageTime));
 
@@ -87,9 +89,16 @@ class _ChatListScreenState extends State<ChatListScreen> {
                     if (sortedConversations.isEmpty)
                       const _ChatEmptyCard()
                     else
-                      for (var index = 0; index < sortedConversations.length; index++) ...[
-                        _ChatConversationTile(conversation: sortedConversations[index]),
-                        if (index != sortedConversations.length - 1) const SizedBox(height: 12),
+                      for (
+                        var index = 0;
+                        index < sortedConversations.length;
+                        index++
+                      ) ...[
+                        _ChatConversationTile(
+                          conversation: sortedConversations[index],
+                        ),
+                        if (index != sortedConversations.length - 1)
+                          const SizedBox(height: 12),
                       ],
                   ],
                 ),
@@ -165,11 +174,7 @@ class _ChatEmptyCard extends StatelessWidget {
       padding: const EdgeInsets.all(32),
       child: Column(
         children: [
-          Icon(
-            Icons.chat_bubble_outline,
-            size: 64,
-            color: AppColors.muted,
-          ),
+          Icon(Icons.chat_bubble_outline, size: 64, color: AppColors.muted),
           const SizedBox(height: 16),
           Text(
             'No conversations yet',
@@ -195,8 +200,10 @@ class _ChatConversationTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final otherUserName = conversation.participantNames
-        .firstWhere((name) => name != 'Bạn', orElse: () => 'Unknown');
+    final otherUserName = conversation.participantNames.firstWhere(
+      (name) => name != 'Bạn',
+      orElse: () => 'Unknown',
+    );
 
     return GestureDetector(
       onTap: () {
@@ -270,8 +277,8 @@ class _ChatConversationTile extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    conversation.lastMessage.isEmpty 
-                        ? 'No messages yet' 
+                    conversation.lastMessage.isEmpty
+                        ? 'No messages yet'
                         : conversation.lastMessage,
                     style: AppTextStyles.caption.copyWith(
                       color: AppColors.muted,
@@ -290,10 +297,7 @@ class _ChatConversationTile extends StatelessWidget {
                 ],
               ),
             ),
-            const Icon(
-              Icons.chevron_right,
-              color: AppColors.muted,
-            ),
+            const Icon(Icons.chevron_right, color: AppColors.muted),
           ],
         ),
       ),
@@ -303,7 +307,7 @@ class _ChatConversationTile extends StatelessWidget {
   String _formatTime(DateTime dateTime) {
     final now = DateTime.now();
     final difference = now.difference(dateTime);
-    
+
     if (difference.inMinutes < 1) {
       return 'Just now';
     } else if (difference.inMinutes < 60) {

@@ -7,7 +7,7 @@ class AuthRepository {
   AuthRepository._();
 
   AuthUser? _currentUser;
-  
+
   /// Get current authenticated user
   AuthUser? get currentUser => _currentUser;
 
@@ -18,16 +18,16 @@ class AuthRepository {
   Future<AuthUser> login(String email, String password) async {
     // Simulate network delay
     await Future.delayed(const Duration(seconds: 1));
-    
+
     // Mock validation
     if (email.isEmpty || password.isEmpty) {
       throw Exception('Email và mật khẩu không được để trống');
     }
-    
+
     if (!email.contains('@')) {
       throw Exception('Email không hợp lệ');
     }
-    
+
     if (password.length < 6) {
       throw Exception('Mật khẩu phải có ít nhất 6 ký tự');
     }
@@ -54,16 +54,16 @@ class AuthRepository {
   }) async {
     // Simulate network delay
     await Future.delayed(const Duration(seconds: 2));
-    
+
     // Mock validation
     if (email.isEmpty || password.isEmpty || name.isEmpty) {
       throw Exception('Vui lòng điền đầy đủ thông tin');
     }
-    
+
     if (!email.contains('@')) {
       throw Exception('Email không hợp lệ');
     }
-    
+
     if (password.length < 6) {
       throw Exception('Mật khẩu phải có ít nhất 6 ký tự');
     }
@@ -84,22 +84,22 @@ class AuthRepository {
   /// Send OTP to phone number
   Future<void> sendOtp(String phoneNumber) async {
     await Future.delayed(const Duration(seconds: 1));
-    
+
     if (phoneNumber.isEmpty) {
       throw Exception('Số điện thoại không được để trống');
     }
-    
+
     // Mock OTP sent successfully
   }
 
   /// Verify OTP code
   Future<void> verifyOtp(String otpCode) async {
     await Future.delayed(const Duration(seconds: 1));
-    
+
     if (otpCode.isEmpty || otpCode.length != 6) {
       throw Exception('Mã OTP phải có 6 số');
     }
-    
+
     // Mock OTP verification (accept any 6-digit code for testing)
     if (_currentUser != null) {
       _currentUser = _currentUser!.copyWith(isPhoneVerified: true);
@@ -109,11 +109,11 @@ class AuthRepository {
   /// Send password reset email
   Future<void> resetPassword(String email) async {
     await Future.delayed(const Duration(seconds: 1));
-    
+
     if (email.isEmpty || !email.contains('@')) {
       throw Exception('Email không hợp lệ');
     }
-    
+
     // Mock password reset email sent
   }
 
@@ -130,7 +130,7 @@ class AuthRepository {
     String? avatarUrl,
   }) async {
     await Future.delayed(const Duration(seconds: 1));
-    
+
     if (_currentUser == null) {
       throw Exception('Người dùng chưa đăng nhập');
     }

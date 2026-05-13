@@ -271,6 +271,8 @@ Một task được xem là hoàn thành khi:
 - Dùng `SharedPreferences` cho key-value đơn giản (cấu hình, flags, small cache).
 - Không lưu dữ liệu nhạy cảm (tokens, phone, exact location) vào `SharedPreferences` không mã hóa.
 - Đóng gói `SharedPreferences` trong một lớp wrapper (ví dụ `LocalStorageService`) và expose interface để dễ mock trong test.
+- Với preference đơn giản dùng chung toàn app như `localeCode`, `hasSeenOnboarding`, theme hoặc UI flags, dùng một service chung trong `core` (ví dụ `AppPreferences`), không tạo nhiều `FeatureStorage` chỉ để bọc `SharedPreferences`.
+- Không lưu trạng thái đăng nhập bằng bool local như `isLoggedIn`; nguồn sự thật đăng nhập phải đến từ Firebase Authentication hoặc `AuthRepository/AuthCubit`.
 - Tạo file `lib/core/local/local_storage.dart` (interface) và `lib/core/local/shared_prefs_storage.dart` (cài đặt `SharedPreferences`).
 - Đặt tất cả keys vào một nơi tập trung (`core/constants/keys.dart`) để tránh xâu ký tự rải rác.
 - Nếu cần lưu collection phức tạp hoặc offline-first, cân nhắc `Hive` hoặc `sembast` thay vì `SharedPreferences`.
@@ -282,4 +284,3 @@ Một task được xem là hoàn thành khi:
 - Tạo mẫu feature theo Clean Architecture (`domain/data/presentation`) cho một feature mới.
 - Thêm example `Bloc`/`Cubit` và `bloc_test` template.
 - Thêm `LocalStorageService` wrapper và đăng ký dependency.
-

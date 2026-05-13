@@ -27,12 +27,10 @@ class AuthBlocWrapper extends StatelessWidget {
       builder: (context, state) {
         if (showLoading && state is AuthLoading) {
           return const Scaffold(
-            body: Center(
-              child: CircularProgressIndicator(),
-            ),
+            body: Center(child: CircularProgressIndicator()),
           );
         }
-        
+
         return child;
       },
     );

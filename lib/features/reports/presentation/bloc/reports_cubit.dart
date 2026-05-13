@@ -5,8 +5,8 @@ import 'reports_state.dart';
 
 class ReportsCubit extends Cubit<ReportsState> {
   ReportsCubit({ReportsRepository? reportsRepository})
-      : _reportsRepository = reportsRepository ?? ReportsRepository.instance,
-        super(const ReportsInitial());
+    : _reportsRepository = reportsRepository ?? ReportsRepository.instance,
+      super(const ReportsInitial());
 
   final ReportsRepository _reportsRepository;
   String? _currentUserId;
@@ -30,7 +30,7 @@ class ReportsCubit extends Cubit<ReportsState> {
         filterType: filterType,
         filterStatus: filterStatus,
       );
-      
+
       if (reports.isEmpty) {
         emit(const ReportsEmpty());
       } else {
@@ -55,7 +55,7 @@ class ReportsCubit extends Cubit<ReportsState> {
 
     try {
       final reports = await _reportsRepository.getUserReports(uid);
-      
+
       if (reports.isEmpty) {
         emit(const ReportsEmpty());
       } else {
@@ -74,7 +74,7 @@ class ReportsCubit extends Cubit<ReportsState> {
 
     try {
       final report = await _reportsRepository.getReportById(reportId);
-      
+
       if (report != null) {
         emit(ReportLoaded(report));
       } else {
@@ -121,10 +121,10 @@ class ReportsCubit extends Cubit<ReportsState> {
         ownerId: uid,
       );
 
-      final message = type == PetReportType.lost 
-          ? 'Đã đăng báo mất thú cưng' 
+      final message = type == PetReportType.lost
+          ? 'Đã đăng báo mất thú cưng'
           : 'Đã đăng báo tìm thấy thú cưng';
-      
+
       emit(ReportOperationSuccess(message, report: newReport));
     } catch (error) {
       emit(ReportsError(error.toString()));
@@ -164,7 +164,12 @@ class ReportsCubit extends Cubit<ReportsState> {
         longitude: longitude,
       );
 
-      emit(ReportOperationSuccess('Cập nhật báo cáo thành công', report: updatedReport));
+      emit(
+        ReportOperationSuccess(
+          'Cập nhật báo cáo thành công',
+          report: updatedReport,
+        ),
+      );
     } catch (error) {
       emit(ReportsError(error.toString()));
     }
@@ -178,7 +183,7 @@ class ReportsCubit extends Cubit<ReportsState> {
 
     try {
       await _reportsRepository.deleteReport(reportId);
-      
+
       emit(const ReportOperationSuccess('Xóa báo cáo thành công'));
     } catch (error) {
       emit(ReportsError(error.toString()));
@@ -193,7 +198,7 @@ class ReportsCubit extends Cubit<ReportsState> {
 
     try {
       final reports = await _reportsRepository.searchReports(query);
-      
+
       if (reports.isEmpty) {
         if (query.trim().isEmpty) {
           emit(const ReportsEmpty());
@@ -224,9 +229,9 @@ class ReportsCubit extends Cubit<ReportsState> {
         longitude: longitude,
         radiusKm: radiusKm,
       );
-      
+
       final locationLabel = 'Trong bán kính ${radiusKm.toInt()} km';
-      
+
       if (reports.isEmpty) {
         emit(const ReportsEmpty());
       } else {
@@ -245,8 +250,13 @@ class ReportsCubit extends Cubit<ReportsState> {
 
     try {
       final updatedReport = await _reportsRepository.markAsResolved(reportId);
-      
-      emit(ReportOperationSuccess('Đã đánh dấu báo cáo là đã giải quyết', report: updatedReport));
+
+      emit(
+        ReportOperationSuccess(
+          'Đã đánh dấu báo cáo là đã giải quyết',
+          report: updatedReport,
+        ),
+      );
     } catch (error) {
       emit(ReportsError(error.toString()));
     }
@@ -259,9 +269,16 @@ class ReportsCubit extends Cubit<ReportsState> {
     emit(const ReportsLoading());
 
     try {
-      final updatedReport = await _reportsRepository.markAsPossibleMatch(reportId);
-      
-      emit(ReportOperationSuccess('Đã đánh dấu báo cáo có thể trùng khớp', report: updatedReport));
+      final updatedReport = await _reportsRepository.markAsPossibleMatch(
+        reportId,
+      );
+
+      emit(
+        ReportOperationSuccess(
+          'Đã đánh dấu báo cáo có thể trùng khớp',
+          report: updatedReport,
+        ),
+      );
     } catch (error) {
       emit(ReportsError(error.toString()));
     }
@@ -275,7 +292,7 @@ class ReportsCubit extends Cubit<ReportsState> {
 
     try {
       await _reportsRepository.reportContent(reportId, reason);
-      
+
       emit(const ReportOperationSuccess('Đã báo cáo nội dung không phù hợp'));
     } catch (error) {
       emit(ReportsError(error.toString()));

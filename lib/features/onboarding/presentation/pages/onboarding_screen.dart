@@ -12,6 +12,7 @@ import '../../../../app/theme/app_text_styles.dart';
 import '../../../../core/localization/localization_extensions.dart';
 import '../../../../core/widgets/app_asset_image.dart';
 import '../../../../core/widgets/app_button.dart';
+import '../../domain/onboarding_controller.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -57,10 +58,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     ),
   ];
 
+  Future<void> _finish() async {
+    await onboardingController.complete();
+    if (!mounted) return;
+    context.goNamed(AppRoute.welcome.name);
+  }
+
   void _next() {
     final pages = _pages(context);
     if (_page == pages.length - 1) {
-      context.goNamed(AppRoute.welcome.name);
+      _finish();
       return;
     }
     _controller.nextPage(
@@ -84,7 +91,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 right: AppSpacing.screen,
                 top: 10,
                 child: TextButton(
-                  onPressed: () => context.goNamed(AppRoute.welcome.name),
+                  onPressed: _finish,
                   child: Text(
                     context.l10n.onboardingSkip,
                     style: AppTextStyles.bodyStrong.copyWith(

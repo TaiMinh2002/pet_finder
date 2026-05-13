@@ -38,9 +38,9 @@ abstract class BaseCubit<T extends BaseState> extends Cubit<T> {
   }) async {
     try {
       if (showLoading) emitLoading();
-      
+
       final result = await operation();
-      
+
       if (onSuccess != null) {
         onSuccess(result);
       } else {

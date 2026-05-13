@@ -214,11 +214,13 @@ class ReportDetailScreen extends StatelessWidget {
                                   onPressed: () {
                                     // Chat functionality temporarily disabled
                                     // TODO: Implement chat integration with new ChatCubit
-                                    
+
                                     // For now, show placeholder message
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       const SnackBar(
-                                        content: Text('Chat functionality coming soon'),
+                                        content: Text(
+                                          'Chat functionality coming soon',
+                                        ),
                                       ),
                                     );
                                     context.goNamed(AppRoute.chatList.name);

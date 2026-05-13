@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'locale_storage.dart';
+import '../storage/app_preferences.dart';
 
 class LocaleController extends ChangeNotifier {
-  LocaleController({LocaleStorage? storage})
-    : _storage = storage ?? LocaleStorage();
+  LocaleController({AppPreferences? preferences})
+    : _preferences = preferences ?? AppPreferences.instance;
 
   static const defaultLocale = Locale('vi');
   static const supportedLocales = <Locale>[
@@ -15,13 +15,13 @@ class LocaleController extends ChangeNotifier {
     Locale('zh'),
   ];
 
-  final LocaleStorage _storage;
+  final AppPreferences _preferences;
 
   Locale _locale = defaultLocale;
   Locale get locale => _locale;
 
   Future<void> load() async {
-    final storedCode = await _storage.loadLocaleCode();
+    final storedCode = await _preferences.loadLocaleCode();
     if (storedCode == null || storedCode.isEmpty) {
       _locale = defaultLocale;
       return;
@@ -37,7 +37,7 @@ class LocaleController extends ChangeNotifier {
     if (_locale == locale) return;
     _locale = locale;
     notifyListeners();
-    await _storage.saveLocaleCode(locale.languageCode);
+    await _preferences.saveLocaleCode(locale.languageCode);
   }
 }
 

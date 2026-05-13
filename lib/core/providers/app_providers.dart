@@ -21,25 +21,17 @@ class AppProviders extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         // Auth Cubit - Global state for authentication
-        BlocProvider<AuthCubit>(
-          create: (context) => AuthCubit(),
-        ),
-        
+        BlocProvider<AuthCubit>(create: (context) => AuthCubit()),
+
         // Pets Cubit - Global state for pets management
-        BlocProvider<PetsCubit>(
-          create: (context) => PetsCubit(),
-        ),
-        
+        BlocProvider<PetsCubit>(create: (context) => PetsCubit()),
+
         // Reports Cubit - Global state for reports
-        BlocProvider<ReportsCubit>(
-          create: (context) => ReportsCubit(),
-        ),
-        
+        BlocProvider<ReportsCubit>(create: (context) => ReportsCubit()),
+
         // Chat Cubit - Global state for chat
-        BlocProvider<ChatCubit>(
-          create: (context) => ChatCubit(),
-        ),
-        
+        BlocProvider<ChatCubit>(create: (context) => ChatCubit()),
+
         // Map Cubit - Global state for map
         BlocProvider<MapCubit>(
           create: (context) => MapCubit(MapLocationService()),
