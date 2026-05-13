@@ -11,9 +11,7 @@ class ChatScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: child,
-    );
+    return Scaffold(body: child);
   }
 }
 
@@ -38,8 +36,14 @@ class ChatHeader extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-          Text(subtitle, style: const TextStyle(fontSize: 16, color: Colors.grey)),
+          Text(
+            title,
+            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            subtitle,
+            style: const TextStyle(fontSize: 16, color: Colors.grey),
+          ),
         ],
       ),
     );
@@ -47,21 +51,14 @@ class ChatHeader extends StatelessWidget {
 }
 
 class CircleGlassButton extends StatelessWidget {
-  const CircleGlassButton({
-    required this.icon,
-    required this.onTap,
-    super.key,
-  });
+  const CircleGlassButton({required this.icon, required this.onTap, super.key});
 
   final IconData icon;
   final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      onPressed: onTap,
-      icon: Icon(icon),
-    );
+    return IconButton(onPressed: onTap, icon: Icon(icon));
   }
 }
 
@@ -170,7 +167,10 @@ class QuickActionStrip extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        IconButton(onPressed: onShareLocation, icon: const Icon(Icons.location_on)),
+        IconButton(
+          onPressed: onShareLocation,
+          icon: const Icon(Icons.location_on),
+        ),
         IconButton(onPressed: onSendPhoto, icon: const Icon(Icons.photo)),
         IconButton(onPressed: onCall, icon: const Icon(Icons.call)),
         IconButton(onPressed: onViewReport, icon: const Icon(Icons.report)),

@@ -9,10 +9,10 @@ abstract class PetsState extends BaseState {
 /// Initial pets state
 class PetsInitial extends PetsState {
   const PetsInitial();
-  
+
   @override
   bool operator ==(Object other) => other is PetsInitial;
-  
+
   @override
   int get hashCode => runtimeType.hashCode;
 }
@@ -20,10 +20,10 @@ class PetsInitial extends PetsState {
 /// Loading pets
 class PetsLoading extends PetsState {
   const PetsLoading();
-  
+
   @override
   bool operator ==(Object other) => other is PetsLoading;
-  
+
   @override
   int get hashCode => runtimeType.hashCode;
 }
@@ -31,15 +31,15 @@ class PetsLoading extends PetsState {
 /// Pets loaded successfully
 class PetsLoaded extends PetsState {
   const PetsLoaded(this.pets);
-  
+
   final List<PetModel> pets;
-  
+
   @override
   bool operator ==(Object other) =>
-      other is PetsLoaded && 
+      other is PetsLoaded &&
       other.pets.length == pets.length &&
       other.pets.every((pet) => pets.contains(pet));
-  
+
   @override
   int get hashCode => pets.hashCode;
 }
@@ -47,13 +47,12 @@ class PetsLoaded extends PetsState {
 /// Single pet loaded
 class PetLoaded extends PetsState {
   const PetLoaded(this.pet);
-  
+
   final PetModel pet;
-  
+
   @override
-  bool operator ==(Object other) =>
-      other is PetLoaded && other.pet == pet;
-  
+  bool operator ==(Object other) => other is PetLoaded && other.pet == pet;
+
   @override
   int get hashCode => pet.hashCode;
 }
@@ -61,16 +60,16 @@ class PetLoaded extends PetsState {
 /// Pet operation success (add/update/delete)
 class PetOperationSuccess extends PetsState {
   const PetOperationSuccess(this.message, {this.pet});
-  
+
   final String message;
   final PetModel? pet;
-  
+
   @override
   bool operator ==(Object other) =>
-      other is PetOperationSuccess && 
+      other is PetOperationSuccess &&
       other.message == message &&
       other.pet == pet;
-  
+
   @override
   int get hashCode => Object.hash(message, pet);
 }
@@ -78,13 +77,13 @@ class PetOperationSuccess extends PetsState {
 /// Pets error state
 class PetsError extends PetsState {
   const PetsError(this.message);
-  
+
   final String message;
-  
+
   @override
   bool operator ==(Object other) =>
       other is PetsError && other.message == message;
-  
+
   @override
   int get hashCode => message.hashCode;
 }
@@ -92,10 +91,10 @@ class PetsError extends PetsState {
 /// Empty pets state
 class PetsEmpty extends PetsState {
   const PetsEmpty();
-  
+
   @override
   bool operator ==(Object other) => other is PetsEmpty;
-  
+
   @override
   int get hashCode => runtimeType.hashCode;
 }

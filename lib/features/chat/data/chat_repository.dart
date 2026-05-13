@@ -12,7 +12,7 @@ class ChatRepository {
   /// Get user conversations
   Future<List<ChatConversation>> getConversations(String userId) async {
     await Future.delayed(const Duration(seconds: 1));
-    
+
     // Mock conversations
     if (_conversations.isEmpty) {
       _conversations.addAll([
@@ -36,14 +36,16 @@ class ChatRepository {
         ),
       ]);
     }
-    
-    return _conversations.where((conv) => conv.participantIds.contains(userId)).toList();
+
+    return _conversations
+        .where((conv) => conv.participantIds.contains(userId))
+        .toList();
   }
 
   /// Get messages for conversation
   Future<List<ChatMessage>> getMessages(String conversationId) async {
     await Future.delayed(const Duration(milliseconds: 500));
-    
+
     if (!_messages.containsKey(conversationId)) {
       // Mock messages
       _messages[conversationId] = [
@@ -62,7 +64,9 @@ class ChatRepository {
           senderId: 'current_user_id',
           senderName: 'Bạn',
           content: 'Thật sao? Ở đâu vậy?',
-          timestamp: DateTime.now().subtract(const Duration(hours: 2, minutes: 30)),
+          timestamp: DateTime.now().subtract(
+            const Duration(hours: 2, minutes: 30),
+          ),
           messageType: MessageType.text,
         ),
         ChatMessage(
@@ -76,7 +80,7 @@ class ChatRepository {
         ),
       ];
     }
-    
+
     return _messages[conversationId] ?? [];
   }
 
@@ -89,7 +93,7 @@ class ChatRepository {
     MessageType messageType = MessageType.text,
   }) async {
     await Future.delayed(const Duration(milliseconds: 800));
-    
+
     final message = ChatMessage(
       id: 'msg_${DateTime.now().millisecondsSinceEpoch}',
       conversationId: conversationId,
@@ -103,9 +107,9 @@ class ChatRepository {
     if (!_messages.containsKey(conversationId)) {
       _messages[conversationId] = [];
     }
-    
+
     _messages[conversationId]!.add(message);
-    
+
     // Update conversation last message
     final convIndex = _conversations.indexWhere((c) => c.id == conversationId);
     if (convIndex != -1) {
@@ -114,7 +118,7 @@ class ChatRepository {
         lastMessageTime: message.timestamp,
       );
     }
-    
+
     return message;
   }
 
@@ -126,7 +130,7 @@ class ChatRepository {
     String? reportId,
   }) async {
     await Future.delayed(const Duration(seconds: 1));
-    
+
     final conversation = ChatConversation(
       id: 'chat_${DateTime.now().millisecondsSinceEpoch}',
       participantIds: [userId, otherUserId],
@@ -136,7 +140,7 @@ class ChatRepository {
       unreadCount: 0,
       reportId: reportId,
     );
-    
+
     _conversations.insert(0, conversation);
     return conversation;
   }
@@ -144,7 +148,7 @@ class ChatRepository {
   /// Mark conversation as read
   Future<void> markAsRead(String conversationId, String userId) async {
     await Future.delayed(const Duration(milliseconds: 200));
-    
+
     final index = _conversations.indexWhere((c) => c.id == conversationId);
     if (index != -1) {
       _conversations[index] = _conversations[index].copyWith(unreadCount: 0);

@@ -4,9 +4,9 @@ import '../../domain/auth_user.dart';
 import 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
-  AuthCubit({AuthRepository? authRepository}) 
-      : _authRepository = authRepository ?? AuthRepository.instance,
-        super(const AuthInitial()) {
+  AuthCubit({AuthRepository? authRepository})
+    : _authRepository = authRepository ?? AuthRepository.instance,
+      super(const AuthInitial()) {
     _checkAuthStatus();
   }
 
@@ -27,7 +27,7 @@ class AuthCubit extends Cubit<AuthState> {
     if (state is AuthLoading) return;
 
     emit(const AuthLoading());
-    
+
     try {
       final user = await _authRepository.login(email, password);
       emit(AuthAuthenticated(user));
@@ -46,7 +46,7 @@ class AuthCubit extends Cubit<AuthState> {
     if (state is AuthLoading) return;
 
     emit(const AuthLoading());
-    
+
     try {
       final user = await _authRepository.register(
         email: email,
@@ -65,7 +65,7 @@ class AuthCubit extends Cubit<AuthState> {
     if (state is AuthLoading) return;
 
     emit(const AuthLoading());
-    
+
     try {
       await _authRepository.sendOtp(phoneNumber);
       emit(AuthOtpSent(phoneNumber));
@@ -79,7 +79,7 @@ class AuthCubit extends Cubit<AuthState> {
     if (state is AuthLoading) return;
 
     emit(const AuthLoading());
-    
+
     try {
       await _authRepository.verifyOtp(otpCode);
       final user = _authRepository.currentUser;
@@ -98,7 +98,7 @@ class AuthCubit extends Cubit<AuthState> {
     if (state is AuthLoading) return;
 
     emit(const AuthLoading());
-    
+
     try {
       await _authRepository.resetPassword(email);
       emit(AuthPasswordResetSent(email));
@@ -112,7 +112,7 @@ class AuthCubit extends Cubit<AuthState> {
     if (state is AuthLoading) return;
 
     emit(const AuthLoading());
-    
+
     try {
       await _authRepository.logout();
       emit(const AuthInitial());
@@ -134,7 +134,7 @@ class AuthCubit extends Cubit<AuthState> {
     }
 
     emit(const AuthLoading());
-    
+
     try {
       final user = await _authRepository.updateProfile(
         name: name,

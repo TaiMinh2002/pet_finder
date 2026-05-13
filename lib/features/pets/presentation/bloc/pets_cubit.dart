@@ -5,8 +5,8 @@ import 'pets_state.dart';
 
 class PetsCubit extends Cubit<PetsState> {
   PetsCubit({PetsRepository? petsRepository})
-      : _petsRepository = petsRepository ?? PetsRepository.instance,
-        super(const PetsInitial());
+    : _petsRepository = petsRepository ?? PetsRepository.instance,
+      super(const PetsInitial());
 
   final PetsRepository _petsRepository;
   String? _currentUserId;
@@ -30,7 +30,7 @@ class PetsCubit extends Cubit<PetsState> {
 
     try {
       final pets = await _petsRepository.getUserPets(uid);
-      
+
       if (pets.isEmpty) {
         emit(const PetsEmpty());
       } else {
@@ -49,7 +49,7 @@ class PetsCubit extends Cubit<PetsState> {
 
     try {
       final pet = await _petsRepository.getPetById(petId);
-      
+
       if (pet != null) {
         emit(PetLoaded(pet));
       } else {
@@ -101,7 +101,7 @@ class PetsCubit extends Cubit<PetsState> {
       );
 
       emit(PetOperationSuccess('Thêm thú cưng thành công', pet: newPet));
-      
+
       // Reload pets list
       loadUserPets();
     } catch (error) {
@@ -148,8 +148,10 @@ class PetsCubit extends Cubit<PetsState> {
         photoUrl: photoUrl,
       );
 
-      emit(PetOperationSuccess('Cập nhật thú cưng thành công', pet: updatedPet));
-      
+      emit(
+        PetOperationSuccess('Cập nhật thú cưng thành công', pet: updatedPet),
+      );
+
       // Reload pets list
       if (_currentUserId != null) {
         loadUserPets();
@@ -167,9 +169,9 @@ class PetsCubit extends Cubit<PetsState> {
 
     try {
       await _petsRepository.deletePet(petId);
-      
+
       emit(const PetOperationSuccess('Xóa thú cưng thành công'));
-      
+
       // Reload pets list
       if (_currentUserId != null) {
         loadUserPets();
@@ -193,7 +195,7 @@ class PetsCubit extends Cubit<PetsState> {
 
     try {
       final pets = await _petsRepository.searchPets(query, uid);
-      
+
       if (pets.isEmpty) {
         if (query.trim().isEmpty) {
           emit(const PetsEmpty());

@@ -11,7 +11,7 @@ abstract final class AppColors {
   static const green = Color(0xFF8ACB88);
   static const muted = Color(0xFF76665F);
   static const white = Color(0xFFFFFFFF);
-  
+
   // Additional colors for compatibility
   static const blue = Color(0xFF2196F3);
   static const red = Color(0xFFFF5722);

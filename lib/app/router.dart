@@ -19,6 +19,7 @@ import '../features/map/presentation/pages/nearby_alerts_map_screen.dart';
 import '../features/notifications/presentation/pages/notifications_screen.dart';
 import '../features/onboarding/presentation/pages/onboarding_screen.dart';
 import '../features/onboarding/presentation/pages/splash_screen.dart';
+import '../features/onboarding/domain/onboarding_controller.dart';
 import '../features/pets/presentation/pages/add_pet_profile_screen.dart';
 import '../features/pets/presentation/pages/edit_pet_profile_screen.dart';
 import '../features/pets/presentation/pages/my_pets_empty_screen.dart';
@@ -146,7 +147,7 @@ const _authenticatedRouteNames = {
 
 final appRouter = GoRouter(
   initialLocation: AppRoute.splash.path,
-  refreshListenable: mockAuth,
+  refreshListenable: Listenable.merge([mockAuth, onboardingController]),
   redirect: (context, state) {
     final routeName = state.topRoute?.name;
     final isAuthenticated = mockAuth.isAuthenticated;

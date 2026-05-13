@@ -50,9 +50,9 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
   Future<void> _sendMessage() async {
     final text = _composerController.text.trim();
     if (_isSending || text.isEmpty) return;
-    
+
     setState(() => _isSending = true);
-    
+
     try {
       await context.read<ChatCubit>().sendMessage(
         conversationId: widget.chatId,
@@ -129,7 +129,8 @@ class _ChatDetailScreenState extends State<ChatDetailScreen> {
             body: Stack(
               children: [
                 CustomScrollView(
-                  keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+                  keyboardDismissBehavior:
+                      ScrollViewKeyboardDismissBehavior.onDrag,
                   slivers: [
                     SliverPadding(
                       padding: const EdgeInsets.fromLTRB(
@@ -181,12 +182,9 @@ class _MessageBubble extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isMe = message.senderId == 'current_user_id';
-    
+
     return Container(
-      margin: EdgeInsets.only(
-        left: isMe ? 50 : 0,
-        right: isMe ? 0 : 50,
-      ),
+      margin: EdgeInsets.only(left: isMe ? 50 : 0, right: isMe ? 0 : 50),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: isMe ? AppColors.teal : AppColors.glass,
@@ -197,9 +195,7 @@ class _MessageBubble extends StatelessWidget {
         children: [
           Text(
             message.content,
-            style: TextStyle(
-              color: isMe ? Colors.white : Colors.black87,
-            ),
+            style: TextStyle(color: isMe ? Colors.white : Colors.black87),
           ),
           const SizedBox(height: 4),
           Text(
@@ -217,7 +213,7 @@ class _MessageBubble extends StatelessWidget {
   String _formatTime(DateTime dateTime) {
     final now = DateTime.now();
     final difference = now.difference(dateTime);
-    
+
     if (difference.inMinutes < 1) {
       return 'Just now';
     } else if (difference.inMinutes < 60) {

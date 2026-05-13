@@ -8,27 +8,35 @@ class ReportsRepository {
   ReportsRepository._();
 
   final List<PetReportModel> _reports = [];
-  
+
   /// Initialize with mock data
   void _initializeMockData() {
     if (_reports.isEmpty) {
-      _reports.addAll(MockData.lostPetReports.map((report) => report.copyWith(
-        ownerId: 'current_user_id', // Mock some reports as current user's
-        createdAt: DateTime.now().subtract(Duration(
-          hours: DateTime.now().millisecondsSinceEpoch % 72,
-        )),
-        updatedAt: DateTime.now(),
-      )));
-      
+      _reports.addAll(
+        MockData.lostPetReports.map(
+          (report) => report.copyWith(
+            ownerId: 'current_user_id', // Mock some reports as current user's
+            createdAt: DateTime.now().subtract(
+              Duration(hours: DateTime.now().millisecondsSinceEpoch % 72),
+            ),
+            updatedAt: DateTime.now(),
+          ),
+        ),
+      );
+
       // Add some reports from other users
-      _reports.addAll(MockData.lostPetReports.map((report) => report.copyWith(
-        id: 'other_${report.id}',
-        ownerId: 'other_user_id',
-        createdAt: DateTime.now().subtract(Duration(
-          hours: DateTime.now().millisecondsSinceEpoch % 120,
-        )),
-        updatedAt: DateTime.now(),
-      )));
+      _reports.addAll(
+        MockData.lostPetReports.map(
+          (report) => report.copyWith(
+            id: 'other_${report.id}',
+            ownerId: 'other_user_id',
+            createdAt: DateTime.now().subtract(
+              Duration(hours: DateTime.now().millisecondsSinceEpoch % 120),
+            ),
+            updatedAt: DateTime.now(),
+          ),
+        ),
+      );
     }
   }
 
@@ -38,47 +46,57 @@ class ReportsRepository {
     PetReportStatus? filterStatus,
   }) async {
     _initializeMockData();
-    
+
     await Future.delayed(const Duration(seconds: 1));
-    
+
     var filteredReports = List<PetReportModel>.from(_reports);
-    
+
     if (filterType != null) {
-      filteredReports = filteredReports.where((r) => r.type == filterType).toList();
+      filteredReports = filteredReports
+          .where((r) => r.type == filterType)
+          .toList();
     }
-    
+
     if (filterStatus != null) {
-      filteredReports = filteredReports.where((r) => r.status == filterStatus).toList();
+      filteredReports = filteredReports
+          .where((r) => r.status == filterStatus)
+          .toList();
     }
-    
+
     // Sort by creation date (newest first)
-    filteredReports.sort((a, b) => (b.createdAt ?? DateTime.now())
-        .compareTo(a.createdAt ?? DateTime.now()));
-    
+    filteredReports.sort(
+      (a, b) => (b.createdAt ?? DateTime.now()).compareTo(
+        a.createdAt ?? DateTime.now(),
+      ),
+    );
+
     return filteredReports;
   }
 
   /// Get user's own reports
   Future<List<PetReportModel>> getUserReports(String userId) async {
     _initializeMockData();
-    
+
     await Future.delayed(const Duration(milliseconds: 800));
-    
+
     final userReports = _reports.where((r) => r.ownerId == userId).toList();
-    
+
     // Sort by creation date (newest first)
-    userReports.sort((a, b) => (b.createdAt ?? DateTime.now())
-        .compareTo(a.createdAt ?? DateTime.now()));
-    
+    userReports.sort(
+      (a, b) => (b.createdAt ?? DateTime.now()).compareTo(
+        a.createdAt ?? DateTime.now(),
+      ),
+    );
+
     return userReports;
   }
 
   /// Get report by ID
   Future<PetReportModel?> getReportById(String reportId) async {
     _initializeMockData();
-    
+
     await Future.delayed(const Duration(milliseconds: 500));
-    
+
     try {
       return _reports.firstWhere((report) => report.id == reportId);
     } catch (e) {
@@ -100,24 +118,24 @@ class ReportsRepository {
     String? ownerId,
   }) async {
     await Future.delayed(const Duration(seconds: 2));
-    
+
     // Validation
     if (petName.trim().isEmpty) {
       throw Exception('Tên thú cưng không được để trống');
     }
-    
+
     if (breed.trim().isEmpty) {
       throw Exception('Giống thú cưng không được để trống');
     }
-    
+
     if (locationLabel.trim().isEmpty) {
       throw Exception('Địa điểm không được để trống');
     }
-    
+
     if (description.trim().isEmpty) {
       throw Exception('Mô tả không được để trống');
     }
-    
+
     if (contactInfo.trim().isEmpty) {
       throw Exception('Thông tin liên hệ không được để trống');
     }
@@ -147,7 +165,8 @@ class ReportsRepository {
   }
 
   /// Update existing report
-  Future<PetReportModel> updateReport(String reportId, {
+  Future<PetReportModel> updateReport(
+    String reportId, {
     PetReportType? type,
     PetReportStatus? status,
     String? petName,
@@ -160,7 +179,7 @@ class ReportsRepository {
     double? longitude,
   }) async {
     await Future.delayed(const Duration(seconds: 1));
-    
+
     final index = _reports.indexWhere((report) => report.id == reportId);
     if (index == -1) {
       throw Exception('Không tìm thấy báo cáo');
@@ -188,7 +207,7 @@ class ReportsRepository {
   /// Delete report
   Future<void> deleteReport(String reportId) async {
     await Future.delayed(const Duration(milliseconds: 800));
-    
+
     final index = _reports.indexWhere((report) => report.id == reportId);
     if (index == -1) {
       throw Exception('Không tìm thấy báo cáo');
@@ -200,36 +219,42 @@ class ReportsRepository {
   /// Search reports
   Future<List<PetReportModel>> searchReports(String query) async {
     await Future.delayed(const Duration(milliseconds: 600));
-    
+
     if (query.trim().isEmpty) {
       return getAllReports();
     }
 
     _initializeMockData();
     final searchQuery = query.toLowerCase();
-    
-    final searchResults = _reports.where((report) =>
-        report.petName.toLowerCase().contains(searchQuery) ||
-        report.breed.toLowerCase().contains(searchQuery) ||
-        report.locationLabel.toLowerCase().contains(searchQuery) ||
-        report.description.toLowerCase().contains(searchQuery)
-    ).toList();
-    
+
+    final searchResults = _reports
+        .where(
+          (report) =>
+              report.petName.toLowerCase().contains(searchQuery) ||
+              report.breed.toLowerCase().contains(searchQuery) ||
+              report.locationLabel.toLowerCase().contains(searchQuery) ||
+              report.description.toLowerCase().contains(searchQuery),
+        )
+        .toList();
+
     // Sort by relevance (exact matches first, then partial matches)
     searchResults.sort((a, b) {
-      final aExactMatch = a.petName.toLowerCase() == searchQuery ||
-                         a.breed.toLowerCase() == searchQuery;
-      final bExactMatch = b.petName.toLowerCase() == searchQuery ||
-                         b.breed.toLowerCase() == searchQuery;
-      
+      final aExactMatch =
+          a.petName.toLowerCase() == searchQuery ||
+          a.breed.toLowerCase() == searchQuery;
+      final bExactMatch =
+          b.petName.toLowerCase() == searchQuery ||
+          b.breed.toLowerCase() == searchQuery;
+
       if (aExactMatch && !bExactMatch) return -1;
       if (!aExactMatch && bExactMatch) return 1;
-      
+
       // If both or neither are exact matches, sort by date
-      return (b.createdAt ?? DateTime.now())
-          .compareTo(a.createdAt ?? DateTime.now());
+      return (b.createdAt ?? DateTime.now()).compareTo(
+        a.createdAt ?? DateTime.now(),
+      );
     });
-    
+
     return searchResults;
   }
 
@@ -240,29 +265,34 @@ class ReportsRepository {
     double radiusKm = 10.0,
   }) async {
     await Future.delayed(const Duration(milliseconds: 800));
-    
+
     _initializeMockData();
-    
+
     // For mock, return all reports and simulate distance
-    final nearbyReports = _reports.map((report) {
-      // Mock distance calculation
-      final mockDistance = (DateTime.now().millisecondsSinceEpoch % 20).toDouble();
-      return report.copyWith(
-        distanceLabel: '${mockDistance.toStringAsFixed(1)} km',
-      );
-    }).where((report) {
-      // Filter by mock radius
-      final distance = double.tryParse(report.distanceLabel.replaceAll(' km', '')) ?? 0;
-      return distance <= radiusKm;
-    }).toList();
-    
+    final nearbyReports = _reports
+        .map((report) {
+          // Mock distance calculation
+          final mockDistance = (DateTime.now().millisecondsSinceEpoch % 20)
+              .toDouble();
+          return report.copyWith(
+            distanceLabel: '${mockDistance.toStringAsFixed(1)} km',
+          );
+        })
+        .where((report) {
+          // Filter by mock radius
+          final distance =
+              double.tryParse(report.distanceLabel.replaceAll(' km', '')) ?? 0;
+          return distance <= radiusKm;
+        })
+        .toList();
+
     // Sort by distance
     nearbyReports.sort((a, b) {
       final distA = double.tryParse(a.distanceLabel.replaceAll(' km', '')) ?? 0;
       final distB = double.tryParse(b.distanceLabel.replaceAll(' km', '')) ?? 0;
       return distA.compareTo(distB);
     });
-    
+
     return nearbyReports;
   }
 
@@ -279,7 +309,7 @@ class ReportsRepository {
   /// Report inappropriate content
   Future<void> reportContent(String reportId, String reason) async {
     await Future.delayed(const Duration(milliseconds: 500));
-    
+
     // In real implementation, this would flag the report for moderation
     // For mock, we just update the status
     updateReport(reportId, status: PetReportStatus.reported);
@@ -289,7 +319,7 @@ class ReportsRepository {
   String _formatTimeLabel(DateTime dateTime) {
     final now = DateTime.now();
     final difference = now.difference(dateTime);
-    
+
     if (difference.inMinutes < 60) {
       return '${difference.inMinutes} phút trước';
     } else if (difference.inHours < 24) {

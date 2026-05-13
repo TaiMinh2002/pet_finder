@@ -18,12 +18,12 @@ class ChatLoading extends ChatState {
 class ConversationsLoaded extends ChatState {
   const ConversationsLoaded(this.conversations);
   final List<ChatConversation> conversations;
-  
+
   @override
   bool operator ==(Object other) =>
-      other is ConversationsLoaded && 
+      other is ConversationsLoaded &&
       other.conversations.length == conversations.length;
-  
+
   @override
   int get hashCode => conversations.hashCode;
 }
@@ -32,13 +32,13 @@ class MessagesLoaded extends ChatState {
   const MessagesLoaded(this.messages, this.conversationId);
   final List<ChatMessage> messages;
   final String conversationId;
-  
+
   @override
   bool operator ==(Object other) =>
-      other is MessagesLoaded && 
+      other is MessagesLoaded &&
       other.conversationId == conversationId &&
       other.messages.length == messages.length;
-  
+
   @override
   int get hashCode => Object.hash(messages, conversationId);
 }
@@ -46,11 +46,11 @@ class MessagesLoaded extends ChatState {
 class MessageSent extends ChatState {
   const MessageSent(this.message);
   final ChatMessage message;
-  
+
   @override
   bool operator ==(Object other) =>
       other is MessageSent && other.message == message;
-  
+
   @override
   int get hashCode => message.hashCode;
 }
@@ -58,19 +58,19 @@ class MessageSent extends ChatState {
 class ChatError extends ChatState {
   const ChatError(this.message);
   final String message;
-  
+
   @override
   bool operator ==(Object other) =>
       other is ChatError && other.message == message;
-  
+
   @override
   int get hashCode => message.hashCode;
 }
 
 class ChatCubit extends Cubit<ChatState> {
   ChatCubit({ChatRepository? chatRepository})
-      : _chatRepository = chatRepository ?? ChatRepository.instance,
-        super(const ChatInitial());
+    : _chatRepository = chatRepository ?? ChatRepository.instance,
+      super(const ChatInitial());
 
   final ChatRepository _chatRepository;
   String? _currentUserId;
@@ -126,9 +126,9 @@ class ChatCubit extends Cubit<ChatState> {
         content: content,
         messageType: messageType,
       );
-      
+
       emit(MessageSent(message));
-      
+
       // Reload messages to show the new message
       loadMessages(conversationId);
     } catch (error) {
@@ -156,7 +156,7 @@ class ChatCubit extends Cubit<ChatState> {
         otherUserName: otherUserName,
         reportId: reportId,
       );
-      
+
       // Load messages for the new conversation
       loadMessages(conversation.id);
     } catch (error) {

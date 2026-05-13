@@ -4,6 +4,8 @@ import 'package:pet_finder/app/app.dart';
 import 'package:pet_finder/app/router.dart';
 import 'package:pet_finder/core/localization/locale_controller.dart';
 import 'package:pet_finder/features/mock/mock_data.dart';
+import 'package:pet_finder/features/onboarding/domain/onboarding_controller.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> pumpApp(WidgetTester tester) async {
   await tester.pumpWidget(PetFinderApp(localeController: appLocaleController));
@@ -11,7 +13,10 @@ Future<void> pumpApp(WidgetTester tester) async {
 }
 
 void main() {
-  setUp(() {
+  setUp(() async {
+    SharedPreferences.setMockInitialValues({});
+    await appLocaleController.updateLocale(const Locale('en'));
+    onboardingController.resetForTest();
     mockAuth.signOut();
     appRouter.goNamed(AppRoute.splash.name);
   });
@@ -30,6 +35,18 @@ void main() {
 
     expect(find.text('Skip'), findsOneWidget);
     expect(find.text('Report a lost pet in seconds'), findsOneWidget);
+  });
+
+  testWidgets('splash skips onboarding after completion', (tester) async {
+    await onboardingController.complete();
+    appRouter.goNamed(AppRoute.splash.name);
+
+    await pumpApp(tester);
+    await tester.pump(const Duration(seconds: 3));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Welcome home'), findsOneWidget);
+    expect(find.text('Report a lost pet in seconds'), findsNothing);
   });
 
   testWidgets('home renders for authenticated users', (tester) async {
