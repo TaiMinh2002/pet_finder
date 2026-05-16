@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../app/router.dart';
@@ -6,6 +7,7 @@ import '../../../../app/theme/app_colors.dart';
 import '../../../../app/theme/app_spacing.dart';
 import '../../../../core/localization/localization_extensions.dart';
 import '../../../../core/utils/app_feedback.dart';
+import '../../../auth/presentation/bloc/auth_cubit.dart';
 import '../widgets/profile_widgets.dart';
 
 class ProfileOverviewScreen extends StatelessWidget {
@@ -100,8 +102,9 @@ class ProfileOverviewScreen extends StatelessWidget {
                       subtitle: context.l10n.profileLogoutSubtitle,
                       icon: Icons.logout_rounded,
                       color: AppColors.coral,
-                      onTap: () {
-                        mockAuth.signOut();
+                      onTap: () async {
+                        await context.read<AuthCubit>().logout();
+                        if (!context.mounted) return;
                         showPetSnackBar(
                           context,
                           context.l10n.profileSignedOut,

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import '../../../../core/bloc/bloc_exports.dart';
 import '../../data/auth_repository.dart';
 import '../../domain/auth_user.dart';
@@ -7,10 +9,19 @@ class AuthCubit extends Cubit<AuthState> {
   AuthCubit({AuthRepository? authRepository})
     : _authRepository = authRepository ?? AuthRepository.instance,
       super(const AuthInitial()) {
+    _subscription = _authRepository.authStateChanges().listen((user) {
+      if (isClosed) return;
+      if (user == null) {
+        emit(const AuthInitial());
+      } else {
+        emit(AuthAuthenticated(user));
+      }
+    });
     _checkAuthStatus();
   }
 
   final AuthRepository _authRepository;
+  late final StreamSubscription<AuthUser?> _subscription;
 
   /// Check current authentication status
   void _checkAuthStatus() {
@@ -32,7 +43,7 @@ class AuthCubit extends Cubit<AuthState> {
       final user = await _authRepository.login(email, password);
       emit(AuthAuthenticated(user));
     } catch (error) {
-      emit(AuthError(error.toString()));
+      emit(AuthError(_messageFromError(error)));
     }
   }
 
@@ -56,7 +67,7 @@ class AuthCubit extends Cubit<AuthState> {
       );
       emit(AuthAuthenticated(user));
     } catch (error) {
-      emit(AuthError(error.toString()));
+      emit(AuthError(_messageFromError(error)));
     }
   }
 
@@ -70,7 +81,7 @@ class AuthCubit extends Cubit<AuthState> {
       await _authRepository.sendOtp(phoneNumber);
       emit(AuthOtpSent(phoneNumber));
     } catch (error) {
-      emit(AuthError(error.toString()));
+      emit(AuthError(_messageFromError(error)));
     }
   }
 
@@ -89,7 +100,7 @@ class AuthCubit extends Cubit<AuthState> {
         emit(const AuthError('Không thể xác thực người dùng'));
       }
     } catch (error) {
-      emit(AuthError(error.toString()));
+      emit(AuthError(_messageFromError(error)));
     }
   }
 
@@ -103,7 +114,7 @@ class AuthCubit extends Cubit<AuthState> {
       await _authRepository.resetPassword(email);
       emit(AuthPasswordResetSent(email));
     } catch (error) {
-      emit(AuthError(error.toString()));
+      emit(AuthError(_messageFromError(error)));
     }
   }
 
@@ -117,7 +128,7 @@ class AuthCubit extends Cubit<AuthState> {
       await _authRepository.logout();
       emit(const AuthInitial());
     } catch (error) {
-      emit(AuthError(error.toString()));
+      emit(AuthError(_messageFromError(error)));
     }
   }
 
@@ -143,7 +154,7 @@ class AuthCubit extends Cubit<AuthState> {
       );
       emit(AuthAuthenticated(user));
     } catch (error) {
-      emit(AuthError(error.toString()));
+      emit(AuthError(_messageFromError(error)));
     }
   }
 
@@ -164,4 +175,15 @@ class AuthCubit extends Cubit<AuthState> {
 
   /// Check if user is logged in
   bool get isLoggedIn => _authRepository.isLoggedIn;
+
+  String _messageFromError(Object error) {
+    if (error is AuthFailure) return error.message;
+    return error.toString();
+  }
+
+  @override
+  Future<void> close() {
+    _subscription.cancel();
+    return super.close();
+  }
 }

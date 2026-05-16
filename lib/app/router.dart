@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../features/auth/data/auth_repository.dart';
 import '../features/auth/presentation/pages/account_success_screen.dart';
 import '../features/auth/presentation/pages/forgot_password_screen.dart';
 import '../features/auth/presentation/pages/login_screen.dart';
 import '../features/auth/presentation/pages/otp_verification_screen.dart';
 import '../features/auth/presentation/pages/sign_up_screen.dart';
 import '../features/auth/presentation/pages/welcome_screen.dart';
+import '../features/auth/presentation/bloc/auth_session_controller.dart';
 import '../features/chat/presentation/pages/chat_detail_screen.dart';
 import '../features/chat/presentation/pages/chat_list_screen.dart';
 import '../features/community/presentation/pages/community_empty_screen.dart';
@@ -83,26 +85,6 @@ enum AppRoute {
   final String name;
 }
 
-class MockAuthController extends ChangeNotifier {
-  bool _isAuthenticated = false;
-
-  bool get isAuthenticated => _isAuthenticated;
-
-  void signIn() {
-    if (_isAuthenticated) return;
-    _isAuthenticated = true;
-    notifyListeners();
-  }
-
-  void signOut() {
-    if (!_isAuthenticated) return;
-    _isAuthenticated = false;
-    notifyListeners();
-  }
-}
-
-final mockAuth = MockAuthController();
-
 const _publicRouteNames = {
   'splash',
   'onboarding',
@@ -111,7 +93,6 @@ const _publicRouteNames = {
   'signUp',
   'forgotPassword',
   'otp',
-  'accountSuccess',
 };
 
 const _authenticatedRouteNames = {
@@ -143,14 +124,16 @@ const _authenticatedRouteNames = {
   'remindersDetail',
   'remindersEdit',
   'remindersCompleted',
+  'accountSuccess',
 };
 
 final appRouter = GoRouter(
   initialLocation: AppRoute.splash.path,
-  refreshListenable: Listenable.merge([mockAuth, onboardingController]),
+  refreshListenable: Listenable.merge([authSession, onboardingController]),
   redirect: (context, state) {
     final routeName = state.topRoute?.name;
-    final isAuthenticated = mockAuth.isAuthenticated;
+    final isAuthenticated =
+        authSession.isAuthenticated || AuthRepository.instance.isLoggedIn;
     final isPublic = _publicRouteNames.contains(routeName);
     final isProtected = _authenticatedRouteNames.contains(routeName);
 
