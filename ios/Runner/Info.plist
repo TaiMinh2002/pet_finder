@@ -51,6 +51,10 @@
 	<string>Pet Finder cần quyền truy cập vị trí để hiển thị các cảnh báo thú cưng thất lạc gần bạn.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Pet Finder cần quyền truy cập vị trí để hiển thị các cảnh báo thú cưng thất lạc gần bạn.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Pet Finder cần quyền truy cập camera để bạn chụp ảnh đại diện.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Pet Finder cần quyền truy cập thư viện ảnh để bạn chọn ảnh đại diện.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

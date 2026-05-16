@@ -81,6 +81,8 @@ class FirebaseAuthRepository implements AuthRepository {
       return user;
     } on firebase_auth.FirebaseAuthException catch (error) {
       throw AuthFailure.fromFirebase(error);
+    } on FirebaseException catch (error) {
+      throw AuthFailure.fromFirestore(error);
     }
   }
 
@@ -111,6 +113,8 @@ class FirebaseAuthRepository implements AuthRepository {
       return user;
     } on firebase_auth.FirebaseAuthException catch (error) {
       throw AuthFailure.fromFirebase(error);
+    } on FirebaseException catch (error) {
+      throw AuthFailure.fromFirestore(error);
     }
   }
 
@@ -179,6 +183,7 @@ class FirebaseAuthRepository implements AuthRepository {
       'email': user.email,
       'avatarUrl': user.avatarUrl,
       'homeLocation': null,
+      'city': null,
       'notificationRadiusKm': 5,
       'isPhoneVerified': user.isPhoneVerified,
       'role': 'user',
@@ -220,6 +225,17 @@ class AuthFailure implements Exception {
 
   factory AuthFailure.fromFirebase(firebase_auth.FirebaseAuthException error) {
     return AuthFailure(_messageForCode(error.code));
+  }
+
+  factory AuthFailure.fromFirestore(FirebaseException error) {
+    return switch (error.code) {
+      'permission-denied' => const AuthFailure(
+        'Tài khoản đã được tạo nhưng chưa thể lưu hồ sơ người dùng. Hãy kiểm tra Firestore Rules.',
+      ),
+      _ => const AuthFailure(
+        'Không thể lưu hồ sơ người dùng. Vui lòng thử lại.',
+      ),
+    };
   }
 
   static String _messageForCode(String code) {

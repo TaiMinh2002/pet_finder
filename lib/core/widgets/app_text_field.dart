@@ -14,6 +14,7 @@ class AppTextField extends StatelessWidget {
     this.controller,
     this.maxLines = 1,
     this.enabled = true,
+    this.readOnly = false,
     this.obscureText = false,
     this.keyboardType,
     this.textInputAction,
@@ -30,6 +31,7 @@ class AppTextField extends StatelessWidget {
   final TextEditingController? controller;
   final int maxLines;
   final bool enabled;
+  final bool readOnly;
   final bool obscureText;
   final TextInputType? keyboardType;
   final TextInputAction? textInputAction;
@@ -63,6 +65,7 @@ class AppTextField extends StatelessWidget {
         TextField(
           controller: controller,
           enabled: enabled,
+          readOnly: readOnly,
           onChanged: onChanged,
           onTapOutside: dismissKeyboardOnTapOutside
               ? (_) => FocusManager.instance.primaryFocus?.unfocus()

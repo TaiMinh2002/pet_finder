@@ -9,6 +9,7 @@ import '../../features/reports/presentation/bloc/reports_cubit.dart';
 import '../../features/chat/presentation/bloc/chat_cubit.dart';
 import '../../features/map/presentation/bloc/map_cubit.dart';
 import '../../features/map/services/map_location_service.dart';
+import '../../features/profile/presentation/bloc/profile_cubit.dart';
 
 /// Provides all BLoC instances to the app
 class AppProviders extends StatelessWidget {
@@ -25,6 +26,9 @@ class AppProviders extends StatelessWidget {
 
         // Pets Cubit - Global state for pets management
         BlocProvider<PetsCubit>(create: (context) => PetsCubit()),
+
+        // Profile Cubit - User profile data and updates
+        BlocProvider<ProfileCubit>(create: (context) => ProfileCubit()),
 
         // Reports Cubit - Global state for reports
         BlocProvider<ReportsCubit>(create: (context) => ReportsCubit()),
@@ -47,10 +51,12 @@ class AppProviders extends StatelessWidget {
                 context.read<PetsCubit>().setUserId(state.user.id);
                 context.read<ReportsCubit>().setUserId(state.user.id);
                 context.read<ChatCubit>().setUserId(state.user.id);
+                context.read<ProfileCubit>().loadProfile();
               } else if (state is AuthInitial) {
                 // User logged out - reset other cubits
                 context.read<PetsCubit>().reset();
                 context.read<ReportsCubit>().reset();
+                context.read<ProfileCubit>().reset();
               }
             },
           ),

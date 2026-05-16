@@ -16,6 +16,7 @@ import '../../../../core/widgets/app_chip.dart';
 import '../../../../core/widgets/empty_state.dart';
 import '../../../mock/mock_data.dart';
 import '../../../reports/domain/pet_report_model.dart';
+import '../../domain/user_profile.dart';
 
 class ProfileScaffold extends StatelessWidget {
   const ProfileScaffold({
@@ -187,7 +188,9 @@ class CircleGlassButton extends StatelessWidget {
 }
 
 class ProfileHeroCard extends StatelessWidget {
-  const ProfileHeroCard({super.key});
+  const ProfileHeroCard({required this.profile, super.key});
+
+  final UserProfile profile;
 
   @override
   Widget build(BuildContext context) {
@@ -198,19 +201,19 @@ class ProfileHeroCard extends StatelessWidget {
       padding: const EdgeInsets.all(18),
       child: Row(
         children: [
-          const _ProfileAvatar(size: 92),
+          _ProfileAvatar(size: 92, avatarUrl: profile.avatarUrl),
           const SizedBox(width: 16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  MockData.profileName,
+                  profile.name,
                   style: AppTextStyles.heroTitle.copyWith(fontSize: 24),
                 ),
                 const SizedBox(height: 6),
                 Text(
-                  MockData.profileEmail,
+                  profile.email,
                   style: AppTextStyles.bodyStrong.copyWith(fontSize: 13),
                 ),
                 const SizedBox(height: 6),
@@ -319,6 +322,57 @@ class ProfileStatGrid extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class ProfileHeroLoadingCard extends StatelessWidget {
+  const ProfileHeroLoadingCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppCard(
+      color: AppColors.glass,
+      radius: 32,
+      shadow: AppShadows.raisedCard,
+      padding: const EdgeInsets.all(18),
+      child: const Row(
+        children: [
+          _ProfileAvatar(size: 92),
+          SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _ProfileSkeletonLine(width: 120, height: 20),
+                SizedBox(height: 10),
+                _ProfileSkeletonLine(width: 180, height: 14),
+                SizedBox(height: 10),
+                _ProfileSkeletonLine(width: double.infinity, height: 14),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _ProfileSkeletonLine extends StatelessWidget {
+  const _ProfileSkeletonLine({required this.width, required this.height});
+
+  final double width;
+  final double height;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: width,
+      height: height,
+      decoration: BoxDecoration(
+        color: AppColors.white.withValues(alpha: 0.7),
+        borderRadius: AppRadius.mdBorder,
+      ),
     );
   }
 }
@@ -684,9 +738,10 @@ class ProfileMenuItemData {
 }
 
 class _ProfileAvatar extends StatelessWidget {
-  const _ProfileAvatar({required this.size});
+  const _ProfileAvatar({required this.size, this.avatarUrl});
 
   final double size;
+  final String? avatarUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -697,10 +752,22 @@ class _ProfileAvatar extends StatelessWidget {
         color: AppColors.white,
         borderRadius: BorderRadius.circular(size * 0.32),
       ),
-      child: AppAssetImage(
-        assetPath: AppImages.profileAvatarDog,
-        borderRadius: BorderRadius.circular(size * 0.32),
-      ),
+      child: avatarUrl == null || avatarUrl!.isEmpty
+          ? AppAssetImage(
+              assetPath: AppImages.profileAvatarDog,
+              borderRadius: BorderRadius.circular(size * 0.32),
+            )
+          : ClipRRect(
+              borderRadius: BorderRadius.circular(size * 0.32),
+              child: Image.network(
+                avatarUrl!,
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) => AppAssetImage(
+                  assetPath: AppImages.profileAvatarDog,
+                  borderRadius: BorderRadius.circular(size * 0.32),
+                ),
+              ),
+            ),
     );
   }
 }

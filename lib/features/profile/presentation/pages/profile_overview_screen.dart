@@ -8,10 +8,29 @@ import '../../../../app/theme/app_spacing.dart';
 import '../../../../core/localization/localization_extensions.dart';
 import '../../../../core/utils/app_feedback.dart';
 import '../../../auth/presentation/bloc/auth_cubit.dart';
+import '../bloc/profile_cubit.dart';
+import '../bloc/profile_state.dart';
 import '../widgets/profile_widgets.dart';
 
-class ProfileOverviewScreen extends StatelessWidget {
+class ProfileOverviewScreen extends StatefulWidget {
   const ProfileOverviewScreen({super.key});
+
+  @override
+  State<ProfileOverviewScreen> createState() => _ProfileOverviewScreenState();
+}
+
+class _ProfileOverviewScreenState extends State<ProfileOverviewScreen> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      final state = context.read<ProfileCubit>().state;
+      if (state is ProfileInitial) {
+        context.read<ProfileCubit>().loadProfile();
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +55,17 @@ class ProfileOverviewScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 18),
-                const ProfileHeroCard(),
+                BlocBuilder<ProfileCubit, ProfileState>(
+                  builder: (context, state) {
+                    if (state is ProfileReady) {
+                      return ProfileHeroCard(profile: state.profile);
+                    }
+                    if (state is ProfileError && state.profile != null) {
+                      return ProfileHeroCard(profile: state.profile!);
+                    }
+                    return const ProfileHeroLoadingCard();
+                  },
+                ),
                 const SizedBox(height: 16),
                 const ProfileStatGrid(),
                 const SizedBox(height: 18),

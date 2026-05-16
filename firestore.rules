@@ -1,0 +1,30 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId} {
+      allow create: if isSignedIn()
+        && isOwner(userId)
+        && request.resource.data.role == 'user'
+        && request.resource.data.email == request.auth.token.email;
+
+      allow read: if isSignedIn() && isOwner(userId);
+
+      allow update: if isSignedIn()
+        && isOwner(userId)
+        && request.resource.data.role == resource.data.role
+        && request.resource.data.email == resource.data.email
+        && request.resource.data.createdAt == resource.data.createdAt;
+
+      allow delete: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+  }
+}
