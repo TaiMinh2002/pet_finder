@@ -140,6 +140,66 @@ void main() {
     expect(find.text('Lost or found a pet?'), findsOneWidget);
   });
 
+  testWidgets('login form validates required fields before submit', (
+    tester,
+  ) async {
+    await pumpApp(tester);
+    appRouter.goNamed(AppRoute.login.name);
+    await tester.pumpAndSettle();
+
+    await tester.ensureVisible(find.text('Log in'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Log in'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Email không được để trống.'), findsOneWidget);
+    expect(find.text('Mật khẩu không được để trống.'), findsOneWidget);
+    expect(fakeAuthRepository.currentUser, isNull);
+  });
+
+  testWidgets('auth input dismisses keyboard when tapping outside', (
+    tester,
+  ) async {
+    await pumpApp(tester);
+    appRouter.goNamed(AppRoute.login.name);
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.byType(TextField).first);
+    await tester.pump();
+    final inputState = tester.state<EditableTextState>(
+      find.byType(EditableText).first,
+    );
+    expect(inputState.widget.focusNode.hasFocus, isTrue);
+
+    await tester.tap(find.text('Welcome back'));
+    await tester.pump();
+
+    expect(inputState.widget.focusNode.hasFocus, isFalse);
+  });
+
+  testWidgets('sign up form validates password strength', (tester) async {
+    await pumpApp(tester);
+    appRouter.goNamed(AppRoute.signUp.name);
+    await tester.pumpAndSettle();
+
+    await tester.enterText(find.byType(TextField).at(0), 'Test User');
+    await tester.enterText(find.byType(TextField).at(1), 'test@example.com');
+    await tester.enterText(find.byType(TextField).at(2), 'password');
+    await tester.enterText(find.byType(TextField).at(3), 'password');
+    await tester.ensureVisible(find.text('Create account'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Create account'));
+    await tester.pumpAndSettle();
+
+    expect(
+      find.text(
+        'Mật khẩu cần có chữ hoa, chữ thường và số hoặc ký tự đặc biệt.',
+      ),
+      findsOneWidget,
+    );
+    expect(fakeAuthRepository.currentUser, isNull);
+  });
+
   testWidgets('forgot password form shows success state', (tester) async {
     await pumpApp(tester);
     appRouter.goNamed(AppRoute.forgotPassword.name);

@@ -3,6 +3,7 @@
 ## 1. Quy tắc chung
 
 - Ứng dụng dùng Flutter, Firebase và Cloudinary.
+- Trước khi triển khai task, phải đọc các thư mục và tệp trong .agent (nếu có) vì chúng chứa định nghĩa agent, skills và các quy tắc chi tiết cần tuân thủ.
 - Viết code dễ đọc, tách rõ UI, state, repository/service và model.
 - Không đặt secret key trong source code client.
 - Không để client ghi dữ liệu nhạy cảm nếu chưa qua rule hoặc Cloud Functions.

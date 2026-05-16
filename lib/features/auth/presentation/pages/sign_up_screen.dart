@@ -12,6 +12,7 @@ import '../../../../core/widgets/app_button.dart';
 import '../../../../core/widgets/app_text_field.dart';
 import '../bloc/auth_cubit.dart';
 import '../bloc/auth_state.dart';
+import '../utils/auth_form_validators.dart';
 import '../widgets/auth_scaffold.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -26,6 +27,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
+  String? _nameError;
+  String? _emailError;
+  String? _passwordError;
+  String? _confirmPasswordError;
+  bool _isPasswordVisible = false;
+  bool _isConfirmPasswordVisible = false;
 
   @override
   void dispose() {
@@ -37,20 +44,68 @@ class _SignUpScreenState extends State<SignUpScreen> {
   }
 
   void _submit() {
-    if (_passwordController.text != _confirmPasswordController.text) {
-      showPetSnackBar(
-        context,
-        'Mật khẩu xác nhận không khớp.',
-        icon: Icons.error_outline,
-        backgroundColor: AppColors.coralDark,
-      );
-      return;
-    }
+    FocusManager.instance.primaryFocus?.unfocus();
+    if (!_validate()) return;
     context.read<AuthCubit>().register(
       email: _emailController.text,
       password: _passwordController.text,
       name: _nameController.text,
     );
+  }
+
+  bool _validate() {
+    final nameError = AuthFormValidators.fullName(_nameController.text);
+    final emailError = AuthFormValidators.email(_emailController.text);
+    final passwordError = AuthFormValidators.strongPassword(
+      _passwordController.text,
+    );
+    final confirmPasswordError = AuthFormValidators.confirmPassword(
+      _confirmPasswordController.text,
+      _passwordController.text,
+    );
+    setState(() {
+      _nameError = nameError;
+      _emailError = emailError;
+      _passwordError = passwordError;
+      _confirmPasswordError = confirmPasswordError;
+    });
+    return [
+      nameError,
+      emailError,
+      passwordError,
+      confirmPasswordError,
+    ].every((error) => error == null);
+  }
+
+  void _clearNameError(String value) {
+    if (_nameError == null) return;
+    setState(() => _nameError = AuthFormValidators.fullName(value));
+  }
+
+  void _clearEmailError(String value) {
+    if (_emailError == null) return;
+    setState(() => _emailError = AuthFormValidators.email(value));
+  }
+
+  void _clearPasswordError(String value) {
+    if (_passwordError == null && _confirmPasswordError == null) return;
+    setState(() {
+      _passwordError = AuthFormValidators.strongPassword(value);
+      _confirmPasswordError = AuthFormValidators.confirmPassword(
+        _confirmPasswordController.text,
+        value,
+      );
+    });
+  }
+
+  void _clearConfirmPasswordError(String value) {
+    if (_confirmPasswordError == null) return;
+    setState(() {
+      _confirmPasswordError = AuthFormValidators.confirmPassword(
+        value,
+        _passwordController.text,
+      );
+    });
   }
 
   @override
@@ -104,6 +159,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   controller: _nameController,
                   textInputAction: TextInputAction.next,
                   enabled: !isLoading,
+                  required: true,
+                  errorText: _nameError,
+                  onChanged: _clearNameError,
+                  dismissKeyboardOnTapOutside: false,
                 ),
                 const SizedBox(height: 12),
                 AppTextField(
@@ -114,6 +173,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   keyboardType: TextInputType.emailAddress,
                   textInputAction: TextInputAction.next,
                   enabled: !isLoading,
+                  required: true,
+                  errorText: _emailError,
+                  onChanged: _clearEmailError,
+                  dismissKeyboardOnTapOutside: false,
                 ),
                 const SizedBox(height: 12),
                 AppTextField(
@@ -121,9 +184,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   hint: context.l10n.authHintCreatePassword,
                   icon: Icons.lock_outline,
                   controller: _passwordController,
-                  obscureText: true,
+                  obscureText: !_isPasswordVisible,
                   textInputAction: TextInputAction.next,
                   enabled: !isLoading,
+                  required: true,
+                  errorText: _passwordError,
+                  onChanged: _clearPasswordError,
+                  dismissKeyboardOnTapOutside: false,
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        _isPasswordVisible = !_isPasswordVisible;
+                      });
+                    },
+                    icon: Icon(
+                      _isPasswordVisible
+                          ? Icons.visibility_off_outlined
+                          : Icons.visibility_outlined,
+                      color: AppColors.muted,
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 12),
                 AppTextField(
@@ -131,9 +211,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   hint: context.l10n.authHintRepeatPassword,
                   icon: Icons.verified_user_outlined,
                   controller: _confirmPasswordController,
-                  obscureText: true,
+                  obscureText: !_isConfirmPasswordVisible,
                   textInputAction: TextInputAction.done,
                   enabled: !isLoading,
+                  required: true,
+                  errorText: _confirmPasswordError,
+                  onChanged: _clearConfirmPasswordError,
+                  dismissKeyboardOnTapOutside: false,
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        _isConfirmPasswordVisible = !_isConfirmPasswordVisible;
+                      });
+                    },
+                    icon: Icon(
+                      _isConfirmPasswordVisible
+                          ? Icons.visibility_off_outlined
+                          : Icons.visibility_outlined,
+                      color: AppColors.muted,
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 18),
                 AppButton(

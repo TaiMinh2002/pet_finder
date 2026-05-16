@@ -61,63 +61,65 @@ class AuthScaffold extends StatelessWidget {
               final contentBottomPadding =
                   AppSpacing.xxxl + MediaQuery.viewInsetsOf(context).bottom;
 
-              return Stack(
-                children: [
-                  const _AuthBackdrop(),
-                  SingleChildScrollView(
-                    keyboardDismissBehavior:
-                        ScrollViewKeyboardDismissBehavior.onDrag,
-                    padding: EdgeInsets.fromLTRB(
-                      AppSpacing.screen,
-                      topPadding,
-                      AppSpacing.screen,
-                      contentBottomPadding,
-                    ),
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints(
-                        minHeight: constraints.maxHeight - topPadding,
+              return GestureDetector(
+                behavior: HitTestBehavior.translucent,
+                onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+                child: Stack(
+                  children: [
+                    const _AuthBackdrop(),
+                    SingleChildScrollView(
+                      padding: EdgeInsets.fromLTRB(
+                        AppSpacing.screen,
+                        topPadding,
+                        AppSpacing.screen,
+                        contentBottomPadding,
                       ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          if (leading != null) ...[
-                            Align(
-                              alignment: Alignment.centerLeft,
-                              child: leading!,
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          minHeight: constraints.maxHeight - topPadding,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            if (leading != null) ...[
+                              Align(
+                                alignment: Alignment.centerLeft,
+                                child: leading!,
+                              ),
+                              const SizedBox(height: AppSpacing.lg),
+                            ],
+                            if (illustration != null) ...[
+                              illustration!,
+                              SizedBox(height: headerGap),
+                            ],
+                            Text(
+                              title,
+                              textAlign: TextAlign.center,
+                              style: AppTextStyles.heroTitle.copyWith(
+                                fontSize: isRegisterCompact ? 30 : null,
+                                fontWeight: FontWeight.w900,
+                              ),
                             ),
-                            const SizedBox(height: AppSpacing.lg),
-                          ],
-                          if (illustration != null) ...[
-                            illustration!,
-                            SizedBox(height: headerGap),
-                          ],
-                          Text(
-                            title,
-                            textAlign: TextAlign.center,
-                            style: AppTextStyles.heroTitle.copyWith(
-                              fontSize: isRegisterCompact ? 30 : null,
-                              fontWeight: FontWeight.w900,
+                            SizedBox(height: titleSubtitleGap),
+                            Text(
+                              subtitle,
+                              textAlign: TextAlign.center,
+                              style: AppTextStyles.body.copyWith(
+                                fontSize: isRegisterCompact ? 14 : 15,
+                              ),
                             ),
-                          ),
-                          SizedBox(height: titleSubtitleGap),
-                          Text(
-                            subtitle,
-                            textAlign: TextAlign.center,
-                            style: AppTextStyles.body.copyWith(
-                              fontSize: isRegisterCompact ? 14 : 15,
-                            ),
-                          ),
-                          SizedBox(height: subtitleFormGap),
-                          ...children,
-                          if (footer != null) ...[
-                            const SizedBox(height: AppSpacing.lg),
-                            footer!,
+                            SizedBox(height: subtitleFormGap),
+                            ...children,
+                            if (footer != null) ...[
+                              const SizedBox(height: AppSpacing.lg),
+                              footer!,
+                            ],
                           ],
-                        ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               );
             },
           ),
