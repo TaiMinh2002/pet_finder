@@ -979,6 +979,71 @@ class AppLocalizationsVi extends AppLocalizations {
       'Hãy dùng ảnh hồ sơ ấm áp và dễ nhận ra sau.';
 
   @override
+  String get editProfileAlertOptions => 'Tùy chọn cảnh báo';
+
+  @override
+  String get editProfilePickFromGallery => 'Chọn từ thư viện';
+
+  @override
+  String get editProfileTakePhoto => 'Chụp ảnh mới';
+
+  @override
+  String get editProfileChangePhoto => 'Đổi ảnh';
+
+  @override
+  String get editProfileContactInfo => 'Thông tin liên hệ';
+
+  @override
+  String get editProfileNameHint => 'Nhập họ và tên';
+
+  @override
+  String get editProfilePhoneHint => 'Nhập số điện thoại';
+
+  @override
+  String get editProfileEmailHint => 'Địa chỉ email';
+
+  @override
+  String get editProfileCityHint => 'Nhập thành phố';
+
+  @override
+  String get editProfileRadiusHint => '1–100 km';
+
+  @override
+  String get editProfileNameRequired => 'Tên không được để trống.';
+
+  @override
+  String get editProfilePhoneRequired => 'Số điện thoại không được để trống.';
+
+  @override
+  String get editProfilePhoneInvalid => 'Số điện thoại không hợp lệ.';
+
+  @override
+  String get editProfileEmailRequired => 'Email không được để trống.';
+
+  @override
+  String get editProfileEmailInvalid => 'Email không hợp lệ.';
+
+  @override
+  String get editProfileCityRequired => 'Thành phố không được để trống.';
+
+  @override
+  String get editProfileRadiusNumberRequired => 'Bán kính cần là một số.';
+
+  @override
+  String get editProfileRadiusRangeError =>
+      'Bán kính cần nằm trong khoảng 1–100 km.';
+
+  @override
+  String get editProfileRequiredFieldsError =>
+      'Vui lòng kiểm tra lại các trường bắt buộc.';
+
+  @override
+  String get editProfileSaved => 'Đã lưu hồ sơ thành công.';
+
+  @override
+  String get editProfileLoading => 'Đang tải hồ sơ của bạn...';
+
+  @override
   String get editProfileRadius => 'Bán kính nhận cảnh báo';
 
   @override

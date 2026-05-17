@@ -1,48 +1,38 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import '../domain/pet_model.dart';
-import '../../mock/mock_data.dart';
 
-/// Mock pets repository
 class PetsRepository {
+  PetsRepository({FirebaseFirestore? firestore}) : _firestore = firestore;
+
   static PetsRepository? _instance;
-  static PetsRepository get instance => _instance ??= PetsRepository._();
-  PetsRepository._();
+  static PetsRepository get instance => _instance ??= PetsRepository();
 
-  final List<PetModel> _pets = [];
+  final FirebaseFirestore? _firestore;
 
-  /// Initialize with mock data
-  void _initializeMockData() {
-    if (_pets.isEmpty) {
-      _pets.addAll(
-        MockData.pets.map(
-          (pet) => pet.copyWith(
-            ownerId: 'current_user_id', // Mock current user as owner
-          ),
-        ),
-      );
-    }
-  }
+  FirebaseFirestore get _resolvedFirestore =>
+      _firestore ?? FirebaseFirestore.instance;
 
   /// Get all pets for current user
   Future<List<PetModel>> getUserPets(String userId) async {
-    _initializeMockData();
-
-    // Simulate network delay
-    await Future.delayed(const Duration(seconds: 1));
-
-    return _pets.where((pet) => pet.ownerId == userId).toList();
+    final snapshot = await _resolvedFirestore
+        .collection('pets')
+        .where('ownerId', isEqualTo: userId)
+        .get();
+    return snapshot.docs
+        .map((document) => PetModel.fromJson(document.id, document.data()))
+        .toList();
   }
 
   /// Get pet by ID
   Future<PetModel?> getPetById(String petId) async {
-    _initializeMockData();
-
-    await Future.delayed(const Duration(milliseconds: 500));
-
-    try {
-      return _pets.firstWhere((pet) => pet.id == petId);
-    } catch (e) {
-      return null;
-    }
+    final document = await _resolvedFirestore
+        .collection('pets')
+        .doc(petId)
+        .get();
+    final data = document.data();
+    if (!document.exists || data == null) return null;
+    return PetModel.fromJson(document.id, data);
   }
 
   /// Add new pet
@@ -60,9 +50,6 @@ class PetsRepository {
     String? photoUrl,
     String? ownerId,
   }) async {
-    await Future.delayed(const Duration(seconds: 1));
-
-    // Validation
     if (name.trim().isEmpty) {
       throw Exception('Tên thú cưng không được để trống');
     }
@@ -71,8 +58,9 @@ class PetsRepository {
       throw Exception('Giống thú cưng không được để trống');
     }
 
+    final document = _resolvedFirestore.collection('pets').doc();
     final newPet = PetModel(
-      id: 'pet_${DateTime.now().millisecondsSinceEpoch}',
+      id: document.id,
       name: name.trim(),
       type: type,
       breed: breed.trim(),
@@ -89,10 +77,14 @@ class PetsRepository {
       medicalNotes: '',
       reminderLabel: 'Không có nhắc nhở',
       photoUrl: photoUrl,
-      ownerId: ownerId ?? 'current_user_id',
+      ownerId: ownerId,
     );
 
-    _pets.add(newPet);
+    await document.set({
+      ...newPet.toJson(),
+      'createdAt': FieldValue.serverTimestamp(),
+      'updatedAt': FieldValue.serverTimestamp(),
+    });
     return newPet;
   }
 
@@ -113,14 +105,11 @@ class PetsRepository {
     String? medicalNotes,
     String? photoUrl,
   }) async {
-    await Future.delayed(const Duration(seconds: 1));
-
-    final index = _pets.indexWhere((pet) => pet.id == petId);
-    if (index == -1) {
+    final currentPet = await getPetById(petId);
+    if (currentPet == null) {
       throw Exception('Không tìm thấy thú cưng');
     }
 
-    final currentPet = _pets[index];
     final updatedPet = currentPet.copyWith(
       name: name,
       type: type,
@@ -137,26 +126,24 @@ class PetsRepository {
       photoUrl: photoUrl,
     );
 
-    _pets[index] = updatedPet;
+    await _resolvedFirestore.collection('pets').doc(petId).set({
+      ...updatedPet.toJson(),
+      'updatedAt': FieldValue.serverTimestamp(),
+    }, SetOptions(merge: true));
     return updatedPet;
   }
 
   /// Delete pet
   Future<void> deletePet(String petId) async {
-    await Future.delayed(const Duration(milliseconds: 800));
-
-    final index = _pets.indexWhere((pet) => pet.id == petId);
-    if (index == -1) {
+    final currentPet = await getPetById(petId);
+    if (currentPet == null) {
       throw Exception('Không tìm thấy thú cưng');
     }
-
-    _pets.removeAt(index);
+    await _resolvedFirestore.collection('pets').doc(petId).delete();
   }
 
   /// Search pets by name
   Future<List<PetModel>> searchPets(String query, String userId) async {
-    await Future.delayed(const Duration(milliseconds: 300));
-
     if (query.trim().isEmpty) {
       return getUserPets(userId);
     }
@@ -176,7 +163,11 @@ class PetsRepository {
 
   /// Get pets count for user
   Future<int> getPetsCount(String userId) async {
-    final userPets = await getUserPets(userId);
-    return userPets.length;
+    final snapshot = await _resolvedFirestore
+        .collection('pets')
+        .where('ownerId', isEqualTo: userId)
+        .count()
+        .get();
+    return snapshot.count ?? 0;
   }
 }

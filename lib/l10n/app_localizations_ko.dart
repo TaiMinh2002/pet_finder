@@ -946,6 +946,70 @@ class AppLocalizationsKo extends AppLocalizations {
       'Use a warm, recognizable profile photo later.';
 
   @override
+  String get editProfileAlertOptions => '알림 옵션';
+
+  @override
+  String get editProfilePickFromGallery => '갤러리에서 선택';
+
+  @override
+  String get editProfileTakePhoto => '새 사진 촬영';
+
+  @override
+  String get editProfileChangePhoto => '사진 변경';
+
+  @override
+  String get editProfileContactInfo => '연락처 정보';
+
+  @override
+  String get editProfileNameHint => 'Your full name';
+
+  @override
+  String get editProfilePhoneHint => 'Phone number';
+
+  @override
+  String get editProfileEmailHint => 'Email address';
+
+  @override
+  String get editProfileCityHint => 'Your city';
+
+  @override
+  String get editProfileRadiusHint =>
+      'How far nearby alerts should feel relevant';
+
+  @override
+  String get editProfileNameRequired => '이름을 입력해 주세요.';
+
+  @override
+  String get editProfilePhoneRequired => '전화번호를 입력해 주세요.';
+
+  @override
+  String get editProfilePhoneInvalid => '전화번호가 올바르지 않습니다.';
+
+  @override
+  String get editProfileEmailRequired => '이메일을 입력해 주세요.';
+
+  @override
+  String get editProfileEmailInvalid => '이메일이 올바르지 않습니다.';
+
+  @override
+  String get editProfileCityRequired => '도시를 입력해 주세요.';
+
+  @override
+  String get editProfileRadiusNumberRequired => '반경은 숫자여야 합니다.';
+
+  @override
+  String get editProfileRadiusRangeError => '반경은 1~100 km 사이여야 합니다.';
+
+  @override
+  String get editProfileRequiredFieldsError => '필수 항목을 확인해 주세요.';
+
+  @override
+  String get editProfileSaved => 'Profile saved successfully.';
+
+  @override
+  String get editProfileLoading => '프로필을 불러오는 중...';
+
+  @override
   String get editProfileRadius => 'Alert radius preference';
 
   @override

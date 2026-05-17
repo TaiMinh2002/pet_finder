@@ -14,7 +14,6 @@ import '../../../../core/widgets/app_bottom_nav.dart';
 import '../../../../core/widgets/app_card.dart';
 import '../../../../core/widgets/app_chip.dart';
 import '../../../../core/widgets/empty_state.dart';
-import '../../../mock/mock_data.dart';
 import '../../../pets/domain/pet_model.dart';
 import '../../domain/reminder_model.dart';
 
@@ -287,11 +286,13 @@ class ReminderGroupSection extends StatelessWidget {
   const ReminderGroupSection({
     required this.title,
     required this.reminders,
+    required this.pets,
     super.key,
   });
 
   final String title;
   final List<ReminderModel> reminders;
+  final List<PetModel> pets;
 
   @override
   Widget build(BuildContext context) {
@@ -316,6 +317,7 @@ class ReminderGroupSection extends StatelessWidget {
         for (var index = 0; index < reminders.length; index++) ...[
           ReminderTimelineCard(
             reminder: reminders[index],
+            pets: pets,
             isLast: index == reminders.length - 1,
           ),
           if (index != reminders.length - 1) const SizedBox(height: 12),
@@ -328,19 +330,18 @@ class ReminderGroupSection extends StatelessWidget {
 class ReminderTimelineCard extends StatelessWidget {
   const ReminderTimelineCard({
     required this.reminder,
+    required this.pets,
     super.key,
     this.isLast = false,
   });
 
   final ReminderModel reminder;
+  final List<PetModel> pets;
   final bool isLast;
 
   @override
   Widget build(BuildContext context) {
-    final pet = MockData.pets.firstWhere(
-      (item) => item.id == reminder.petId,
-      orElse: () => MockData.pets.first,
-    );
+    final pet = pets.where((item) => item.id == reminder.petId).firstOrNull;
     final categoryMeta = reminderCategoryMeta(context, reminder.category);
 
     return InkWell(
@@ -396,13 +397,18 @@ class ReminderTimelineCard extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      _PetAvatar(pet: pet, size: 48),
+                      pet == null
+                          ? const _UnknownPetAvatar(size: 48)
+                          : _PetAvatar(pet: pet, size: 48),
                       const SizedBox(width: 12),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(pet.name, style: AppTextStyles.bodyStrong),
+                            Text(
+                              pet?.name ?? 'Thú cưng chưa khả dụng',
+                              style: AppTextStyles.bodyStrong,
+                            ),
                             const SizedBox(height: 4),
                             Text(
                               categoryMeta.label,
@@ -804,6 +810,25 @@ class _PetAvatar extends StatelessWidget {
         assetPath: pet.photoUrl ?? AppImages.petCardFor(pet.type),
         borderRadius: BorderRadius.circular(size * 0.36),
       ),
+    );
+  }
+}
+
+class _UnknownPetAvatar extends StatelessWidget {
+  const _UnknownPetAvatar({required this.size});
+
+  final double size;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: size,
+      height: size,
+      decoration: BoxDecoration(
+        color: AppColors.fieldWarm,
+        borderRadius: BorderRadius.circular(size * 0.36),
+      ),
+      child: const Icon(Icons.pets, color: AppColors.coral),
     );
   }
 }

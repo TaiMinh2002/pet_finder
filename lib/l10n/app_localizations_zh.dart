@@ -929,6 +929,69 @@ class AppLocalizationsZh extends AppLocalizations {
       'Use a warm, recognizable profile photo later.';
 
   @override
+  String get editProfileAlertOptions => '警报选项';
+
+  @override
+  String get editProfilePickFromGallery => '从相册选择';
+
+  @override
+  String get editProfileTakePhoto => '拍摄新照片';
+
+  @override
+  String get editProfileChangePhoto => '更换照片';
+
+  @override
+  String get editProfileContactInfo => '联系信息';
+
+  @override
+  String get editProfileNameHint => '您的全名';
+
+  @override
+  String get editProfilePhoneHint => '电话号码';
+
+  @override
+  String get editProfileEmailHint => '电子邮件地址';
+
+  @override
+  String get editProfileCityHint => '您的城市';
+
+  @override
+  String get editProfileRadiusHint => '附近警报应该感觉相关的距离';
+
+  @override
+  String get editProfileNameRequired => '姓名不能为空。';
+
+  @override
+  String get editProfilePhoneRequired => '电话号码不能为空。';
+
+  @override
+  String get editProfilePhoneInvalid => '电话号码无效。';
+
+  @override
+  String get editProfileEmailRequired => '电子邮件不能为空。';
+
+  @override
+  String get editProfileEmailInvalid => '电子邮件无效。';
+
+  @override
+  String get editProfileCityRequired => '城市不能为空。';
+
+  @override
+  String get editProfileRadiusNumberRequired => '半径必须是数字。';
+
+  @override
+  String get editProfileRadiusRangeError => '半径必须在 1–100 km 之间。';
+
+  @override
+  String get editProfileRequiredFieldsError => '请检查必填字段。';
+
+  @override
+  String get editProfileSaved => '档案保存成功。';
+
+  @override
+  String get editProfileLoading => '正在加载您的档案...';
+
+  @override
   String get editProfileRadius => '警报半径偏好';
 
   @override

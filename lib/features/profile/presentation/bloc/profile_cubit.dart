@@ -3,6 +3,7 @@ import 'dart:io';
 import '../../../../core/bloc/bloc_exports.dart';
 import '../../data/cloudinary_avatar_service.dart';
 import '../../data/profile_repository.dart';
+import '../../domain/profile_overview_stats.dart';
 import '../../domain/user_profile.dart';
 import 'profile_state.dart';
 
@@ -17,9 +18,19 @@ class ProfileCubit extends Cubit<ProfileState> {
     emit(const ProfileLoading());
     try {
       final profile = await _repository.getCurrentProfile();
-      emit(ProfileReady(profile));
+      emit(ProfileReady(profile, isStatsLoading: true));
+      await _loadOverviewStats(profile);
     } catch (error) {
       emit(ProfileError(_messageFromError(error)));
+    }
+  }
+
+  Future<void> _loadOverviewStats(UserProfile profile) async {
+    try {
+      final stats = await _repository.getOverviewStats(profile.id);
+      emit(ProfileReady(profile, stats: stats));
+    } catch (_) {
+      emit(ProfileReady(profile));
     }
   }
 
@@ -32,7 +43,15 @@ class ProfileCubit extends Cubit<ProfileState> {
   }) async {
     final current = _currentProfile;
     if (current == null) return;
-    emit(ProfileReady(current, isSaving: true));
+    final stats = _currentStats;
+    emit(
+      ProfileReady(
+        current,
+        stats: stats,
+        isStatsLoading: _isStatsLoading,
+        isSaving: true,
+      ),
+    );
     try {
       final profile = await _repository.updateProfile(
         currentProfile: current,
@@ -42,29 +61,45 @@ class ProfileCubit extends Cubit<ProfileState> {
         notificationRadiusKm: notificationRadiusKm,
         avatarUrl: avatarUrl,
       );
-      emit(ProfileReady(profile));
+      emit(
+        ProfileReady(profile, stats: stats, isStatsLoading: _isStatsLoading),
+      );
     } catch (error) {
-      emit(ProfileError(_messageFromError(error), profile: current));
+      emit(
+        ProfileError(_messageFromError(error), profile: current, stats: stats),
+      );
     }
   }
 
   Future<String?> uploadAvatar(File file) async {
     final current = _currentProfile;
     if (current == null) return null;
-    emit(ProfileReady(current, isUploading: true));
+    final stats = _currentStats;
+    emit(
+      ProfileReady(
+        current,
+        stats: stats,
+        isStatsLoading: _isStatsLoading,
+        isUploading: true,
+      ),
+    );
     try {
       final url = await _repository.uploadAvatar(file);
-      emit(ProfileReady(current));
+      emit(
+        ProfileReady(current, stats: stats, isStatsLoading: _isStatsLoading),
+      );
       return url;
     } catch (error) {
-      emit(ProfileError(_messageFromError(error), profile: current));
+      emit(
+        ProfileError(_messageFromError(error), profile: current, stats: stats),
+      );
       return null;
     }
   }
 
   void restoreReadyState() {
     final current = _currentProfile;
-    if (current != null) emit(ProfileReady(current));
+    if (current != null) emit(ProfileReady(current, stats: _currentStats));
   }
 
   void reset() {
@@ -76,6 +111,18 @@ class ProfileCubit extends Cubit<ProfileState> {
     if (currentState is ProfileReady) return currentState.profile;
     if (currentState is ProfileError) return currentState.profile;
     return null;
+  }
+
+  ProfileOverviewStats get _currentStats {
+    final currentState = state;
+    if (currentState is ProfileReady) return currentState.stats;
+    if (currentState is ProfileError) return currentState.stats;
+    return const ProfileOverviewStats.empty();
+  }
+
+  bool get _isStatsLoading {
+    final currentState = state;
+    return currentState is ProfileReady && currentState.isStatsLoading;
   }
 
   String _messageFromError(Object error) {

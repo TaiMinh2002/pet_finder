@@ -7,6 +7,7 @@ import '../../app/theme/app_text_styles.dart';
 class AppTextField extends StatelessWidget {
   const AppTextField({
     required this.label,
+    this.labelColor = AppColors.charcoal,
     super.key,
     this.hint,
     this.icon,
@@ -25,6 +26,7 @@ class AppTextField extends StatelessWidget {
   });
 
   final String label;
+  final Color labelColor;
   final String? hint;
   final IconData? icon;
   final Widget? suffixIcon;
@@ -48,7 +50,7 @@ class AppTextField extends StatelessWidget {
         RichText(
           text: TextSpan(
             text: label,
-            style: AppTextStyles.caption.copyWith(color: AppColors.charcoal),
+            style: AppTextStyles.caption.copyWith(color: labelColor),
             children: [
               if (required)
                 TextSpan(

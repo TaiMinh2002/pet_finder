@@ -1916,6 +1916,132 @@ abstract class AppLocalizations {
   /// **'Hãy dùng ảnh hồ sơ ấm áp và dễ nhận ra sau.'**
   String get editProfilePhotoDesc;
 
+  /// No description provided for @editProfileAlertOptions.
+  ///
+  /// In vi, this message translates to:
+  /// **'Tùy chọn cảnh báo'**
+  String get editProfileAlertOptions;
+
+  /// No description provided for @editProfilePickFromGallery.
+  ///
+  /// In vi, this message translates to:
+  /// **'Chọn từ thư viện'**
+  String get editProfilePickFromGallery;
+
+  /// No description provided for @editProfileTakePhoto.
+  ///
+  /// In vi, this message translates to:
+  /// **'Chụp ảnh mới'**
+  String get editProfileTakePhoto;
+
+  /// No description provided for @editProfileChangePhoto.
+  ///
+  /// In vi, this message translates to:
+  /// **'Đổi ảnh'**
+  String get editProfileChangePhoto;
+
+  /// No description provided for @editProfileContactInfo.
+  ///
+  /// In vi, this message translates to:
+  /// **'Thông tin liên hệ'**
+  String get editProfileContactInfo;
+
+  /// No description provided for @editProfileNameHint.
+  ///
+  /// In vi, this message translates to:
+  /// **'Nhập họ và tên'**
+  String get editProfileNameHint;
+
+  /// No description provided for @editProfilePhoneHint.
+  ///
+  /// In vi, this message translates to:
+  /// **'Nhập số điện thoại'**
+  String get editProfilePhoneHint;
+
+  /// No description provided for @editProfileEmailHint.
+  ///
+  /// In vi, this message translates to:
+  /// **'Địa chỉ email'**
+  String get editProfileEmailHint;
+
+  /// No description provided for @editProfileCityHint.
+  ///
+  /// In vi, this message translates to:
+  /// **'Nhập thành phố'**
+  String get editProfileCityHint;
+
+  /// No description provided for @editProfileRadiusHint.
+  ///
+  /// In vi, this message translates to:
+  /// **'1–100 km'**
+  String get editProfileRadiusHint;
+
+  /// No description provided for @editProfileNameRequired.
+  ///
+  /// In vi, this message translates to:
+  /// **'Tên không được để trống.'**
+  String get editProfileNameRequired;
+
+  /// No description provided for @editProfilePhoneRequired.
+  ///
+  /// In vi, this message translates to:
+  /// **'Số điện thoại không được để trống.'**
+  String get editProfilePhoneRequired;
+
+  /// No description provided for @editProfilePhoneInvalid.
+  ///
+  /// In vi, this message translates to:
+  /// **'Số điện thoại không hợp lệ.'**
+  String get editProfilePhoneInvalid;
+
+  /// No description provided for @editProfileEmailRequired.
+  ///
+  /// In vi, this message translates to:
+  /// **'Email không được để trống.'**
+  String get editProfileEmailRequired;
+
+  /// No description provided for @editProfileEmailInvalid.
+  ///
+  /// In vi, this message translates to:
+  /// **'Email không hợp lệ.'**
+  String get editProfileEmailInvalid;
+
+  /// No description provided for @editProfileCityRequired.
+  ///
+  /// In vi, this message translates to:
+  /// **'Thành phố không được để trống.'**
+  String get editProfileCityRequired;
+
+  /// No description provided for @editProfileRadiusNumberRequired.
+  ///
+  /// In vi, this message translates to:
+  /// **'Bán kính cần là một số.'**
+  String get editProfileRadiusNumberRequired;
+
+  /// No description provided for @editProfileRadiusRangeError.
+  ///
+  /// In vi, this message translates to:
+  /// **'Bán kính cần nằm trong khoảng 1–100 km.'**
+  String get editProfileRadiusRangeError;
+
+  /// No description provided for @editProfileRequiredFieldsError.
+  ///
+  /// In vi, this message translates to:
+  /// **'Vui lòng kiểm tra lại các trường bắt buộc.'**
+  String get editProfileRequiredFieldsError;
+
+  /// No description provided for @editProfileSaved.
+  ///
+  /// In vi, this message translates to:
+  /// **'Đã lưu hồ sơ thành công.'**
+  String get editProfileSaved;
+
+  /// No description provided for @editProfileLoading.
+  ///
+  /// In vi, this message translates to:
+  /// **'Đang tải hồ sơ của bạn...'**
+  String get editProfileLoading;
+
   /// No description provided for @editProfileRadius.
   ///
   /// In vi, this message translates to:

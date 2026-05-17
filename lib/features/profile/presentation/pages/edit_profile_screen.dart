@@ -38,6 +38,11 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   String? _avatarUrl;
   bool _didHydrate = false;
   bool _isSavingRequested = false;
+  String? _nameError;
+  String? _phoneError;
+  String? _emailError;
+  String? _cityError;
+  String? _radiusError;
 
   @override
   void initState() {
@@ -101,7 +106,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               children: [
                 ListTile(
                   leading: const Icon(Icons.photo_library_outlined),
-                  title: const Text('Chọn từ thư viện'),
+                  title: Text(context.l10n.editProfilePickFromGallery),
                   onTap: () {
                     Navigator.pop(context);
                     _pickAvatar(ImageSource.gallery);
@@ -109,7 +114,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 ),
                 ListTile(
                   leading: const Icon(Icons.photo_camera_outlined),
-                  title: const Text('Chụp ảnh mới'),
+                  title: Text(context.l10n.editProfileTakePhoto),
                   onTap: () {
                     Navigator.pop(context);
                     _pickAvatar(ImageSource.camera);
@@ -124,20 +129,39 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   }
 
   Future<void> _saveProfile() async {
+    FocusManager.instance.primaryFocus?.unfocus();
     final radius = int.tryParse(_radiusController.text.trim());
-    if (_nameController.text.trim().isEmpty) {
+    final name = _nameController.text.trim();
+    final phone = _phoneController.text.trim();
+    final email = _emailController.text.trim();
+    final city = _cityController.text.trim();
+
+    final nameError = name.isEmpty
+        ? context.l10n.editProfileNameRequired
+        : null;
+    final phoneError = _validatePhone(phone);
+    final emailError = _validateEmail(email);
+    final cityError = city.isEmpty
+        ? context.l10n.editProfileCityRequired
+        : null;
+    final radiusError = _validateRadius(radius);
+
+    setState(() {
+      _nameError = nameError;
+      _phoneError = phoneError;
+      _emailError = emailError;
+      _cityError = cityError;
+      _radiusError = radiusError;
+    });
+
+    if (nameError != null ||
+        phoneError != null ||
+        emailError != null ||
+        cityError != null ||
+        radiusError != null) {
       showPetSnackBar(
         context,
-        'Tên không được để trống.',
-        icon: Icons.error_outline,
-        backgroundColor: AppColors.coralDark,
-      );
-      return;
-    }
-    if (radius == null || radius <= 0) {
-      showPetSnackBar(
-        context,
-        'Bán kính cần là số lớn hơn 0.',
+        context.l10n.editProfileRequiredFieldsError,
         icon: Icons.error_outline,
         backgroundColor: AppColors.coralDark,
       );
@@ -146,17 +170,63 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
 
     _isSavingRequested = true;
     await context.read<ProfileCubit>().saveProfile(
-      name: _nameController.text,
-      phoneNumber: _phoneController.text,
-      city: _cityController.text,
-      notificationRadiusKm: radius,
+      name: name,
+      phoneNumber: phone,
+      city: city,
+      notificationRadiusKm: radius!,
       avatarUrl: _avatarUrl,
     );
   }
 
+  String? _validatePhone(String value) {
+    if (value.isEmpty) return context.l10n.editProfilePhoneRequired;
+    final digits = value.replaceAll(RegExp(r'\D'), '');
+    if (digits.length < 9 || digits.length > 15) {
+      return context.l10n.editProfilePhoneInvalid;
+    }
+    if (!RegExp(r'^\+?[0-9\s().-]+$').hasMatch(value)) {
+      return context.l10n.editProfilePhoneInvalid;
+    }
+    return null;
+  }
+
+  String? _validateEmail(String value) {
+    if (value.isEmpty) return context.l10n.editProfileEmailRequired;
+    if (!RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$').hasMatch(value)) {
+      return context.l10n.editProfileEmailInvalid;
+    }
+    return null;
+  }
+
+  String? _validateRadius(int? value) {
+    if (value == null) return context.l10n.editProfileRadiusNumberRequired;
+    if (value < 1 || value > 100) {
+      return context.l10n.editProfileRadiusRangeError;
+    }
+    return null;
+  }
+
+  void _clearFieldError(String field) {
+    setState(() {
+      switch (field) {
+        case 'name':
+          _nameError = null;
+          break;
+        case 'phone':
+          _phoneError = null;
+          break;
+        case 'city':
+          _cityError = null;
+          break;
+        case 'radius':
+          _radiusError = null;
+          break;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    final bottomInset = MediaQuery.viewInsetsOf(context).bottom;
     return BlocConsumer<ProfileCubit, ProfileState>(
       listener: (context, state) {
         if (state is ProfileReady &&
@@ -166,7 +236,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           _isSavingRequested = false;
           showPetSnackBar(
             context,
-            'Profile saved successfully.',
+            context.l10n.editProfileSaved,
             icon: Icons.check_circle_outline,
             backgroundColor: AppColors.green,
           );
@@ -190,7 +260,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             child: Center(
               child: AppLoadingState(
                 title: context.l10n.editProfileTitle,
-                message: 'Đang tải hồ sơ của bạn...',
+                message: context.l10n.editProfileLoading,
               ),
             ),
           );
@@ -216,125 +286,224 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             : ProfileReady((state as ProfileError).profile!);
         _hydrate(readyState);
 
-        return ProfileScaffold(
-          bottomNav: false,
-          child: Stack(
-            children: [
-              CustomScrollView(
-                slivers: [
-                  SliverPadding(
-                    padding: EdgeInsets.fromLTRB(
-                      AppSpacing.screenNarrow,
-                      18,
-                      AppSpacing.screenNarrow,
-                      126 + bottomInset,
-                    ),
-                    sliver: SliverList.list(
-                      children: [
-                        ProfileHeader(
-                          title: context.l10n.editProfileTitle,
-                          subtitle: context.l10n.editProfileSubtitle,
-                          leading: CircleGlassButton(
-                            icon: Icons.arrow_back,
-                            onTap: () =>
-                                context.goNamed(AppRoute.profileOverview.name),
-                          ),
-                        ),
-                        const SizedBox(height: 18),
-                        AppCard(
-                          color: AppColors.glass,
-                          radius: 30,
-                          shadow: AppShadows.raisedCard,
-                          padding: const EdgeInsets.all(18),
-                          child: Column(
-                            children: [
-                              _EditableAvatar(
-                                avatarUrl: _avatarUrl,
-                                isUploading: readyState.isUploading,
-                              ),
-                              const SizedBox(height: 12),
-                              Text(
-                                context.l10n.editProfileAvatarHint,
-                                style: AppTextStyles.bodyStrong,
-                              ),
-                              const SizedBox(height: 4),
-                              Text(
-                                context.l10n.editProfilePhotoDesc,
-                                style: AppTextStyles.caption.copyWith(
-                                  color: AppColors.muted,
-                                ),
-                              ),
-                              const SizedBox(height: 12),
-                              OutlinedButton.icon(
-                                onPressed: readyState.isUploading
-                                    ? null
-                                    : _showAvatarSourceSheet,
-                                icon: const Icon(Icons.photo_camera_outlined),
-                                label: const Text('Đổi ảnh đại diện'),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(height: 14),
-                        AppTextField(
-                          label: context.l10n.editProfileName,
-                          hint: 'Your full name',
-                          icon: Icons.person_outline,
-                          controller: _nameController,
-                        ),
-                        const SizedBox(height: 14),
-                        AppTextField(
-                          label: context.l10n.editProfilePhone,
-                          hint: 'Phone number',
-                          icon: Icons.call_outlined,
-                          controller: _phoneController,
-                          keyboardType: TextInputType.phone,
-                        ),
-                        const SizedBox(height: 14),
-                        AppTextField(
-                          label: context.l10n.editProfileEmail,
-                          hint: 'Email address',
-                          icon: Icons.mail_outline,
-                          controller: _emailController,
-                          readOnly: true,
-                        ),
-                        const SizedBox(height: 14),
-                        AppTextField(
-                          label: context.l10n.editProfileCity,
-                          hint: 'Your city',
-                          icon: Icons.place_outlined,
-                          controller: _cityController,
-                        ),
-                        const SizedBox(height: 14),
-                        AppTextField(
-                          label: context.l10n.editProfileRadius,
-                          hint: 'How far nearby alerts should feel relevant',
-                          icon: Icons.radar_outlined,
-                          controller: _radiusController,
-                          keyboardType: TextInputType.number,
-                        ),
-                      ],
-                    ),
+        return GestureDetector(
+          behavior: HitTestBehavior.translucent,
+          onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+          child: ProfileScaffold(
+            bottomNav: false,
+            resizeToAvoidBottomInset: false,
+            bottomNavigationBar: _EditProfileBottomAction(
+              isSaving: readyState.isSaving,
+              isUploading: readyState.isUploading,
+              onPressed: _saveProfile,
+            ),
+            child: CustomScrollView(
+              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+              slivers: [
+                SliverPadding(
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.screenNarrow,
+                    18,
+                    AppSpacing.screenNarrow,
+                    148,
                   ),
-                ],
-              ),
-              Positioned(
-                left: AppSpacing.screenNarrow,
-                right: AppSpacing.screenNarrow,
-                bottom: 28 + bottomInset,
-                child: AppButton(
-                  label: context.l10n.petEditSaveBtn,
-                  icon: Icons.check_circle_outline,
-                  isLoading: readyState.isSaving,
-                  onPressed: readyState.isSaving || readyState.isUploading
-                      ? null
-                      : _saveProfile,
+                  sliver: SliverList.list(
+                    children: [
+                      ProfileHeader(
+                        title: context.l10n.editProfileTitle,
+                        subtitle: context.l10n.editProfileSubtitle,
+                        leading: CircleGlassButton(
+                          icon: Icons.arrow_back,
+                          onTap: () =>
+                              context.goNamed(AppRoute.profileOverview.name),
+                        ),
+                      ),
+                      const SizedBox(height: 18),
+                      AppCard(
+                        color: AppColors.white,
+                        radius: 24,
+                        shadow: AppShadows.raisedCard,
+                        border: Border.all(color: AppColors.peach),
+                        padding: const EdgeInsets.all(12),
+                        child: Row(
+                          children: [
+                            _EditableAvatar(
+                              avatarUrl: _avatarUrl,
+                              isUploading: readyState.isUploading,
+                            ),
+                            const SizedBox(width: 12),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    _nameController.text.trim().isEmpty
+                                        ? context.l10n.editProfileAvatarHint
+                                        : _nameController.text.trim(),
+                                    style: AppTextStyles.bodyStrong,
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    context.l10n.editProfilePhotoDesc,
+                                    style: AppTextStyles.caption.copyWith(
+                                      color: AppColors.muted,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 8),
+                                  OutlinedButton.icon(
+                                    onPressed: readyState.isUploading
+                                        ? null
+                                        : _showAvatarSourceSheet,
+                                    icon: const Icon(
+                                      Icons.photo_camera_outlined,
+                                      size: 18,
+                                    ),
+                                    label: Text(
+                                      context.l10n.editProfileChangePhoto,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      AppCard(
+                        color: AppColors.white,
+                        radius: 24,
+                        shadow: AppShadows.softCard,
+                        border: Border.all(color: AppColors.peach),
+                        padding: const EdgeInsets.all(12),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              context.l10n.editProfileContactInfo,
+                              style: AppTextStyles.bodyStrong.copyWith(
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            AppTextField(
+                              label: context.l10n.editProfileName,
+                              hint: context.l10n.editProfileNameHint,
+                              icon: Icons.person_outline,
+                              controller: _nameController,
+                              required: true,
+                              errorText: _nameError,
+                              textInputAction: TextInputAction.next,
+                              onChanged: (_) => _clearFieldError('name'),
+                            ),
+                            const SizedBox(height: 12),
+                            AppTextField(
+                              label: context.l10n.editProfilePhone,
+                              hint: context.l10n.editProfilePhoneHint,
+                              icon: Icons.call_outlined,
+                              controller: _phoneController,
+                              keyboardType: TextInputType.phone,
+                              textInputAction: TextInputAction.next,
+                              required: true,
+                              errorText: _phoneError,
+                              onChanged: (_) => _clearFieldError('phone'),
+                            ),
+                            const SizedBox(height: 12),
+                            AppTextField(
+                              label: context.l10n.editProfileEmail,
+                              hint: context.l10n.editProfileEmailHint,
+                              icon: Icons.mail_outline,
+                              controller: _emailController,
+                              readOnly: true,
+                              required: true,
+                              errorText: _emailError,
+                            ),
+                            const SizedBox(height: 12),
+                            AppTextField(
+                              label: context.l10n.editProfileCity,
+                              hint: context.l10n.editProfileCityHint,
+                              icon: Icons.place_outlined,
+                              controller: _cityController,
+                              required: true,
+                              errorText: _cityError,
+                              textInputAction: TextInputAction.next,
+                              onChanged: (_) => _clearFieldError('city'),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      AppCard(
+                        color: AppColors.charcoal,
+                        radius: 24,
+                        shadow: AppShadows.floating,
+                        padding: const EdgeInsets.all(13),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              context.l10n.editProfileAlertOptions,
+                              style: AppTextStyles.bodyStrong.copyWith(
+                                color: AppColors.white,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            AppTextField(
+                              label: context.l10n.editProfileRadius,
+                              labelColor: AppColors.white,
+                              hint: context.l10n.editProfileRadiusHint,
+                              icon: Icons.radar_outlined,
+                              controller: _radiusController,
+                              keyboardType: TextInputType.number,
+                              textInputAction: TextInputAction.done,
+                              required: true,
+                              errorText: _radiusError,
+                              onChanged: (_) => _clearFieldError('radius'),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       },
+    );
+  }
+}
+
+class _EditProfileBottomAction extends StatelessWidget {
+  const _EditProfileBottomAction({
+    required this.isSaving,
+    required this.isUploading,
+    required this.onPressed,
+  });
+
+  final bool isSaving;
+  final bool isUploading;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      top: false,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(
+          AppSpacing.screenNarrow,
+          12,
+          AppSpacing.screenNarrow,
+          28,
+        ),
+        child: AppButton(
+          label: context.l10n.petEditSaveBtn,
+          icon: Icons.check_circle_outline,
+          isLoading: isSaving,
+          onPressed: isSaving || isUploading ? null : onPressed,
+        ),
+      ),
     );
   }
 }

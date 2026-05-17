@@ -935,6 +935,70 @@ class AppLocalizationsJa extends AppLocalizations {
       'Use a warm, recognizable profile photo later.';
 
   @override
+  String get editProfileAlertOptions => 'アラート設定';
+
+  @override
+  String get editProfilePickFromGallery => 'ギャラリーから選択';
+
+  @override
+  String get editProfileTakePhoto => '新しい写真を撮る';
+
+  @override
+  String get editProfileChangePhoto => '写真を変更';
+
+  @override
+  String get editProfileContactInfo => '連絡先情報';
+
+  @override
+  String get editProfileNameHint => 'Your full name';
+
+  @override
+  String get editProfilePhoneHint => 'Phone number';
+
+  @override
+  String get editProfileEmailHint => 'Email address';
+
+  @override
+  String get editProfileCityHint => 'Your city';
+
+  @override
+  String get editProfileRadiusHint =>
+      'How far nearby alerts should feel relevant';
+
+  @override
+  String get editProfileNameRequired => '名前を入力してください。';
+
+  @override
+  String get editProfilePhoneRequired => '電話番号を入力してください。';
+
+  @override
+  String get editProfilePhoneInvalid => '電話番号が正しくありません。';
+
+  @override
+  String get editProfileEmailRequired => 'メールアドレスを入力してください。';
+
+  @override
+  String get editProfileEmailInvalid => 'メールアドレスが正しくありません。';
+
+  @override
+  String get editProfileCityRequired => '都市を入力してください。';
+
+  @override
+  String get editProfileRadiusNumberRequired => '半径は数値で入力してください。';
+
+  @override
+  String get editProfileRadiusRangeError => '半径は1〜100 kmの範囲で入力してください。';
+
+  @override
+  String get editProfileRequiredFieldsError => '必須項目を確認してください。';
+
+  @override
+  String get editProfileSaved => 'Profile saved successfully.';
+
+  @override
+  String get editProfileLoading => 'プロフィールを読み込んでいます...';
+
+  @override
   String get editProfileRadius => 'Alert radius preference';
 
   @override

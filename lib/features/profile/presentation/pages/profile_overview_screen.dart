@@ -58,16 +58,36 @@ class _ProfileOverviewScreenState extends State<ProfileOverviewScreen> {
                 BlocBuilder<ProfileCubit, ProfileState>(
                   builder: (context, state) {
                     if (state is ProfileReady) {
-                      return ProfileHeroCard(profile: state.profile);
+                      return ProfileHeroCard(
+                        profile: state.profile,
+                        stats: state.stats,
+                        isStatsLoading: state.isStatsLoading,
+                      );
                     }
                     if (state is ProfileError && state.profile != null) {
-                      return ProfileHeroCard(profile: state.profile!);
+                      return ProfileHeroCard(
+                        profile: state.profile!,
+                        stats: state.stats,
+                      );
                     }
                     return const ProfileHeroLoadingCard();
                   },
                 ),
                 const SizedBox(height: 16),
-                const ProfileStatGrid(),
+                BlocBuilder<ProfileCubit, ProfileState>(
+                  builder: (context, state) {
+                    if (state is ProfileReady) {
+                      return ProfileStatGrid(
+                        stats: state.stats,
+                        isLoading: state.isStatsLoading,
+                      );
+                    }
+                    if (state is ProfileError) {
+                      return ProfileStatGrid(stats: state.stats);
+                    }
+                    return const ProfileStatGrid();
+                  },
+                ),
                 const SizedBox(height: 18),
                 ProfileMenuSection(
                   title: context.l10n.profileAccountSection,

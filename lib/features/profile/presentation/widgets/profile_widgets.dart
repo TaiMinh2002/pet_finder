@@ -14,8 +14,7 @@ import '../../../../core/widgets/app_bottom_nav.dart';
 import '../../../../core/widgets/app_card.dart';
 import '../../../../core/widgets/app_chip.dart';
 import '../../../../core/widgets/empty_state.dart';
-import '../../../mock/mock_data.dart';
-import '../../../reports/domain/pet_report_model.dart';
+import '../../domain/profile_overview_stats.dart';
 import '../../domain/user_profile.dart';
 
 class ProfileScaffold extends StatelessWidget {
@@ -23,14 +22,20 @@ class ProfileScaffold extends StatelessWidget {
     required this.child,
     super.key,
     this.bottomNav = true,
+    this.bottomNavigationBar,
+    this.resizeToAvoidBottomInset,
   });
 
   final Widget child;
   final bool bottomNav;
+  final Widget? bottomNavigationBar;
+  final bool? resizeToAvoidBottomInset;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: resizeToAvoidBottomInset,
+      bottomNavigationBar: bottomNavigationBar,
       body: DecoratedBox(
         decoration: const BoxDecoration(gradient: AppGradients.warmTeal),
         child: SafeArea(
@@ -188,9 +193,16 @@ class CircleGlassButton extends StatelessWidget {
 }
 
 class ProfileHeroCard extends StatelessWidget {
-  const ProfileHeroCard({required this.profile, super.key});
+  const ProfileHeroCard({
+    required this.profile,
+    required this.stats,
+    this.isStatsLoading = false,
+    super.key,
+  });
 
   final UserProfile profile;
+  final ProfileOverviewStats stats;
+  final bool isStatsLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -218,7 +230,7 @@ class ProfileHeroCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 6),
                 Text(
-                  MockData.profileStatus,
+                  _buildStatusText(context),
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
                   style: AppTextStyles.body.copyWith(fontSize: 13),
@@ -230,45 +242,65 @@ class ProfileHeroCard extends StatelessWidget {
       ),
     );
   }
+
+  String _buildStatusText(BuildContext context) {
+    if (isStatsLoading) {
+      return 'Đang cập nhật dữ liệu tài khoản của bạn.';
+    }
+    if (stats.petsCount == 0 && stats.activeReportsCount == 0) {
+      return 'Bạn chưa có hồ sơ thú cưng hoặc tin đang hoạt động.';
+    }
+    if (stats.activeReportsCount == 0) {
+      return 'Bạn đang quản lý ${stats.petsCount} hồ sơ thú cưng.';
+    }
+    return 'Bạn đang quản lý ${stats.petsCount} hồ sơ thú cưng và ${stats.activeReportsCount} tin đang hoạt động.';
+  }
 }
 
 class ProfileStatGrid extends StatelessWidget {
-  const ProfileStatGrid({super.key});
+  const ProfileStatGrid({
+    this.stats = const ProfileOverviewStats.empty(),
+    this.isLoading = false,
+    super.key,
+  });
+
+  final ProfileOverviewStats stats;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
-    final stats = <({String label, String value, Color color, IconData icon})>[
-      (
-        label: context.l10n.commonMyReports,
-        value:
-            '${MockData.myReports.where((r) => r.status == PetReportStatus.active).length}',
-        color: AppColors.coral,
-        icon: Icons.campaign_outlined,
-      ),
-      (
-        label: context.l10n.commonPets,
-        value: '${MockData.pets.length}',
-        color: AppColors.teal,
-        icon: Icons.pets,
-      ),
-      (
-        label: context.l10n.commonCommunity,
-        value: '${MockData.communityPosts.length}',
-        color: AppColors.green,
-        icon: Icons.groups_2_outlined,
-      ),
-      (
-        label: context.l10n.profileHelpedCases,
-        value: '5', // Placeholder for chat count
-        color: AppColors.coralDark,
-        icon: Icons.favorite_outline,
-      ),
-    ];
+    final statItems =
+        <({String label, String value, Color color, IconData icon})>[
+          (
+            label: context.l10n.commonMyReports,
+            value: _displayValue(stats.activeReportsCount),
+            color: AppColors.coral,
+            icon: Icons.campaign_outlined,
+          ),
+          (
+            label: context.l10n.commonPets,
+            value: _displayValue(stats.petsCount),
+            color: AppColors.teal,
+            icon: Icons.pets,
+          ),
+          (
+            label: context.l10n.commonCommunity,
+            value: _displayValue(stats.communityPostsCount),
+            color: AppColors.green,
+            icon: Icons.groups_2_outlined,
+          ),
+          (
+            label: context.l10n.profileHelpedCases,
+            value: _displayValue(stats.helpedCasesCount),
+            color: AppColors.coralDark,
+            icon: Icons.favorite_outline,
+          ),
+        ];
 
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: stats.length,
+      itemCount: statItems.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         crossAxisSpacing: 12,
@@ -276,7 +308,7 @@ class ProfileStatGrid extends StatelessWidget {
         childAspectRatio: 1.48,
       ),
       itemBuilder: (context, index) {
-        final stat = stats[index];
+        final stat = statItems[index];
         return AppCard(
           color: AppColors.white.withValues(alpha: 0.82),
           radius: 24,
@@ -324,6 +356,8 @@ class ProfileStatGrid extends StatelessWidget {
       },
     );
   }
+
+  String _displayValue(int value) => isLoading ? '—' : '$value';
 }
 
 class ProfileHeroLoadingCard extends StatelessWidget {

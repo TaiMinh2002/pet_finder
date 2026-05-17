@@ -971,6 +971,71 @@ class AppLocalizationsEn extends AppLocalizations {
       'Use a warm, recognizable profile photo later.';
 
   @override
+  String get editProfileAlertOptions => 'Alert options';
+
+  @override
+  String get editProfilePickFromGallery => 'Choose from gallery';
+
+  @override
+  String get editProfileTakePhoto => 'Take a new photo';
+
+  @override
+  String get editProfileChangePhoto => 'Change photo';
+
+  @override
+  String get editProfileContactInfo => 'Contact information';
+
+  @override
+  String get editProfileNameHint => 'Enter your full name';
+
+  @override
+  String get editProfilePhoneHint => 'Enter phone number';
+
+  @override
+  String get editProfileEmailHint => 'Email address';
+
+  @override
+  String get editProfileCityHint => 'Enter city';
+
+  @override
+  String get editProfileRadiusHint => '1–100 km';
+
+  @override
+  String get editProfileNameRequired => 'Name is required.';
+
+  @override
+  String get editProfilePhoneRequired => 'Phone number is required.';
+
+  @override
+  String get editProfilePhoneInvalid => 'Phone number is invalid.';
+
+  @override
+  String get editProfileEmailRequired => 'Email is required.';
+
+  @override
+  String get editProfileEmailInvalid => 'Email is invalid.';
+
+  @override
+  String get editProfileCityRequired => 'City is required.';
+
+  @override
+  String get editProfileRadiusNumberRequired => 'Radius must be a number.';
+
+  @override
+  String get editProfileRadiusRangeError =>
+      'Radius must be between 1 and 100 km.';
+
+  @override
+  String get editProfileRequiredFieldsError =>
+      'Please check the required fields.';
+
+  @override
+  String get editProfileSaved => 'Profile saved successfully.';
+
+  @override
+  String get editProfileLoading => 'Loading your profile...';
+
+  @override
   String get editProfileRadius => 'Alert radius preference';
 
   @override

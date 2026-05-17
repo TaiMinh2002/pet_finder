@@ -25,19 +25,30 @@ class UserProfile {
   final DateTime? createdAt;
   final DateTime? updatedAt;
 
-  factory UserProfile.fromJson(String id, Map<String, dynamic> json) {
+  factory UserProfile.fromJson(
+    String id,
+    Map<String, dynamic> json, {
+    String fallbackName = 'Pet Finder User',
+    String fallbackEmail = '',
+    String? fallbackPhoneNumber,
+    String? fallbackAvatarUrl,
+    bool fallbackIsPhoneVerified = false,
+  }) {
     return UserProfile(
       id: id,
       name: (json['name'] as String?)?.trim().isNotEmpty ?? false
           ? (json['name'] as String).trim()
-          : 'Pet Finder User',
-      email: (json['email'] as String?) ?? '',
-      phoneNumber: json['phone'] as String?,
-      avatarUrl: json['avatarUrl'] as String?,
+          : fallbackName,
+      email: (json['email'] as String?)?.trim().isNotEmpty ?? false
+          ? (json['email'] as String).trim()
+          : fallbackEmail,
+      phoneNumber: (json['phone'] as String?) ?? fallbackPhoneNumber,
+      avatarUrl: (json['avatarUrl'] as String?) ?? fallbackAvatarUrl,
       city: json['city'] as String?,
       notificationRadiusKm:
           (json['notificationRadiusKm'] as num?)?.round() ?? 5,
-      isPhoneVerified: (json['isPhoneVerified'] as bool?) ?? false,
+      isPhoneVerified:
+          (json['isPhoneVerified'] as bool?) ?? fallbackIsPhoneVerified,
       createdAt: _parseDate(json['createdAt']),
       updatedAt: _parseDate(json['updatedAt']),
     );

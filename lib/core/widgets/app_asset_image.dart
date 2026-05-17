@@ -34,24 +34,41 @@ class AppAssetImage extends StatelessWidget {
       );
     }
 
-    final image = Image.asset(
-      assetPath,
-      fit: fit,
-      width: width,
-      height: height,
-      alignment: alignment,
-      cacheWidth: cacheWidth,
-      cacheHeight: cacheHeight,
-      semanticLabel: semanticLabel,
-      filterQuality: FilterQuality.medium,
-      errorBuilder: (context, error, stackTrace) {
-        return _FallbackImage(
-          width: width,
-          height: height,
-          borderRadius: borderRadius,
-        );
-      },
-    );
+    final image = _isRemoteImage
+        ? Image.network(
+            assetPath,
+            fit: fit,
+            width: width,
+            height: height,
+            alignment: alignment,
+            semanticLabel: semanticLabel,
+            filterQuality: FilterQuality.medium,
+            errorBuilder: (context, error, stackTrace) {
+              return _FallbackImage(
+                width: width,
+                height: height,
+                borderRadius: borderRadius,
+              );
+            },
+          )
+        : Image.asset(
+            assetPath,
+            fit: fit,
+            width: width,
+            height: height,
+            alignment: alignment,
+            cacheWidth: cacheWidth,
+            cacheHeight: cacheHeight,
+            semanticLabel: semanticLabel,
+            filterQuality: FilterQuality.medium,
+            errorBuilder: (context, error, stackTrace) {
+              return _FallbackImage(
+                width: width,
+                height: height,
+                borderRadius: borderRadius,
+              );
+            },
+          );
 
     if (borderRadius == null) {
       return image;
@@ -59,6 +76,9 @@ class AppAssetImage extends StatelessWidget {
 
     return ClipRRect(borderRadius: borderRadius!, child: image);
   }
+
+  bool get _isRemoteImage =>
+      assetPath.startsWith('http://') || assetPath.startsWith('https://');
 }
 
 class _FallbackImage extends StatelessWidget {
